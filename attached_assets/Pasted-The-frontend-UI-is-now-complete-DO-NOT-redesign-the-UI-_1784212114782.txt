@@ -1,0 +1,395 @@
+The frontend UI is now complete.
+
+DO NOT redesign the UI.
+
+DO NOT change the layout.
+
+DO NOT modify colors, typography, spacing, animations, or responsiveness.
+
+Only complete the backend and connect every feature to make the application production-ready.
+
+====================================================
+
+BOOKING SYSTEM
+
+When a customer submits the booking form:
+
+1. Validate all required fields.
+
+2. Upload images/videos to Cloudinary.
+
+3. Store media URLs in MongoDB.
+
+4. Save the booking in MongoDB.
+
+5. Generate a unique Booking ID.
+
+Example:
+
+ZOO-2026-0001
+
+====================================================
+
+ADMIN NOTIFICATION EMAIL
+
+Immediately send an email to
+
+zoophilistpetservice@gmail.com
+
+Subject
+
+🐾 New Service Request - ZOO-2026-0001
+
+Email should contain
+
+Customer Details
+
+• Name
+• Phone
+• Email
+
+Pet Details
+
+• Name
+• Type
+• Breed
+• Age
+• Aggressive (Yes / No)
+
+Service Details
+
+• Service
+• Preferred Date
+• Preferred Time
+• Address
+• Notes
+
+Uploaded Media
+
+Clickable links
+
+Open Dashboard button
+
+====================================================
+
+CUSTOMER CONFIRMATION EMAIL
+
+Immediately send an automatic confirmation email.
+
+Subject
+
+Your Zoophilist Service Request has been received 🐾
+
+Body
+
+Thank the customer.
+
+Include
+
+Booking ID
+
+Selected Service
+
+Preferred Date
+
+Phone Number
+
+Expected response message
+
+Professional Zoophilist branding
+
+====================================================
+
+TELEGRAM BOT
+
+Configure Telegram Bot API.
+
+Whenever a booking is submitted send a formatted message.
+
+Example
+
+🐾 NEW BOOKING
+
+Booking ID
+
+Customer
+
+Phone
+
+Service
+
+Date
+
+Time
+
+Aggressive Pet
+
+Address
+
+Tap to Open Dashboard
+
+====================================================
+
+ADMIN DASHBOARD
+
+Dashboard should display
+
+Today's Requests
+
+Pending
+
+Confirmed
+
+Completed
+
+Cancelled
+
+Revenue
+
+Recent Bookings
+
+====================================================
+
+REQUEST MANAGEMENT
+
+Admin can
+
+View
+
+Search
+
+Filter
+
+Sort
+
+Confirm Booking
+
+Reject Booking
+
+Mark Contacted
+
+Mark Scheduled
+
+Mark Completed
+
+Cancel
+
+Delete
+
+Add Internal Notes
+
+====================================================
+
+CUSTOMER STATUS
+
+Status Flow
+
+Pending
+
+↓
+
+Confirmed
+
+↓
+
+Scheduled
+
+↓
+
+Completed
+
+or
+
+Cancelled
+
+====================================================
+
+SERVICES CRUD
+
+Admin can
+
+Create Service
+
+Edit Service
+
+Delete Service
+
+Hide Service
+
+Change Price
+
+Upload Thumbnail
+
+Upload Gallery
+
+Upload Videos
+
+====================================================
+
+GALLERY CRUD
+
+Upload
+
+Images
+
+Videos
+
+Category
+
+Service
+
+Date
+
+Description
+
+====================================================
+
+SETTINGS
+
+Editable
+
+Phone
+
+Email
+
+Business Address
+
+Working Hours
+
+Telegram Token
+
+Telegram Chat ID
+
+Resend API Key
+
+Cloudinary Keys
+
+MongoDB URI
+
+Logo
+
+Social Links
+
+SEO
+
+====================================================
+
+DATABASE
+
+Use Prisma with MongoDB.
+
+Implement proper relationships.
+
+Indexes.
+
+Validation.
+
+Soft delete where appropriate.
+
+====================================================
+
+SECURITY
+
+Rate limit booking API.
+
+Validate inputs with Zod.
+
+Sanitize user inputs.
+
+Secure environment variables.
+
+Protect Admin routes.
+
+====================================================
+
+PERFORMANCE
+
+Lazy load images.
+
+Optimize Cloudinary images.
+
+Use Next.js Image.
+
+Code splitting.
+
+Caching.
+
+====================================================
+
+ERROR HANDLING
+
+Every API must return proper responses.
+
+User-friendly error messages.
+
+Retry uploads if needed.
+
+====================================================
+
+SUCCESS PAGE
+
+After booking
+
+Show
+
+Booking ID
+
+Confirmation message
+
+Expected response
+
+Return Home button
+
+====================================================
+
+CONTACT FORM
+
+Working email integration.
+
+Save inquiries to MongoDB.
+
+Send Telegram notification.
+
+====================================================
+
+TESTING
+
+Verify
+
+Booking works
+
+Images upload
+
+Videos upload
+
+MongoDB saves
+
+Email sends
+
+Telegram sends
+
+Admin CRUD works
+
+Dashboard updates
+
+Mobile works
+
+Desktop works
+
+No TypeScript errors
+
+No ESLint errors
+
+No build errors
+
+====================================================
+
+FINAL STEP
+
+Run the application.
+
+Fix every issue.
+
+Ensure the application is production-ready.
+
+Do NOT stop until every backend feature is fully connected and tested.
