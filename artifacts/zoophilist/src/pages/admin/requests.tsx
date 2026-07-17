@@ -39,17 +39,22 @@ export default function AdminRequests() {
     });
   };
 
-  const filteredBookings = bookings.filter(b => 
-    b.customerName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    b.petName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    b.id.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredBookings = bookings.filter(b => {
+    const q = searchTerm.toLowerCase();
+    return (
+      b.customerName.toLowerCase().includes(q) ||
+      b.petName.toLowerCase().includes(q) ||
+      b.id.toLowerCase().includes(q) ||
+      ((b as any).bookingId ?? "").toLowerCase().includes(q)
+    );
+  });
 
   const getStatusBadge = (status: string) => {
     switch(status) {
       case "pending": return <Badge className="bg-amber-500/20 text-amber-500 hover:bg-amber-500/20">Pending</Badge>;
       case "confirmed": return <Badge className="bg-indigo-500/20 text-indigo-500 hover:bg-indigo-500/20">Confirmed</Badge>;
       case "completed": return <Badge className="bg-emerald-500/20 text-emerald-500 hover:bg-emerald-500/20">Completed</Badge>;
+      case "scheduled": return <Badge className="bg-cyan-500/20 text-cyan-500 hover:bg-cyan-500/20">Scheduled</Badge>;
       case "cancelled": return <Badge className="bg-rose-500/20 text-rose-500 hover:bg-rose-500/20">Cancelled</Badge>;
       default: return <Badge variant="outline">{status}</Badge>;
     }
@@ -70,6 +75,7 @@ export default function AdminRequests() {
                 <TabsTrigger value="all">All</TabsTrigger>
                 <TabsTrigger value="pending">Pending</TabsTrigger>
                 <TabsTrigger value="confirmed">Confirmed</TabsTrigger>
+                <TabsTrigger value="scheduled">Scheduled</TabsTrigger>
                 <TabsTrigger value="completed">Completed</TabsTrigger>
                 <TabsTrigger value="cancelled">Cancelled</TabsTrigger>
               </TabsList>
@@ -115,7 +121,9 @@ export default function AdminRequests() {
                   filteredBookings.map((booking) => (
                     <TableRow key={booking.id} className="border-white/5 hover:bg-white/[0.02]">
                       <TableCell>
-                        <div className="font-medium text-white">#{booking.id.slice(0,6)}</div>
+                        <div className="font-mono font-semibold text-primary text-xs">
+                          {(booking as any).bookingId || `#${booking.id.slice(0, 6)}`}
+                        </div>
                         <div className="text-xs text-muted-foreground">{format(new Date(booking.createdAt), "MMM d, yyyy")}</div>
                       </TableCell>
                       <TableCell>
@@ -146,6 +154,7 @@ export default function AdminRequests() {
                           <SelectContent>
                             <SelectItem value="pending">Pending</SelectItem>
                             <SelectItem value="confirmed">Confirmed</SelectItem>
+                            <SelectItem value="scheduled">Scheduled</SelectItem>
                             <SelectItem value="completed">Completed</SelectItem>
                             <SelectItem value="cancelled">Cancelled</SelectItem>
                           </SelectContent>

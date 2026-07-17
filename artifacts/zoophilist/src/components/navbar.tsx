@@ -1,100 +1,173 @@
 import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
-import { PawPrint, Menu, X } from "lucide-react";
+import { PawPrint, Menu, X, Phone } from "lucide-react";
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
+import { motion, AnimatePresence } from "framer-motion";
+
+const navLinks = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/services", label: "Services" },
+  { href: "/gallery", label: "Gallery" },
+  { href: "/contact", label: "Contact" },
+];
 
 export function Navbar() {
   const [location] = useLocation();
   const [scrolled, setScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const navLinks = [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "About Us" },
-    { href: "/services", label: "Services" },
-    { href: "/gallery", label: "Gallery" },
-    { href: "/contact", label: "Contact" },
-  ];
+  // Close mobile menu on route change
+  useEffect(() => { setMobileOpen(false); }, [location]);
 
   return (
-    <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        scrolled ? "bg-background/80 backdrop-blur-xl border-b border-white/5 shadow-lg" : "bg-transparent py-2"
-      )}
-    >
-      <div className="container mx-auto px-4 h-20 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center border border-primary/30 group-hover:bg-primary/30 transition-colors">
-            <PawPrint className="w-6 h-6 text-primary" />
+    <>
+      <motion.header
+        initial={{ y: -80, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 sm:px-6 lg:px-8 h-20"
+      >
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-2.5 group shrink-0">
+          <div className="w-9 h-9 rounded-xl bg-primary/15 flex items-center justify-center border border-primary/25 group-hover:bg-primary/25 group-hover:border-primary/40 transition-all duration-300">
+            <PawPrint className="w-5 h-5 text-primary" />
           </div>
-          <span className="text-2xl font-bold tracking-tight text-white">
+          <span className="text-xl font-bold tracking-tight text-white">
             Zoophilist
           </span>
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={cn(
-                "text-sm font-medium transition-colors hover:text-primary",
-                location === link.href ? "text-primary" : "text-gray-300"
-              )}
-            >
-              {link.label}
-            </Link>
-          ))}
-          <Link href="/book" className="hidden md:inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-10 px-6 ml-4">
-            Book Now
-          </Link>
+        {/* Desktop: Glass pill nav */}
+        <nav
+          className={cn(
+            "hidden md:flex items-center gap-1 px-3 py-2 rounded-full transition-all duration-500",
+            scrolled
+              ? "bg-black/60 backdrop-blur-2xl border border-white/10 shadow-xl shadow-black/30"
+              : "bg-white/5 backdrop-blur-md border border-white/8"
+          )}
+        >
+          {navLinks.map((link) => {
+            const active = location === link.href;
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={cn(
+                  "relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-200",
+                  active
+                    ? "text-primary-foreground"
+                    : "text-gray-400 hover:text-white"
+                )}
+              >
+                {active && (
+                  <motion.span
+                    layoutId="nav-pill"
+                    className="absolute inset-0 rounded-full bg-primary"
+                    style={{ zIndex: -1 }}
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+                {link.label}
+              </Link>
+            );
+          })}
         </nav>
 
-        {/* Mobile Toggle */}
-        <button
-          className="md:hidden p-2 text-gray-300 hover:text-white"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
-          {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-white/5 py-4 px-4 flex flex-col gap-4 shadow-xl">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={() => setMobileMenuOpen(false)}
-              className={cn(
-                "text-lg font-medium p-2 rounded-lg transition-colors",
-                location === link.href ? "bg-primary/10 text-primary" : "text-gray-300 hover:bg-white/5 hover:text-white"
-              )}
-            >
-              {link.label}
-            </Link>
-          ))}
+        {/* Desktop: Right actions */}
+        <div className="hidden md:flex items-center gap-3 shrink-0">
+          <a
+            href="tel:+919515247704"
+            className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors"
+          >
+            <Phone className="w-4 h-4" />
+            <span>+91 9515247704</span>
+          </a>
           <Link
             href="/book"
-            onClick={() => setMobileMenuOpen(false)}
-            className="mt-4 flex items-center justify-center whitespace-nowrap rounded-md text-base font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-12 px-6"
+            className="inline-flex items-center justify-center h-10 px-5 rounded-full bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-all duration-200 hover:shadow-lg hover:shadow-primary/20"
           >
             Book Now
           </Link>
         </div>
-      )}
-    </header>
+
+        {/* Mobile: Toggle */}
+        <button
+          onClick={() => setMobileOpen(!mobileOpen)}
+          className="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-white/10 transition-colors"
+          aria-label="Toggle menu"
+        >
+          {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+        </button>
+      </motion.header>
+
+      {/* Mobile menu */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              key="backdrop"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm md:hidden"
+              onClick={() => setMobileOpen(false)}
+            />
+            {/* Panel */}
+            <motion.div
+              key="panel"
+              initial={{ opacity: 0, y: -16, scale: 0.97 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -16, scale: 0.97 }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="fixed top-24 left-4 right-4 z-50 md:hidden rounded-2xl bg-card/95 backdrop-blur-2xl border border-white/10 shadow-2xl p-4"
+            >
+              <nav className="flex flex-col gap-1">
+                {navLinks.map((link) => {
+                  const active = location === link.href;
+                  return (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className={cn(
+                        "flex items-center px-4 py-3 rounded-xl text-base font-medium transition-colors",
+                        active
+                          ? "bg-primary/15 text-primary"
+                          : "text-gray-300 hover:bg-white/5 hover:text-white"
+                      )}
+                    >
+                      {link.label}
+                    </Link>
+                  );
+                })}
+              </nav>
+              <div className="mt-4 pt-4 border-t border-white/10 flex flex-col gap-3">
+                <a
+                  href="tel:+919515247704"
+                  className="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-white hover:bg-white/5 transition-colors"
+                >
+                  <Phone className="w-5 h-5" />
+                  <span>+91 9515247704</span>
+                </a>
+                <Link
+                  href="/book"
+                  className="flex items-center justify-center h-12 rounded-xl bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors"
+                >
+                  Book an Appointment
+                </Link>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+    </>
   );
 }

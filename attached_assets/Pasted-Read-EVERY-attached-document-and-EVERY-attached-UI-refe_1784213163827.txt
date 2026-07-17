@@ -1,0 +1,576 @@
+Read EVERY attached document and EVERY attached UI reference image before writing or modifying any code.
+
+The attached UI images are the OFFICIAL DESIGN.
+
+Treat them exactly like a professional Figma design.
+
+DO NOT redesign the UI.
+
+DO NOT simplify layouts.
+
+DO NOT replace sections with generic Tailwind templates.
+
+The goal is to recreate the UI as closely as possible while making it production-ready.
+
+========================================================
+
+PROJECT
+
+Zoophilist 2.0
+
+A premium animal services platform.
+
+This is NOT a prototype.
+
+This is NOT a demo.
+
+This is a REAL business application.
+
+I expect a production-quality result.
+
+Continue working until the entire application is complete.
+
+Do not stop after implementing only a few features.
+
+========================================================
+
+DESIGN DIRECTION
+
+Overall Design Ratio
+
+70% Direction B
+30% Direction A
+
+Direction A
+
+• Cinematic hero
+• Large pet photography
+• Emotional storytelling
+• Full viewport landing section
+• Premium editorial spacing
+
+Direction B
+
+• Apple
+• Linear
+• Vercel
+• Stripe
+• Framer
+
+Use
+
+Glassmorphism
+
+Blur
+
+Floating cards
+
+Gradient borders
+
+Large border radius
+
+Premium typography
+
+Animated blobs
+
+Aurora backgrounds
+
+Mouse interactions
+
+Framer Motion animations
+
+Beautiful whitespace
+
+Luxury feeling
+
+Micro interactions
+
+Hover animations
+
+Scroll animations
+
+Smooth page transitions
+
+Animated counters
+
+Loading skeletons
+
+The website should immediately feel premium.
+
+========================================================
+
+RESPONSIVENESS
+
+The website MUST be perfectly responsive.
+
+Desktop
+
+Laptop
+
+Tablet
+
+Mobile
+
+Foldable Devices
+
+Use Mobile First.
+
+Desktop and Mobile should have different optimized layouts.
+
+Do NOT simply shrink the desktop layout.
+
+Create responsive experiences.
+
+========================================================
+
+PUBLIC WEBSITE
+
+Build
+
+Home
+
+About
+
+Services
+
+Individual Service
+
+Gallery
+
+Success Stories
+
+Contact
+
+Book Service
+
+Privacy Policy
+
+Terms
+
+404
+
+Every page must be completely functional.
+
+========================================================
+
+BOOKING SYSTEM
+
+Customer Details
+
+Full Name
+
+Phone
+
+Email
+
+City
+
+Area
+
+Complete Address
+
+Pet Details
+
+Pet Name
+
+Pet Type
+
+Breed
+
+Age
+
+Aggressive
+
+Yes
+
+No
+
+Service Details
+
+Service
+
+Preferred Date
+
+Preferred Time
+
+Notes
+
+Upload Photos
+
+Upload Videos
+
+========================================================
+
+SERVICES
+
+Spa Bath
+
+₹899
+
+Bath with Shampoo
+
+Blow Dry
+
+Nail Clipping
+
+Ear Cleaning
+
+Eyes Cleaning
+
+Combing
+
+------------------------------------
+
+Grooming
+
+₹1599
+
+Bath with Shampoo
+
+Full Body Trimming
+
+Zero Haircut
+
+Blow Dry
+
+Nail Clipping
+
+Sanitary Trim
+
+Ear Cleaning
+
+Eyes Cleaning
+
+Combing
+
+------------------------------------
+
+Hair Cut
+
+₹1199
+
+Full Body Trimming
+
+Zero Haircut
+
+Nail Clipping
+
+Sanitary Trim
+
+------------------------------------
+
+Medical Bath
+
+₹1699
+
+Bath with Shampoo
+
+Anti Tick Bath (Applying Medicine)
+
+Blow Dry
+
+Nail Clipping
+
+Ear Cleaning
+
+Eyes Cleaning
+
+Combing
+
+------------------------------------
+
+Monthly Subscription
+
+Original Price
+
+₹5899
+
+Offer Price
+
+₹3899
+
+Benefits
+
+Valid for 2 Months
+
+Choose Any Grooming Service
+
+Only 3 Services
+
+========================================================
+
+CONTACT
+
+Phone
+
++91 9515247704
+
+Email
+
+zoophilistpetservice@gmail.com
+
+========================================================
+
+ADMIN PANEL
+
+Admin Login
+
+Dashboard
+
+Requests
+
+Services CRUD
+
+Gallery CRUD
+
+Settings
+
+Statistics
+
+Media Upload
+
+Customer Management
+
+Booking Management
+
+Internal Notes
+
+Search
+
+Filters
+
+========================================================
+
+DATABASE
+
+MongoDB Atlas
+
+Prisma ORM
+
+Relationships
+
+Indexes
+
+Validation
+
+Seed default services
+
+========================================================
+
+MEDIA
+
+Cloudinary
+
+Images
+
+Videos
+
+Optimization
+
+========================================================
+
+EMAIL
+
+Use Resend.
+
+Automatically send
+
+Customer Confirmation Email
+
+Admin Notification Email
+
+Beautiful HTML templates
+
+Professional branding
+
+========================================================
+
+TELEGRAM
+
+Configure Telegram Bot.
+
+When a booking is submitted automatically send
+
+Booking ID
+
+Customer Name
+
+Phone
+
+Service
+
+Date
+
+Time
+
+Aggressive Pet
+
+Address
+
+Dashboard Link
+
+========================================================
+
+BOOKING STATUS
+
+Pending
+
+↓
+
+Confirmed
+
+↓
+
+Scheduled
+
+↓
+
+Completed
+
+OR
+
+Cancelled
+
+========================================================
+
+SETTINGS
+
+Editable
+
+Phone
+
+Email
+
+Business Address
+
+Logo
+
+Working Hours
+
+Telegram Token
+
+Telegram Chat ID
+
+Cloudinary Keys
+
+Resend API
+
+MongoDB URI
+
+Social Links
+
+SEO
+
+========================================================
+
+PERFORMANCE
+
+Image Optimization
+
+Lazy Loading
+
+Code Splitting
+
+Caching
+
+Dynamic Imports
+
+Excellent Lighthouse Score
+
+========================================================
+
+ACCESSIBILITY
+
+ARIA
+
+Keyboard Navigation
+
+Semantic HTML
+
+Color Contrast
+
+========================================================
+
+SEO
+
+Metadata
+
+Open Graph
+
+Twitter Cards
+
+Sitemap
+
+Robots
+
+Structured Data
+
+========================================================
+
+QUALITY
+
+Strict TypeScript
+
+No duplicated code
+
+Reusable Components
+
+Reusable Hooks
+
+Reusable Utilities
+
+Clean Architecture
+
+Proper Folder Structure
+
+Production Ready
+
+========================================================
+
+TESTING
+
+Before finishing
+
+Run the application
+
+Fix
+
+TypeScript Errors
+
+ESLint Errors
+
+Hydration Errors
+
+Prisma Errors
+
+Tailwind Errors
+
+Build Errors
+
+Responsive Issues
+
+Animation Bugs
+
+Broken Links
+
+API Errors
+
+========================================================
+
+IMPORTANT
+
+Do NOT stop after implementing one feature.
+
+Continue implementing until every page, every backend integration, every CRUD operation, every notification, every upload flow, and every admin feature is complete.
+
+Only stop if there is missing information that cannot reasonably be inferred.
+
+If placeholders are required (icons, sample pet images, illustrations), use high-quality placeholders while preserving the overall premium design.
+
+At the end, provide:
+
+1. A list of completed features.
+2. A list of anything that still requires my input (if any).
+3. Confirmation that the application builds successfully.
+4. Confirmation that all pages are responsive.
+5. Confirmation that all backend integrations are connected and working.

@@ -9,6 +9,7 @@ import type { BookingStatus } from './bookingStatus';
 
 export interface Booking {
   id: string;
+  bookingId?: string;
   customerName: string;
   customerPhone: string;
   customerEmail?: string;
@@ -25,6 +26,7 @@ export interface Booking {
   preferredDate?: string;
   preferredTime?: string;
   notes?: string;
+  internalNotes?: string;
   photoUrls?: string[];
   videoUrls?: string[];
   status: BookingStatus;

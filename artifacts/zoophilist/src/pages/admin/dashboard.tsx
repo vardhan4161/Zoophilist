@@ -44,10 +44,13 @@ export default function AdminDashboard() {
 
   const data = stats?.totalRequests ? stats : defaultStats;
 
+  const scheduled = (stats as any)?.scheduled ?? 0;
+
   const statCards = [
     { title: "Total Requests", value: data.totalRequests, icon: Activity, color: "text-blue-500", bg: "bg-blue-500/10" },
     { title: "Pending", value: data.pending, icon: Clock, color: "text-amber-500", bg: "bg-amber-500/10" },
     { title: "Confirmed", value: data.confirmed, icon: CalendarDays, color: "text-indigo-500", bg: "bg-indigo-500/10" },
+    { title: "Scheduled", value: scheduled, icon: CalendarDays, color: "text-cyan-500", bg: "bg-cyan-500/10" },
     { title: "Completed", value: data.completed, icon: CheckCircle2, color: "text-emerald-500", bg: "bg-emerald-500/10" },
     { title: "Cancelled", value: data.cancelled, icon: XCircle, color: "text-rose-500", bg: "bg-rose-500/10" },
     { title: "Revenue", value: `₹${data.totalRevenue.toLocaleString()}`, icon: IndianRupee, color: "text-primary", bg: "bg-primary/10" },
@@ -71,7 +74,7 @@ export default function AdminDashboard() {
       <h1 className="text-3xl font-bold text-white">Dashboard Overview</h1>
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-4">
         {statCards.map((stat, i) => (
           <Card key={i} className="bg-card border-white/5">
             <CardContent className="p-4 sm:p-6 flex flex-col items-center text-center">

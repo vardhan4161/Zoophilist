@@ -43,7 +43,7 @@ paths:
           in: query
           schema:
             type: string
-            enum: [pending, confirmed, completed, cancelled]
+            enum: [pending, confirmed, scheduled, completed, cancelled]
         - name: page
           in: query
           schema:
@@ -377,6 +377,8 @@ components:
       properties:
         id:
           type: string
+        bookingId:
+          type: string
         customerName:
           type: string
         customerPhone:
@@ -409,6 +411,8 @@ components:
           type: string
         notes:
           type: string
+        internalNotes:
+          type: string
         photoUrls:
           type: array
           items:
@@ -419,7 +423,7 @@ components:
             type: string
         status:
           type: string
-          enum: [pending, confirmed, completed, cancelled]
+          enum: [pending, confirmed, scheduled, completed, cancelled]
         createdAt:
           type: string
         updatedAt:
@@ -491,9 +495,9 @@ components:
       properties:
         status:
           type: string
-          enum: [pending, confirmed, completed, cancelled]
-      required:
-        - status
+          enum: [pending, confirmed, scheduled, completed, cancelled]
+        internalNotes:
+          type: string
 
     BookingListResponse:
       type: object
@@ -525,6 +529,8 @@ components:
         pending:
           type: integer
         confirmed:
+          type: integer
+        scheduled:
           type: integer
         completed:
           type: integer

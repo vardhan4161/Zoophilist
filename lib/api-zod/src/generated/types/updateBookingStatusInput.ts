@@ -8,5 +8,6 @@
 import type { UpdateBookingStatusInputStatus } from './updateBookingStatusInputStatus';
 
 export interface UpdateBookingStatusInput {
-  status: UpdateBookingStatusInputStatus;
+  status?: UpdateBookingStatusInputStatus;
+  internalNotes?: string;
 }

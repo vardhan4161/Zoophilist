@@ -4,6 +4,8 @@ import bookingsRouter from "./bookings";
 import servicesRouter from "./services";
 import galleryRouter from "./gallery";
 import adminRouter from "./admin";
+import settingsRouter from "./settings";
+import uploadRouter from "./upload";
 
 const router: IRouter = Router();
 
@@ -12,5 +14,7 @@ router.use(bookingsRouter);
 router.use(servicesRouter);
 router.use(galleryRouter);
 router.use(adminRouter);
+router.use(settingsRouter);
+router.use(uploadRouter);
 
 export default router;

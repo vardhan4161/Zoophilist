@@ -14,6 +14,7 @@ import Book from '@/pages/book';
 import BookingSuccess from '@/pages/booking-success';
 import Privacy from '@/pages/privacy';
 import Terms from '@/pages/terms';
+import SuccessStories from '@/pages/success-stories';
 import NotFound from '@/pages/not-found';
 
 import { AdminLayout } from '@/components/admin/admin-layout';
@@ -41,6 +42,7 @@ function Router() {
         <Route path="/book/success" component={BookingSuccess} />
         <Route path="/privacy" component={Privacy} />
         <Route path="/terms" component={Terms} />
+        <Route path="/success-stories" component={SuccessStories} />
         
         {/* Admin Auth Route */}
         <Route path="/admin/login" component={AdminLogin} />

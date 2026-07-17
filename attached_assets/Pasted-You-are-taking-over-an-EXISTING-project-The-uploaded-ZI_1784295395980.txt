@@ -1,0 +1,510 @@
+You are taking over an EXISTING project.
+
+The uploaded ZIP file contains the current implementation of Zoophilist.
+
+DO NOT create a new project.
+
+DO NOT replace the existing project.
+
+DO NOT rebuild from scratch.
+
+Your first responsibility is to fully understand the existing codebase before making any changes.
+
+=========================================================
+PHASE 1 — ANALYZE
+=========================================================
+
+Before writing any code:
+
+• Extract and inspect the entire uploaded project.
+• Understand the folder structure.
+• Understand the routing.
+• Understand reusable components.
+• Understand animations.
+• Understand styling.
+• Understand the booking flow.
+• Identify implemented features.
+• Identify placeholder logic.
+• Identify missing backend functionality.
+• Identify mock data.
+• Identify incomplete integrations.
+
+Do not modify anything until you understand the project.
+
+=========================================================
+PHASE 2 — PRESERVE
+=========================================================
+
+The current frontend is already implemented.
+
+Preserve:
+
+• Existing design language
+• Components
+• Pages
+• Animations
+• Layout
+• Routing
+
+Only improve where necessary.
+
+Never replace working code with generic templates.
+
+=========================================================
+PHASE 3 — COMPLETE THE APPLICATION
+=========================================================
+
+Turn this project into a production-ready application.
+
+Implement every missing feature.
+
+=========================================================
+PUBLIC WEBSITE
+=========================================================
+
+Complete and polish:
+
+• Home
+• About
+• Services
+• Individual Service
+• Gallery
+• Success Stories
+• Contact
+• Booking
+• Booking Success
+• Privacy Policy
+• Terms
+• 404
+
+Ensure every page is responsive and functional.
+
+=========================================================
+BOOKING SYSTEM
+=========================================================
+
+Implement a real booking workflow.
+
+Collect:
+
+Customer Details
+• Name
+• Phone
+• Email
+• City
+• Area
+• Address
+
+Pet Details
+• Name
+• Type
+• Breed
+• Age
+• Aggressive (Yes/No)
+
+Service Details
+• Service
+• Preferred Date
+• Preferred Time
+• Notes
+
+Media Upload
+• Images
+• Videos
+
+Generate unique Booking IDs.
+
+Example:
+
+ZOO-2026-000001
+
+Store everything permanently.
+
+=========================================================
+DATABASE
+=========================================================
+
+Use MongoDB Atlas.
+
+Use Prisma ORM.
+
+Create production-quality schemas.
+
+Use indexes.
+
+Validation.
+
+Relationships.
+
+=========================================================
+MEDIA
+=========================================================
+
+Integrate Cloudinary.
+
+Upload:
+
+Images
+
+Videos
+
+Store URLs in MongoDB.
+
+Optimize media automatically.
+
+=========================================================
+EMAIL
+=========================================================
+
+Use Resend.
+
+Automatically send:
+
+1.
+
+Customer Confirmation Email
+
+Include:
+
+Booking ID
+
+Selected Service
+
+Preferred Date
+
+Support Phone
+
+Professional HTML template
+
+2.
+
+Admin Notification Email
+
+Send to:
+
+zoophilistpetservice@gmail.com
+
+Include:
+
+Customer
+
+Pet
+
+Service
+
+Address
+
+Media Links
+
+Booking ID
+
+=========================================================
+TELEGRAM
+=========================================================
+
+Integrate Telegram Bot.
+
+Whenever a booking is submitted send:
+
+🐾 New Booking
+
+Booking ID
+
+Customer
+
+Phone
+
+Service
+
+Date
+
+Time
+
+Aggressive Pet
+
+Address
+
+Open Dashboard Link
+
+=========================================================
+ADMIN PANEL
+=========================================================
+
+Implement a complete admin system.
+
+Dashboard
+
+Bookings
+
+Services CRUD
+
+Gallery CRUD
+
+Media
+
+Search
+
+Filters
+
+Internal Notes
+
+Analytics
+
+Settings
+
+=========================================================
+BOOKING STATUS
+=========================================================
+
+Pending
+
+↓
+
+Confirmed
+
+↓
+
+Scheduled
+
+↓
+
+Completed
+
+or
+
+Cancelled
+
+=========================================================
+SERVICES
+=========================================================
+
+Implement exactly these services:
+
+Spa Bath ₹899
+
+Bath with Shampoo
+
+Blow Dry
+
+Nail Clipping
+
+Ear Cleaning
+
+Eyes Cleaning
+
+Combing
+
+--------------------------------
+
+Grooming ₹1599
+
+Bath with Shampoo
+
+Full Body Trimming
+
+Zero Haircut
+
+Blow Dry
+
+Nail Clipping
+
+Sanitary Trim
+
+Ear Cleaning
+
+Eyes Cleaning
+
+Combing
+
+--------------------------------
+
+Hair Cut ₹1199
+
+Full Body Trimming
+
+Zero Haircut
+
+Nail Clipping
+
+Sanitary Trim
+
+--------------------------------
+
+Medical Bath ₹1699
+
+Bath with Shampoo
+
+Anti Tick Bath (Applying Medicine)
+
+Blow Dry
+
+Nail Clipping
+
+Ear Cleaning
+
+Eyes Cleaning
+
+Combing
+
+--------------------------------
+
+Subscription
+
+Original Price ₹5899
+
+Offer Price ₹3899
+
+Valid for 2 Months
+
+Choose Any Grooming Service
+
+Only 3 Services
+
+=========================================================
+SETTINGS
+=========================================================
+
+Editable:
+
+Business Phone
+
+Business Email
+
+Business Address
+
+Business Hours
+
+Cloudinary Keys
+
+MongoDB URI
+
+Telegram Token
+
+Telegram Chat ID
+
+Resend API Key
+
+Logo
+
+Social Links
+
+SEO
+
+=========================================================
+SECURITY
+=========================================================
+
+Protect admin routes.
+
+Validate every input using Zod.
+
+Rate-limit booking APIs.
+
+Secure environment variables.
+
+Handle errors gracefully.
+
+=========================================================
+PERFORMANCE
+=========================================================
+
+Lazy loading
+
+Image optimization
+
+Cloudinary optimization
+
+Code splitting
+
+Dynamic imports
+
+Excellent Lighthouse score
+
+=========================================================
+SEO
+=========================================================
+
+Metadata
+
+Open Graph
+
+Twitter Cards
+
+Sitemap
+
+Robots.txt
+
+Structured Data
+
+=========================================================
+ACCESSIBILITY
+=========================================================
+
+Semantic HTML
+
+Keyboard navigation
+
+ARIA labels
+
+Proper color contrast
+
+=========================================================
+QUALITY
+=========================================================
+
+Strict TypeScript
+
+Reusable components
+
+Reusable hooks
+
+Reusable utilities
+
+No duplicated code
+
+Clean architecture
+
+Production-ready code
+
+=========================================================
+TESTING
+=========================================================
+
+Before stopping:
+
+Run the application.
+
+Fix:
+
+• TypeScript errors
+• ESLint errors
+• Runtime errors
+• Broken routes
+• Broken forms
+• Broken APIs
+• Responsive issues
+• Animation bugs
+• Build failures
+
+=========================================================
+WORKFLOW
+=========================================================
+
+Do not stop after implementing one feature.
+
+Continue implementing until every page, backend integration, CRUD operation, upload flow, notification system, and admin feature is complete.
+
+If any feature requires credentials (MongoDB URI, Cloudinary keys, Resend API key, Telegram Bot token, etc.), implement the integration with environment variable placeholders and clearly list the required variables at the end.
+
+=========================================================
+FINAL REPORT
+=========================================================
+
+When finished, provide:
+
+1. Completed features.
+2. Remaining tasks (if blocked only by missing credentials).
+3. Required environment variables.
+4. Confirmation that the project builds successfully.
+5. Confirmation that it is responsive.
+6. Confirmation that all implemented features have been tested.

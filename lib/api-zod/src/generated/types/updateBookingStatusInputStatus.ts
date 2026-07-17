@@ -12,6 +12,7 @@ export type UpdateBookingStatusInputStatus = typeof UpdateBookingStatusInputStat
 export const UpdateBookingStatusInputStatus = {
   pending: 'pending',
   confirmed: 'confirmed',
+  scheduled: 'scheduled',
   completed: 'completed',
   cancelled: 'cancelled',
 } as const;

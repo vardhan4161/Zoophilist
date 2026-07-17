@@ -1,45 +1,47 @@
-# [Project name]
+# Zoophilist
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
-
-## Run & Operate
-
-- `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
-- `pnpm run typecheck` — full typecheck across all packages
-- `pnpm run build` — typecheck + build all packages
-- `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
-- `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
-- Required env: `DATABASE_URL` — Postgres connection string
+A premium pet grooming & services booking platform for India-based doorstep grooming.
 
 ## Stack
 
-- pnpm workspaces, Node.js 24, TypeScript 5.9
-- API: Express 5
-- DB: PostgreSQL + Drizzle ORM
-- Validation: Zod (`zod/v4`), `drizzle-zod`
-- API codegen: Orval (from OpenAPI spec)
-- Build: esbuild (CJS bundle)
+- **Frontend**: React 19 + Vite + Tailwind CSS + shadcn/ui + Framer Motion (`artifacts/zoophilist`)
+- **Backend**: Express 5 API server (`artifacts/api-server`)
+- **Database**: PostgreSQL via Drizzle ORM (`lib/db`)
+- **Shared libs**: `lib/api-client-react`, `lib/api-zod`, `lib/db`
+- **Package manager**: pnpm workspace monorepo
 
-## Where things live
+## Running the project
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+Both services start automatically via configured workflows:
 
-## Architecture decisions
+- **Frontend** (`artifacts/zoophilist: web`): `pnpm --filter @workspace/zoophilist run dev`
+- **API server** (`artifacts/api-server: API Server`): `pnpm --filter @workspace/api-server run dev`
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+## Environment
 
-## Product
+- `DATABASE_URL` — provisioned automatically by Replit (PostgreSQL)
+- `SESSION_SECRET` — set as a Replit secret
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+## Database
 
-## User preferences
+Schema is in `lib/db/src/schema/`. To push schema changes:
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+```bash
+pnpm --filter @workspace/db run push
+```
 
-## Gotchas
+## Services & Pricing
 
-_Populate as you build — sharp edges, "always run X before Y" rules._
+| Service       | Price   |
+|---------------|---------|
+| Spa Bath      | ₹899    |
+| Hair Cut      | ₹1,199  |
+| Grooming      | ₹1,599  |
+| Medical Bath  | ₹1,699  |
+| Subscription  | ₹3,899  |
 
-## Pointers
+Business contact: zoophilistpetservice@gmail.com | +91 9515247704
 
-- See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and package details
+## User Preferences
+
+_None recorded yet._

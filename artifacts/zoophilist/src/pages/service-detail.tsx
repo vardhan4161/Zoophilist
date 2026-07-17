@@ -1,99 +1,224 @@
-import { PageTransition } from "@/components/animations";
-import { Button } from "@/components/ui/button";
-import { Link, useRoute } from "wouter";
-import { CheckCircle2, ArrowLeft } from "lucide-react";
-import { useGetServiceById, getGetServiceByIdQueryKey } from "@workspace/api-client-react";
+import { useRoute, Link } from "wouter";
+import { CheckCircle2, ArrowRight, ArrowLeft, Star, Clock, Shield, Sparkles } from "lucide-react";
+import { PageTransition, AuroraBackground, FadeInUp, SlideInLeft, SlideInRight, SectionLabel } from "@/components/animations";
+import { useGetServices } from "@workspace/api-client-react";
 import { STATIC_SERVICES } from "@/lib/constants";
+import { Skeleton } from "@/components/ui/skeleton";
+
+const SERVICE_ICONS: Record<string, string> = {
+  "Spa Bath": "🛁",
+  "Grooming": "✂️",
+  "Hair Cut": "💇",
+  "Medical Bath": "💊",
+  "Subscription": "⭐",
+};
+
+const RELATED_INFO: Record<string, { duration: string; bestFor: string; image: string }> = {
+  "Spa Bath": { duration: "60–90 mins", bestFor: "All pets · Coat maintenance", image: "https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=800&q=80" },
+  "Full Grooming": { duration: "2–3 hours", bestFor: "Dogs & Cats · Complete makeover", image: "https://images.unsplash.com/photo-1601758125946-6ec2ef64daf8?w=800&q=80" },
+  "Hair Cut": { duration: "60–90 mins", bestFor: "Long-haired breeds", image: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=800&q=80" },
+  "Medical Bath": { duration: "90–120 mins", bestFor: "Skin issues · Tick treatment", image: "https://images.unsplash.com/photo-1558788353-f76d92427f16?w=800&q=80" },
+  "Subscription": { duration: "Bi-weekly", bestFor: "All pets · Best value", image: "https://images.unsplash.com/photo-1560807707-8cc77767d783?w=800&q=80" },
+};
 
 export default function ServiceDetail() {
-  const [, params] = useRoute("/services/:id");
-  const id = params?.id;
+  const [match, params] = useRoute("/services/:id");
+  const { data: apiServices, isLoading } = useGetServices();
+  const services = apiServices?.length ? apiServices : STATIC_SERVICES;
 
-  const { data: apiService, isLoading } = useGetServiceById(id || "", { query: { enabled: !!id && !id.startsWith('s'), queryKey: getGetServiceByIdQueryKey(id || "") } });
-  
-  // Fallback to static if it's a seed ID or API fails
-  const staticService = STATIC_SERVICES.find(s => s.id === id);
-  const service = apiService || staticService;
+  const service = services.find((s) => s.id === params?.id) ?? services[0];
+  const info = RELATED_INFO[service?.name] ?? { duration: "60–90 mins", bestFor: "All pets", image: "https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=800&q=80" };
+  const emoji = SERVICE_ICONS[service?.name] ?? "🐾";
 
-  if (isLoading && !staticService) {
+  if (isLoading) {
     return (
-      <PageTransition className="pt-32 pb-24 min-h-[70vh]">
-        <div className="container mx-auto px-4 animate-pulse">
-          <div className="w-32 h-6 bg-white/10 rounded mb-12"></div>
-          <div className="glass-card rounded-[2rem] p-8 md:p-12">
-            <div className="w-1/3 h-12 bg-white/10 rounded mb-6"></div>
-            <div className="w-1/4 h-16 bg-white/10 rounded mb-8"></div>
-            <div className="space-y-4 max-w-2xl">
-              <div className="w-full h-4 bg-white/10 rounded"></div>
-              <div className="w-full h-4 bg-white/10 rounded"></div>
-            </div>
-          </div>
-        </div>
-      </PageTransition>
+      <div className="container mx-auto px-4 pt-36 pb-24">
+        <Skeleton className="h-[500px] rounded-2xl bg-white/5" />
+      </div>
     );
   }
 
   if (!service) {
     return (
-      <PageTransition className="pt-32 pb-24 min-h-[70vh] flex flex-col items-center justify-center">
-        <h1 className="text-3xl font-bold text-white mb-4">Service Not Found</h1>
-        <Button asChild variant="outline">
-          <Link href="/services"><ArrowLeft className="w-4 h-4 mr-2" /> Back to Services</Link>
-        </Button>
-      </PageTransition>
+      <div className="container mx-auto px-4 pt-36 pb-24 text-center">
+        <p className="text-muted-foreground">Service not found.</p>
+        <Link href="/services" className="text-primary mt-4 inline-block">View all services</Link>
+      </div>
     );
   }
 
-  return (
-    <PageTransition className="pt-32 pb-24">
-      <div className="container mx-auto px-4 max-w-4xl">
-        <Button asChild variant="ghost" className="mb-8 -ml-4 text-muted-foreground hover:text-white">
-          <Link href="/services"><ArrowLeft className="w-4 h-4 mr-2" /> Back to Services</Link>
-        </Button>
+  const otherServices = services.filter(s => s.id !== service.id).slice(0, 3);
 
-        <div className="glass-card rounded-[2rem] p-8 md:p-12 relative overflow-hidden">
-          {service.badge && (
-            <div className="absolute top-8 right-8 bg-primary text-primary-foreground text-sm font-bold px-4 py-1.5 rounded-full uppercase tracking-wider">
-              {service.badge}
-            </div>
-          )}
-          
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">{service.name}</h1>
-          
-          <div className="flex items-baseline gap-4 mb-8">
-            <span className="text-5xl font-bold text-primary">₹{service.price}</span>
-            {service.originalPrice && (
-              <span className="text-muted-foreground line-through text-2xl">₹{service.originalPrice}</span>
-            )}
-          </div>
-          
-          {service.description && (
-            <p className="text-xl text-gray-300 mb-12 max-w-2xl leading-relaxed">
-              {service.description}
-            </p>
-          )}
-          
-          <div className="border-t border-white/10 pt-8 mb-12">
-            <h3 className="text-2xl font-bold text-white mb-6">What's Included</h3>
-            <div className="grid md:grid-cols-2 gap-4">
-              {service.features.map((feature, i) => (
-                <div key={i} className="flex items-start gap-3 bg-white/5 p-4 rounded-xl border border-white/5">
-                  <CheckCircle2 className="w-6 h-6 text-primary shrink-0" />
-                  <span className="text-base text-gray-200">{feature}</span>
+  return (
+    <PageTransition className="pb-24">
+      {/* Hero */}
+      <section className="relative pt-24 overflow-hidden">
+        <div className="relative h-[420px] md:h-[500px] overflow-hidden">
+          <AuroraBackground className="opacity-30" />
+          <img
+            src={info.image}
+            alt={service.name}
+            className="w-full h-full object-cover opacity-20 mix-blend-luminosity"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
+          <div className="absolute inset-0 flex items-end pb-12">
+            <div className="container mx-auto px-4">
+              <Link href="/services" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors mb-6">
+                <ArrowLeft className="w-4 h-4" /> All Services
+              </Link>
+              <FadeInUp>
+                <div className="text-5xl mb-4">{emoji}</div>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4">{service.name}</h1>
+                <div className="flex flex-wrap items-center gap-4">
+                  <span className="text-4xl font-black text-primary">₹{service.price}</span>
+                  {(service as any).originalPrice && (
+                    <span className="text-xl text-muted-foreground line-through">₹{(service as any).originalPrice}</span>
+                  )}
+                  <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">
+                    <Clock className="w-3.5 h-3.5 text-primary" />
+                    {info.duration}
+                  </div>
+                  <div className="flex items-center gap-1">
+                    {[1,2,3,4,5].map(s => <Star key={s} className="w-4 h-4 fill-amber-400 text-amber-400" />)}
+                    <span className="text-white font-bold text-sm ml-1">4.9</span>
+                  </div>
                 </div>
-              ))}
-            </div>
-          </div>
-          
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button size="lg" className="rounded-xl h-14 px-8 text-lg w-full sm:w-auto" asChild>
-              <Link href={`/book?service=${service.id}`}>Book This Service</Link>
-            </Button>
-            <div className="text-sm text-muted-foreground flex items-center justify-center sm:justify-start px-4">
-              Requires ~{service.features.length * 15} mins
+              </FadeInUp>
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Content */}
+      <div className="container mx-auto px-4">
+        <div className="grid lg:grid-cols-3 gap-10 mt-10">
+          {/* Main content */}
+          <div className="lg:col-span-2 space-y-8">
+            {/* Description */}
+            <SlideInLeft>
+              <div className="glass-card rounded-2xl p-8">
+                <h2 className="text-2xl font-black text-white mb-4">About This Service</h2>
+                <p className="text-muted-foreground leading-relaxed">
+                  {service.description ?? `Our ${service.name} is a comprehensive grooming experience designed to keep your pet looking and feeling their absolute best. Performed by certified groomers at your doorstep, this service uses only premium, pet-safe products tailored to your pet's specific coat type and needs.`}
+                </p>
+                <div className="mt-6 flex flex-wrap gap-3">
+                  {[info.bestFor.split(" · ")].flat().map((tag) => (
+                    <span key={tag} className="px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-medium">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </SlideInLeft>
+
+            {/* What's included */}
+            <SlideInLeft delay={0.1}>
+              <div className="glass-card rounded-2xl p-8">
+                <h2 className="text-2xl font-black text-white mb-6">What's Included</h2>
+                <div className="grid sm:grid-cols-2 gap-3">
+                  {service.features.map((f, i) => (
+                    <div key={i} className="flex items-start gap-3 p-3 rounded-xl bg-white/3 border border-white/5">
+                      <CheckCircle2 className="w-4.5 h-4.5 text-primary shrink-0 mt-0.5" />
+                      <span className="text-sm text-gray-300">{f}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </SlideInLeft>
+
+            {/* Process */}
+            <SlideInLeft delay={0.15}>
+              <div className="glass-card rounded-2xl p-8">
+                <h2 className="text-2xl font-black text-white mb-6">How the Session Works</h2>
+                <div className="space-y-5">
+                  {[
+                    { step: "1", title: "Groomer Arrives", desc: "Your certified groomer arrives at your doorstep, fully equipped." },
+                    { step: "2", title: "Pet Assessment", desc: "We assess your pet's coat, skin, and temperament to tailor the session." },
+                    { step: "3", title: "Grooming Session", desc: "The complete grooming is performed with care, patience, and premium products." },
+                    { step: "4", title: "Final Touches", desc: "Finishing touches, perfume spritz, and a bow — your pet is show-ready!" },
+                  ].map((item) => (
+                    <div key={item.step} className="flex items-start gap-4">
+                      <div className="w-8 h-8 rounded-full bg-primary/15 border border-primary/25 flex items-center justify-center shrink-0">
+                        <span className="text-xs font-black text-primary">{item.step}</span>
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-white text-sm mb-0.5">{item.title}</h4>
+                        <p className="text-sm text-muted-foreground">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </SlideInLeft>
+          </div>
+
+          {/* Booking sidebar */}
+          <div className="space-y-5">
+            <SlideInRight>
+              <div className="sticky top-24 space-y-5">
+                {/* Price card */}
+                <div className="glass-card rounded-2xl p-6 border border-primary/20">
+                  <div className="flex items-baseline gap-3 mb-2">
+                    <span className="text-4xl font-black text-primary">₹{service.price}</span>
+                    {(service as any).originalPrice && (
+                      <span className="text-muted-foreground line-through text-base">₹{(service as any).originalPrice}</span>
+                    )}
+                  </div>
+                  <p className="text-sm text-muted-foreground mb-5">Doorstep service · All products included</p>
+                  <Link
+                    href={`/book?service=${service.id}`}
+                    className="flex items-center justify-center gap-2 h-12 rounded-xl bg-primary text-primary-foreground font-bold hover:bg-primary/90 transition-all hover:shadow-lg hover:shadow-primary/20"
+                  >
+                    Book Now <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  <a
+                    href="tel:+919515247704"
+                    className="flex items-center justify-center gap-2 h-11 rounded-xl border border-white/10 text-gray-300 font-semibold text-sm hover:bg-white/5 transition-colors mt-3"
+                  >
+                    Call to Book
+                  </a>
+                </div>
+
+                {/* Guarantees */}
+                <div className="glass-card rounded-2xl p-6">
+                  <h4 className="font-bold text-white mb-4 text-sm">Included Guarantee</h4>
+                  <div className="space-y-3">
+                    {[
+                      { icon: Shield, text: "100% satisfaction guarantee" },
+                      { icon: Star, text: "Certified & experienced groomer" },
+                      { icon: Sparkles, text: "Premium, pet-safe products only" },
+                      { icon: CheckCircle2, text: "Fully equipped mobile setup" },
+                    ].map((item, i) => (
+                      <div key={i} className="flex items-center gap-3 text-sm text-gray-300">
+                        <item.icon className="w-4 h-4 text-primary shrink-0" />
+                        {item.text}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </SlideInRight>
+          </div>
+        </div>
+
+        {/* Other services */}
+        {otherServices.length > 0 && (
+          <div className="mt-16">
+            <SectionLabel>You May Also Like</SectionLabel>
+            <FadeInUp>
+              <h2 className="text-3xl font-black text-white mb-8">Other Services</h2>
+            </FadeInUp>
+            <div className="grid md:grid-cols-3 gap-5">
+              {otherServices.map(s => (
+                <Link key={s.id} href={`/services/${s.id}`} className="glass-card rounded-2xl p-6 hover:border-primary/30 hover:-translate-y-1 transition-all duration-300">
+                  <div className="text-3xl mb-3">{SERVICE_ICONS[s.name] ?? "🐾"}</div>
+                  <h3 className="font-black text-white mb-1">{s.name}</h3>
+                  <div className="text-primary font-bold text-xl">₹{s.price}</div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </PageTransition>
   );

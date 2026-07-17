@@ -20,12 +20,14 @@ export type BookingStatus = typeof BookingStatus[keyof typeof BookingStatus];
 export const BookingStatus = {
   pending: 'pending',
   confirmed: 'confirmed',
+  scheduled: 'scheduled',
   completed: 'completed',
   cancelled: 'cancelled',
 } as const;
 
 export interface Booking {
   id: string;
+  bookingId?: string;
   customerName: string;
   customerPhone: string;
   customerEmail?: string;
@@ -42,6 +44,7 @@ export interface Booking {
   preferredDate?: string;
   preferredTime?: string;
   notes?: string;
+  internalNotes?: string;
   photoUrls?: string[];
   videoUrls?: string[];
   status: BookingStatus;
@@ -76,12 +79,14 @@ export type UpdateBookingStatusInputStatus = typeof UpdateBookingStatusInputStat
 export const UpdateBookingStatusInputStatus = {
   pending: 'pending',
   confirmed: 'confirmed',
+  scheduled: 'scheduled',
   completed: 'completed',
   cancelled: 'cancelled',
 } as const;
 
 export interface UpdateBookingStatusInput {
-  status: UpdateBookingStatusInputStatus;
+  status?: UpdateBookingStatusInputStatus;
+  internalNotes?: string;
 }
 
 export interface BookingListResponse {
@@ -102,6 +107,7 @@ export interface BookingStats {
   totalRequests: number;
   pending: number;
   confirmed: number;
+  scheduled?: number;
   completed: number;
   cancelled: number;
   totalRevenue: number;
@@ -204,6 +210,7 @@ export type GetBookingsStatus = typeof GetBookingsStatus[keyof typeof GetBooking
 export const GetBookingsStatus = {
   pending: 'pending',
   confirmed: 'confirmed',
+  scheduled: 'scheduled',
   completed: 'completed',
   cancelled: 'cancelled',
 } as const;

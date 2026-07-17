@@ -2,11 +2,13 @@ import { pgTable, text, boolean, timestamp } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod/v4";
 
-export const bookingStatusValues = ["pending", "confirmed", "completed", "cancelled"] as const;
+export const bookingStatusValues = ["pending", "confirmed", "scheduled", "completed", "cancelled"] as const;
 export type BookingStatus = typeof bookingStatusValues[number];
 
 export const bookingsTable = pgTable("bookings", {
   id: text("id").primaryKey().$defaultFn(() => crypto.randomUUID()),
+  /** Human-readable booking reference, e.g. ZOO-2026-000001 */
+  bookingId: text("booking_id").unique(),
   customerName: text("customer_name").notNull(),
   customerPhone: text("customer_phone").notNull(),
   customerEmail: text("customer_email"),
@@ -23,6 +25,7 @@ export const bookingsTable = pgTable("bookings", {
   preferredDate: text("preferred_date"),
   preferredTime: text("preferred_time"),
   notes: text("notes"),
+  internalNotes: text("internal_notes"),
   photoUrls: text("photo_urls").array().notNull().default([]),
   videoUrls: text("video_urls").array().notNull().default([]),
   status: text("status").$type<BookingStatus>().notNull().default("pending"),

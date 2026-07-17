@@ -12,6 +12,7 @@ export interface BookingStats {
   totalRequests: number;
   pending: number;
   confirmed: number;
+  scheduled?: number;
   completed: number;
   cancelled: number;
   totalRevenue: number;

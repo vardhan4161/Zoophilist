@@ -12,6 +12,7 @@ export type GetBookingsStatus = typeof GetBookingsStatus[keyof typeof GetBooking
 export const GetBookingsStatus = {
   pending: 'pending',
   confirmed: 'confirmed',
+  scheduled: 'scheduled',
   completed: 'completed',
   cancelled: 'cancelled',
 } as const;
