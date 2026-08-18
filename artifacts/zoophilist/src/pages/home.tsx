@@ -9,6 +9,7 @@ import {
   FadeInUp, SlideInLeft, SlideInRight, SectionLabel, FloatingCard
 } from "@/components/animations";
 import { STATIC_SERVICES } from "@/lib/constants";
+import { normaliseServiceList } from "@/lib/service-data";
 import { useGetServices } from "@workspace/api-client-react";
 
 const HOW_IT_WORKS = [
@@ -41,7 +42,7 @@ const WHY_US = [
 
 export default function Home() {
   const { data: apiServices } = useGetServices();
-  const services = Array.isArray(apiServices) && apiServices.length ? apiServices : STATIC_SERVICES;
+  const services = normaliseServiceList(apiServices, STATIC_SERVICES);
   const popularServices = services.slice(0, 3);
 
   return (

@@ -60,6 +60,8 @@ export default function Book() {
   const [step, setStep] = useState(1);
   const [photoFiles, setPhotoFiles] = useState<File[]>([]);
   const [videoFiles, setVideoFiles] = useState<File[]>([]);
+  const [submissionError, setSubmissionError] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const photoRef = useRef<HTMLInputElement>(null);
   const videoRef = useRef<HTMLInputElement>(null);
 
@@ -80,6 +82,20 @@ export default function Book() {
 
   const today = new Date().toISOString().split("T")[0];
 
+  const uploadFiles = async (files: File[]) => {
+    const uploadOne = async (file: File): Promise<string> => {
+      const formData = new FormData();
+      formData.append("file", file);
+      const response = await fetch("/api/uploads/booking", { method: "POST", body: formData });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok || typeof result.url !== "string") {
+        throw new Error(result.error || "We could not upload one of your media files. Please try again.");
+      }
+      return result.url;
+    };
+    return Promise.all(files.map(uploadOne));
+  };
+
   const validateStep = async (s: number) => {
     const fieldsByStep: Record<number, (keyof BookingFormValues)[]> = {
       1: ["customerName", "customerPhone", "city", "area", "address"],
@@ -99,23 +115,28 @@ export default function Book() {
 
   const prevStep = () => setStep((s) => Math.max(1, s - 1));
 
-  const onSubmit = (data: BookingFormValues) => {
+  const onSubmit = async (data: BookingFormValues) => {
     const selectedService = services.find((s) => s.id === data.serviceId);
-    createBooking.mutate({
-      data: {
-        ...data,
-        aggressive: data.aggressive === "yes",
-        serviceName: selectedService?.name ?? "Unknown Service",
-        photoUrls: [],
-        videoUrls: [],
-      },
-    }, {
-      onSuccess: (data: any) => {
-        const ref = data?.bookingId ? `?ref=${encodeURIComponent(data.bookingId)}` : "";
-        setLocation(`/book/success${ref}`);
-      },
-      onError: () => setLocation("/book/success"),
-    });
+    setSubmissionError(null);
+    setIsSubmitting(true);
+    try {
+      const [photoUrls, videoUrls] = await Promise.all([uploadFiles(photoFiles), uploadFiles(videoFiles)]);
+      const result: any = await createBooking.mutateAsync({
+        data: {
+          ...data,
+          aggressive: data.aggressive === "yes",
+          serviceName: selectedService?.name ?? "Unknown Service",
+          photoUrls,
+          videoUrls,
+        },
+      });
+      const ref = result?.bookingId ? `?ref=${encodeURIComponent(result.bookingId)}` : "";
+      setLocation(`/book/success${ref}`);
+    } catch (error) {
+      setSubmissionError(error instanceof Error ? error.message : "We could not submit your booking. Please check your connection and try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const selectedService = services.find(s => s.id === form.watch("serviceId"));
@@ -460,6 +481,11 @@ export default function Book() {
             </AnimatePresence>
 
             {/* Navigation */}
+            {submissionError && (
+              <div role="alert" className="mb-5 rounded-xl border border-destructive/40 bg-destructive/10 px-4 py-3 text-sm text-red-100">
+                <span className="font-bold">Booking not submitted.</span> {submissionError}
+              </div>
+            )}
             <div className="flex items-center justify-between mt-6">
               <button
                 type="button"
@@ -480,11 +506,11 @@ export default function Book() {
               ) : (
                 <button
                   type="submit"
-                  disabled={createBooking.isPending}
+                  disabled={createBooking.isPending || isSubmitting}
                   className="flex items-center gap-2 h-12 px-8 rounded-xl bg-primary text-primary-foreground font-bold text-sm hover:bg-primary/90 transition-all hover:shadow-lg hover:shadow-primary/20 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  {createBooking.isPending ? (
-                    <><Loader2 className="w-4 h-4 animate-spin" /> Submitting...</>
+                  {createBooking.isPending || isSubmitting ? (
+                    <><Loader2 className="w-4 h-4 animate-spin" /> Uploading & submitting...</>
                   ) : (
                     <><CheckCircle2 className="w-4 h-4" /> Confirm Booking</>
                   )}

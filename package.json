@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "preinstall": "sh -c 'rm -f package-lock.json yarn.lock; case \"$npm_config_user_agent\" in pnpm/*) ;; *) echo \"Use pnpm instead\" >&2; exit 1 ;; esac'",
-    "dev": "pnpm --filter @workspace/zoophilist run dev",
+    "dev": "API_PORT=3001 concurrently -k -n api,web -c blue,green \"pnpm --filter @workspace/api-server run dev\" \"pnpm --filter @workspace/zoophilist run dev\"",
     "build": "pnpm run typecheck && pnpm -r --if-present run build",
     "check": "pnpm run typecheck",
     "typecheck:libs": "tsc --build",
@@ -12,10 +12,15 @@
   },
   "private": true,
   "dependencies": {
-    "@replit/connectors-sdk": "^0.4.1"
+    "@aws-sdk/client-s3": "^3.693.0",
+    "@aws-sdk/s3-request-presigner": "^3.693.0",
+    "@replit/connectors-sdk": "^0.4.1",
+    "mongodb": "^7.5.0"
   },
   "devDependencies": {
+    "concurrently": "^10.0.5",
     "prettier": "^3.9.5",
-    "typescript": "~5.9.3"
+    "typescript": "~5.9.3",
+    "vitest": "^4.1.10"
   }
 }

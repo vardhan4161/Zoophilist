@@ -35,3 +35,374 @@
 [2026-08-18T12:26:35.546Z] ➜  Local:   http://localhost:3000/
 [2026-08-18T12:26:35.546Z] ➜  Network: http://169.254.0.21:3000/
 [2026-08-18T12:26:58.307Z] 12:26:58 PM [vite] (client) hmr update /src/pages/home.tsx, /src/index.css
+[2026-08-18T12:38:46.205Z] [ELIFECYCLE] Command failed.
+[2026-08-18T12:38:46.206Z] /home/ubuntu/zoophilist-workspace/artifacts/zoophilist:
+[2026-08-18T12:38:46.206Z] [ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL] @workspace/zoophilist@0.0.0 dev: `vite --config vite.config.ts --host 0.0.0.0`
+[2026-08-18T12:38:46.206Z] Command failed with signal "SIGTERM"
+[2026-08-18T12:38:46.219Z] Dev server exited with code -1
+[2026-08-18T12:38:47.338Z] Starting dev server with command: pnpm run dev
+[2026-08-18T12:38:48.608Z] Scope: all 9 workspace projects
+[2026-08-18T12:38:48.776Z] ✓ Lockfile passes supply-chain policies (verified 17m ago)
+[2026-08-18T12:38:48.985Z] Progress: resolved 1, reused 0, downloaded 0, added 0
+[2026-08-18T12:38:49.501Z] artifacts/mockup-sandbox                 | [WARN] deprecated recharts@2.15.4
+[2026-08-18T12:38:50.014Z] Progress: resolved 83, reused 83, downloaded 0, added 0
+[2026-08-18T12:38:51.015Z] Progress: resolved 167, reused 164, downloaded 2, added 0
+[2026-08-18T12:38:52.034Z] Progress: resolved 383, reused 335, downloaded 12, added 0
+[2026-08-18T12:38:53.114Z] Progress: resolved 522, reused 494, downloaded 26, added 0
+[2026-08-18T12:38:53.132Z] Packages: +26
+[2026-08-18T12:38:53.132Z] ++++++++++++++++++++++++++
+[2026-08-18T12:38:53.222Z] Progress: resolved 522, reused 494, downloaded 26, added 26, done
+[2026-08-18T12:38:53.567Z] . preinstall$ sh -c 'rm -f package-lock.json yarn.lock; case "$npm_config_user_agent" in pnpm/*) ;; *) echo "Use pnpm instead" >&2; exit 1 ;; esac'
+[2026-08-18T12:38:53.586Z] . preinstall: Done
+[2026-08-18T12:38:53.705Z] dependencies:
+[2026-08-18T12:38:53.705Z] + @aws-sdk/client-s3 3.1111.0
+[2026-08-18T12:38:53.705Z] + @aws-sdk/s3-request-presigner 3.1111.0
+[2026-08-18T12:38:53.748Z] Done in 5.7s using pnpm v11.21.0
+[2026-08-18T12:38:53.831Z] $ pnpm --filter @workspace/zoophilist run dev
+[2026-08-18T12:38:54.535Z] $ vite --config vite.config.ts --host 0.0.0.0
+[2026-08-18T12:38:55.021Z] 12:38:55 PM [vite] (client) Re-optimizing dependencies because lockfile has changed
+[2026-08-18T12:38:55.051Z] VITE v7.3.6  ready in 451 ms
+[2026-08-18T12:38:55.051Z] ➜  Local:   http://localhost:3000/
+[2026-08-18T12:38:55.052Z] ➜  Network: http://169.254.0.21:3000/
+[2026-08-18T13:38:35.449Z] /home/ubuntu/zoophilist-workspace/artifacts/zoophilist:
+[2026-08-18T13:38:35.449Z] [ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL] @workspace/zoophilist@0.0.0 dev: `vite --config vite.config.ts --host 0.0.0.0`
+[2026-08-18T13:38:35.449Z] Command failed with signal "SIGTERM"
+[2026-08-18T13:38:35.451Z] [ELIFECYCLE] Command failed.
+[2026-08-18T13:38:35.461Z] Dev server exited with code -1
+[2026-08-18T13:38:36.530Z] Starting dev server with command: pnpm run dev
+[2026-08-18T13:38:37.153Z] $ pnpm --filter @workspace/zoophilist run dev
+[2026-08-18T13:38:37.768Z] $ vite --config vite.config.ts --host 0.0.0.0
+[2026-08-18T13:38:38.178Z] VITE v7.3.6  ready in 360 ms
+[2026-08-18T13:38:38.178Z] ➜  Local:   http://localhost:3000/
+[2026-08-18T13:38:38.178Z] ➜  Network: http://169.254.0.21:3000/
+[2026-08-18T13:39:55.430Z] /home/ubuntu/zoophilist-workspace/artifacts/zoophilist:
+[2026-08-18T13:39:55.430Z] [ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL] @workspace/zoophilist@0.0.0 dev: `vite --config vite.config.ts --host 0.0.0.0`
+[2026-08-18T13:39:55.430Z] Command failed with signal "SIGTERM"
+[2026-08-18T13:39:55.436Z] [ELIFECYCLE] Command failed.
+[2026-08-18T13:39:55.444Z] Dev server exited with code -1
+[2026-08-18T13:39:56.510Z] Starting dev server with command: pnpm run dev
+[2026-08-18T13:39:57.158Z] $ pnpm --filter @workspace/zoophilist run dev
+[2026-08-18T13:39:57.814Z] $ vite --config vite.config.ts --host 0.0.0.0
+[2026-08-18T13:39:58.268Z] 1:39:58 PM [vite] (client) Re-optimizing dependencies because lockfile has changed
+[2026-08-18T13:39:58.296Z] VITE v7.3.6  ready in 433 ms
+[2026-08-18T13:39:58.296Z] ➜  Local:   http://localhost:3000/
+[2026-08-18T13:39:58.296Z] ➜  Network: http://169.254.0.21:3000/
+[2026-08-18T14:46:42.299Z] /home/ubuntu/zoophilist-workspace/artifacts/zoophilist:
+[2026-08-18T14:46:42.299Z] [ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL] @workspace/zoophilist@0.0.0 dev: `vite --config vite.config.ts --host 0.0.0.0`
+[2026-08-18T14:46:42.299Z] Command failed with signal "SIGTERM"
+[2026-08-18T14:46:42.301Z] [ELIFECYCLE] Command failed.
+[2026-08-18T14:46:42.313Z] Dev server exited with code -1
+[2026-08-18T14:46:43.377Z] Starting dev server with command: pnpm run dev
+[2026-08-18T14:46:44.012Z] $ pnpm --filter @workspace/zoophilist run dev
+[2026-08-18T14:46:44.670Z] $ vite --config vite.config.ts --host 0.0.0.0
+[2026-08-18T14:46:45.095Z] VITE v7.3.6  ready in 377 ms
+[2026-08-18T14:46:45.096Z] ➜  Local:   http://localhost:3000/
+[2026-08-18T14:46:45.096Z] ➜  Network: http://169.254.0.21:3000/
+[2026-08-18T15:02:19.684Z] [ELIFECYCLE] Command failed.
+[2026-08-18T15:02:19.685Z] /home/ubuntu/zoophilist-workspace/artifacts/zoophilist:
+[2026-08-18T15:02:19.685Z] [ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL] @workspace/zoophilist@0.0.0 dev: `vite --config vite.config.ts --host 0.0.0.0`
+[2026-08-18T15:02:19.685Z] Command failed with signal "SIGTERM"
+[2026-08-18T15:02:19.695Z] Dev server exited with code -1
+[2026-08-18T15:02:20.765Z] Starting dev server with command: pnpm run dev
+[2026-08-18T15:02:21.405Z] $ pnpm --filter @workspace/zoophilist run dev
+[2026-08-18T15:02:22.051Z] $ vite --config vite.config.ts --host 0.0.0.0
+[2026-08-18T15:02:22.517Z] 3:02:22 PM [vite] (client) Re-optimizing dependencies because lockfile has changed
+[2026-08-18T15:02:22.546Z] VITE v7.3.6  ready in 444 ms
+[2026-08-18T15:02:22.546Z] ➜  Local:   http://localhost:3000/
+[2026-08-18T15:02:22.546Z] ➜  Network: http://169.254.0.21:3000/
+[2026-08-18T15:03:12.920Z] 3:03:12 PM [vite] vite.config.ts changed, restarting server...
+[2026-08-18T15:03:12.947Z] 3:03:12 PM [vite] server restarted.
+[2026-08-18T15:03:23.615Z] [ELIFECYCLE] Command failed.
+[2026-08-18T15:03:23.618Z] /home/ubuntu/zoophilist-workspace/artifacts/zoophilist:
+[2026-08-18T15:03:23.618Z] [ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL] @workspace/zoophilist@0.0.0 dev: `vite --config vite.config.ts --host 0.0.0.0`
+[2026-08-18T15:03:23.618Z] Command failed with signal "SIGTERM"
+[2026-08-18T15:03:23.628Z] Dev server exited with code -1
+[2026-08-18T15:03:24.712Z] Starting dev server with command: pnpm run dev
+[2026-08-18T15:03:25.389Z] $ API_PORT=3001 concurrently -k -n api,web -c blue,green "pnpm --filter @workspace/api-server run dev" "pnpm --filter @workspace/zoophilist run dev"
+[2026-08-18T15:03:26.276Z] [api] $ PORT=$API_PORT NODE_ENV=development pnpm run build && PORT=$API_PORT NODE_ENV=development pnpm run start
+[2026-08-18T15:03:26.292Z] [web] $ vite --config vite.config.ts --host 0.0.0.0
+[2026-08-18T15:03:26.691Z] [web]
+[2026-08-18T15:03:26.691Z] [web]   VITE v7.3.6  ready in 350 ms
+[2026-08-18T15:03:26.691Z] [web]
+[2026-08-18T15:03:26.691Z] [web]   ➜  Local:   http://localhost:3000/
+[2026-08-18T15:03:26.691Z] [web]   ➜  Network: http://169.254.0.21:3000/
+[2026-08-18T15:03:26.892Z] [api] $ node ./build.mjs
+[2026-08-18T15:03:27.383Z] [api]
+[2026-08-18T15:03:27.384Z] [api]   dist/index.mjs                       3.4mb ⚠️
+[2026-08-18T15:03:27.384Z] [api]   dist/pino-worker.mjs               153.4kb
+[2026-08-18T15:03:27.384Z] [api]   dist/pino-file.mjs                 142.1kb
+[2026-08-18T15:03:27.384Z] [api]   dist/pino-pretty.mjs               114.4kb
+[2026-08-18T15:03:27.384Z] [api]   dist/thread-stream-worker.mjs        7.3kb
+[2026-08-18T15:03:27.384Z] [api]   dist/index.mjs.map                   5.8mb
+[2026-08-18T15:03:27.384Z] [api]   dist/pino-worker.mjs.map           256.9kb
+[2026-08-18T15:03:27.384Z] [api]   dist/pino-file.mjs.map             229.1kb
+[2026-08-18T15:03:27.384Z] [api]   dist/pino-pretty.mjs.map           203.6kb
+[2026-08-18T15:03:27.384Z] [api]   dist/thread-stream-worker.mjs.map   12.0kb
+[2026-08-18T15:03:27.384Z] [api]
+[2026-08-18T15:03:27.384Z] [api] ⚡ Done in 393ms
+[2026-08-18T15:03:28.022Z] [api] $ node --enable-source-maps ./dist/index.mjs
+[2026-08-18T15:03:28.427Z] [api] [15:03:28.346] [32mINFO[39m (11640): [36mServer listening[39m
+[2026-08-18T15:03:28.427Z] [api]     [35mport[39m: 3001
+[2026-08-18T15:03:31.481Z] [api] [15:03:31.461] [32mINFO[39m (11640): [36mrequest aborted[39m
+[2026-08-18T15:03:31.481Z] [api]     [35mreq[39m: {
+[2026-08-18T15:03:31.481Z] [api]       "id": 1,
+[2026-08-18T15:03:31.481Z] [api]       "method": "GET",
+[2026-08-18T15:03:31.481Z] [api]       "url": "/api/services"
+[2026-08-18T15:03:31.481Z] [api]     }
+[2026-08-18T15:03:31.481Z] [api]     [35mres[39m: {
+[2026-08-18T15:03:31.481Z] [api]       "statusCode": null
+[2026-08-18T15:03:31.481Z] [api]     }
+[2026-08-18T15:03:31.481Z] [api]     [35mresponseTime[39m: 2728
+[2026-08-18T15:04:05.565Z] [api] [15:04:04.862] [32mINFO[39m (11640): [36mrequest aborted[39m
+[2026-08-18T15:04:05.565Z] [api]     [35mreq[39m: {
+[2026-08-18T15:04:05.565Z] [api]       "id": 2,
+[2026-08-18T15:04:05.566Z] [api]       "method": "GET",
+[2026-08-18T15:04:05.566Z] [api]       "url": "/api/services"
+[2026-08-18T15:04:05.566Z] [api]     }
+[2026-08-18T15:04:05.566Z] [api]     [35mres[39m: {
+[2026-08-18T15:04:05.566Z] [api]       "statusCode": null
+[2026-08-18T15:04:05.566Z] [api]     }
+[2026-08-18T15:04:05.566Z] [api]     [35mresponseTime[39m: 20002
+[2026-08-18T15:04:48.665Z] [api] [15:04:48.141] [32mINFO[39m (11640): [36mrequest completed[39m
+[2026-08-18T15:04:48.665Z] [api]     [35mreq[39m: {
+[2026-08-18T15:04:48.665Z] [api]       "id": 3,
+[2026-08-18T15:04:48.665Z] [api]       "method": "GET",
+[2026-08-18T15:04:48.665Z] [api]       "url": "/api/services"
+[2026-08-18T15:04:48.665Z] [api]     }
+[2026-08-18T15:04:48.665Z] [api]     [35mres[39m: {
+[2026-08-18T15:04:48.665Z] [api]       "statusCode": 200
+[2026-08-18T15:04:48.665Z] [api]     }
+[2026-08-18T15:04:48.665Z] [api]     [35mresponseTime[39m: 5844
+[2026-08-18T15:05:06.735Z] [api] [15:05:06.340] [32mINFO[39m (11640): [36mrequest aborted[39m
+[2026-08-18T15:05:06.735Z] [api]     [35mreq[39m: {
+[2026-08-18T15:05:06.735Z] [api]       "id": 4,
+[2026-08-18T15:05:06.735Z] [api]       "method": "GET",
+[2026-08-18T15:05:06.735Z] [api]       "url": "/api/services"
+[2026-08-18T15:05:06.735Z] [api]     }
+[2026-08-18T15:05:06.735Z] [api]     [35mres[39m: {
+[2026-08-18T15:05:06.735Z] [api]       "statusCode": null
+[2026-08-18T15:05:06.735Z] [api]     }
+[2026-08-18T15:05:06.735Z] [api]     [35mresponseTime[39m: 10003
+[2026-08-18T15:06:04.896Z] [api] [ELIFECYCLE] Command failed.
+[2026-08-18T15:06:04.903Z] [web] /home/ubuntu/zoophilist-workspace/artifacts/zoophilist:
+[2026-08-18T15:06:04.903Z] [web] [ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL] @workspace/zoophilist@0.0.0 dev: `vite --config vite.config.ts --host 0.0.0.0`
+[2026-08-18T15:06:04.903Z] [web] Command failed with signal "SIGTERM"
+[2026-08-18T15:06:04.905Z] [ELIFECYCLE] Command failed.
+[2026-08-18T15:06:04.908Z] [api] /home/ubuntu/zoophilist-workspace/artifacts/api-server:
+[2026-08-18T15:06:04.908Z] [api] [ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL] @workspace/api-server@0.0.0 dev: `PORT=$API_PORT NODE_ENV=development pnpm run build && PORT=$API_PORT NODE_ENV=development pnpm run start`
+[2026-08-18T15:06:04.908Z] [api] Command failed with signal "SIGTERM"
+[2026-08-18T15:06:04.915Z] [web] pnpm --filter @workspace/zoophilist run dev exited with code SIGTERM
+[2026-08-18T15:06:04.916Z] --> Sending SIGTERM to other processes..
+[2026-08-18T15:06:04.919Z] [api] pnpm --filter @workspace/api-server run dev exited with code SIGTERM
+[2026-08-18T15:06:04.926Z] Dev server exited with code -1
+[2026-08-18T15:06:05.972Z] Starting dev server with command: pnpm run dev
+[2026-08-18T15:06:06.563Z] $ API_PORT=3001 concurrently -k -n api,web -c blue,green "pnpm --filter @workspace/api-server run dev" "pnpm --filter @workspace/zoophilist run dev"
+[2026-08-18T15:06:07.435Z] [api] $ PORT=$API_PORT NODE_ENV=development pnpm run build && PORT=$API_PORT NODE_ENV=development pnpm run start
+[2026-08-18T15:06:07.454Z] [web] $ vite --config vite.config.ts --host 0.0.0.0
+[2026-08-18T15:06:07.890Z] [web]
+[2026-08-18T15:06:07.891Z] [web]   VITE v7.3.6  ready in 387 ms
+[2026-08-18T15:06:07.891Z] [web]
+[2026-08-18T15:06:07.891Z] [web]   ➜  Local:   http://localhost:3000/
+[2026-08-18T15:06:07.891Z] [web]   ➜  Network: http://169.254.0.21:3000/
+[2026-08-18T15:06:08.043Z] [api] $ node ./build.mjs
+[2026-08-18T15:06:08.445Z] [api]
+[2026-08-18T15:06:08.445Z] [api]   dist/index.mjs                       3.4mb ⚠️
+[2026-08-18T15:06:08.445Z] [api]   dist/pino-worker.mjs               153.4kb
+[2026-08-18T15:06:08.445Z] [api]   dist/pino-file.mjs                 142.1kb
+[2026-08-18T15:06:08.445Z] [api]   dist/pino-pretty.mjs               114.4kb
+[2026-08-18T15:06:08.445Z] [api]   dist/thread-stream-worker.mjs        7.3kb
+[2026-08-18T15:06:08.445Z] [api]   dist/index.mjs.map                   5.8mb
+[2026-08-18T15:06:08.445Z] [api]   dist/pino-worker.mjs.map           256.9kb
+[2026-08-18T15:06:08.445Z] [api]   dist/pino-file.mjs.map             229.1kb
+[2026-08-18T15:06:08.445Z] [api]   dist/pino-pretty.mjs.map           203.6kb
+[2026-08-18T15:06:08.445Z] [api]   dist/thread-stream-worker.mjs.map   12.0kb
+[2026-08-18T15:06:08.445Z] [api]
+[2026-08-18T15:06:08.445Z] [api] ⚡ Done in 300ms
+[2026-08-18T15:06:09.095Z] [api] $ node --enable-source-maps ./dist/index.mjs
+[2026-08-18T15:06:09.496Z] [api] [15:06:09.416] [32mINFO[39m (12054): [36mServer listening[39m
+[2026-08-18T15:06:09.496Z] [api]     [35mport[39m: 3001
+[2026-08-18T15:06:13.551Z] [api] [15:06:12.628] [32mINFO[39m (12054): [36mrequest aborted[39m
+[2026-08-18T15:06:13.551Z] [api]     [35mreq[39m: {
+[2026-08-18T15:06:13.551Z] [api]       "id": 1,
+[2026-08-18T15:06:13.551Z] [api]       "method": "GET",
+[2026-08-18T15:06:13.551Z] [api]       "url": "/api/services"
+[2026-08-18T15:06:13.551Z] [api]     }
+[2026-08-18T15:06:13.551Z] [api]     [35mres[39m: {
+[2026-08-18T15:06:13.551Z] [api]       "statusCode": null
+[2026-08-18T15:06:13.551Z] [api]     }
+[2026-08-18T15:06:13.551Z] [api]     [35mresponseTime[39m: 2683
+[2026-08-18T15:06:53.647Z] [api] [15:06:52.802] [32mINFO[39m (12054): [36mrequest completed[39m
+[2026-08-18T15:06:53.647Z] [api]     [35mreq[39m: {
+[2026-08-18T15:06:53.647Z] [api]       "id": 2,
+[2026-08-18T15:06:53.647Z] [api]       "method": "GET",
+[2026-08-18T15:06:53.648Z] [api]       "url": "/api/services"
+[2026-08-18T15:06:53.648Z] [api]     }
+[2026-08-18T15:06:53.648Z] [api]     [35mres[39m: {
+[2026-08-18T15:06:53.648Z] [api]       "statusCode": 200
+[2026-08-18T15:06:53.648Z] [api]     }
+[2026-08-18T15:06:53.648Z] [api]     [35mresponseTime[39m: 29448
+[2026-08-18T15:06:57.702Z] [api] [15:06:57.012] [32mINFO[39m (12054): [36mrequest completed[39m
+[2026-08-18T15:06:57.702Z] [api]     [35mreq[39m: {
+[2026-08-18T15:06:57.702Z] [api]       "id": 3,
+[2026-08-18T15:06:57.702Z] [api]       "method": "GET",
+[2026-08-18T15:06:57.702Z] [api]       "url": "/api/services"
+[2026-08-18T15:06:57.702Z] [api]     }
+[2026-08-18T15:06:57.702Z] [api]     [35mres[39m: {
+[2026-08-18T15:06:57.702Z] [api]       "statusCode": 200
+[2026-08-18T15:06:57.702Z] [api]     }
+[2026-08-18T15:06:57.702Z] [api]     [35mresponseTime[39m: 4198
+[2026-08-18T15:07:11.767Z] [api] [15:07:11.596] [32mINFO[39m (12054): [36mrequest aborted[39m
+[2026-08-18T15:07:11.767Z] [api]     [35mreq[39m: {
+[2026-08-18T15:07:11.767Z] [api]       "id": 4,
+[2026-08-18T15:07:11.767Z] [api]       "method": "GET",
+[2026-08-18T15:07:11.767Z] [api]       "url": "/api/services"
+[2026-08-18T15:07:11.767Z] [api]     }
+[2026-08-18T15:07:11.767Z] [api]     [35mres[39m: {
+[2026-08-18T15:07:11.767Z] [api]       "statusCode": null
+[2026-08-18T15:07:11.767Z] [api]     }
+[2026-08-18T15:07:11.767Z] [api]     [35mresponseTime[39m: 3268
+[2026-08-18T15:07:13.817Z] [api] [15:07:12.870] [32mINFO[39m (12054): [36mrequest completed[39m
+[2026-08-18T15:07:13.817Z] [api]     [35mreq[39m: {
+[2026-08-18T15:07:13.817Z] [api]       "id": 5,
+[2026-08-18T15:07:13.817Z] [api]       "method": "GET",
+[2026-08-18T15:07:13.817Z] [api]       "url": "/api/services"
+[2026-08-18T15:07:13.817Z] [api]     }
+[2026-08-18T15:07:13.817Z] [api]     [35mres[39m: {
+[2026-08-18T15:07:13.817Z] [api]       "statusCode": 200
+[2026-08-18T15:07:13.817Z] [api]     }
+[2026-08-18T15:07:13.817Z] [api]     [35mresponseTime[39m: 1273
+[2026-08-18T15:08:26.505Z] [ELIFECYCLE] Command failed.
+[2026-08-18T15:08:26.505Z] [web] /home/ubuntu/zoophilist-workspace/artifacts/zoophilist:
+[2026-08-18T15:08:26.505Z] [web] [ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL] @workspace/zoophilist@0.0.0 dev: `vite --config vite.config.ts --host 0.0.0.0`
+[2026-08-18T15:08:26.505Z] [web] Command failed with signal "SIGTERM"
+[2026-08-18T15:08:26.506Z] [api] /home/ubuntu/zoophilist-workspace/artifacts/api-server:
+[2026-08-18T15:08:26.506Z] [api] [ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL] @workspace/api-server@0.0.0 dev: `PORT=$API_PORT NODE_ENV=development pnpm run build && PORT=$API_PORT NODE_ENV=development pnpm run start`
+[2026-08-18T15:08:26.506Z] [api] Command failed with signal "SIGTERM"
+[2026-08-18T15:08:26.513Z] [api] [ELIFECYCLE] Command failed.
+[2026-08-18T15:08:26.519Z] [web] pnpm --filter @workspace/zoophilist run dev exited with code SIGTERM
+[2026-08-18T15:08:26.519Z] --> Sending SIGTERM to other processes..
+[2026-08-18T15:08:26.527Z] [api] pnpm --filter @workspace/api-server run dev exited with code SIGTERM
+[2026-08-18T15:08:26.536Z] Dev server exited with code -1
+[2026-08-18T15:08:27.581Z] Starting dev server with command: pnpm run dev
+[2026-08-18T15:08:28.250Z] $ API_PORT=3001 concurrently -k -n api,web -c blue,green "pnpm --filter @workspace/api-server run dev" "pnpm --filter @workspace/zoophilist run dev"
+[2026-08-18T15:08:29.177Z] [web] $ vite --config vite.config.ts --host 0.0.0.0
+[2026-08-18T15:08:29.193Z] [api] $ PORT=$API_PORT NODE_ENV=development pnpm run build && PORT=$API_PORT NODE_ENV=development pnpm run start
+[2026-08-18T15:08:29.623Z] [web] 3:08:29 PM [vite] (client) Re-optimizing dependencies because lockfile has changed
+[2026-08-18T15:08:29.652Z] [web]
+[2026-08-18T15:08:29.652Z] [web]   VITE v7.3.6  ready in 415 ms
+[2026-08-18T15:08:29.652Z] [web]
+[2026-08-18T15:08:29.653Z] [web]   ➜  Local:   http://localhost:3000/
+[2026-08-18T15:08:29.653Z] [web]   ➜  Network: http://169.254.0.21:3000/
+[2026-08-18T15:08:29.817Z] [api] $ node ./build.mjs
+[2026-08-18T15:08:30.465Z] [api]
+[2026-08-18T15:08:30.465Z] [api]   dist/index.mjs                       3.4mb ⚠️
+[2026-08-18T15:08:30.465Z] [api]   dist/pino-worker.mjs               153.4kb
+[2026-08-18T15:08:30.465Z] [api]   dist/pino-file.mjs                 142.1kb
+[2026-08-18T15:08:30.465Z] [api]   dist/pino-pretty.mjs               114.4kb
+[2026-08-18T15:08:30.465Z] [api]   dist/thread-stream-worker.mjs        7.3kb
+[2026-08-18T15:08:30.465Z] [api]   dist/index.mjs.map                   5.8mb
+[2026-08-18T15:08:30.465Z] [api]   dist/pino-worker.mjs.map           256.9kb
+[2026-08-18T15:08:30.465Z] [api]   dist/pino-file.mjs.map             229.1kb
+[2026-08-18T15:08:30.465Z] [api]   dist/pino-pretty.mjs.map           203.6kb
+[2026-08-18T15:08:30.465Z] [api]   dist/thread-stream-worker.mjs.map   12.0kb
+[2026-08-18T15:08:30.465Z] [api]
+[2026-08-18T15:08:30.465Z] [api] ⚡ Done in 499ms
+[2026-08-18T15:08:31.143Z] [api] $ node --enable-source-maps ./dist/index.mjs
+[2026-08-18T15:08:31.533Z] [api] [15:08:31.465] [32mINFO[39m (12534): [36mServer listening[39m
+[2026-08-18T15:08:31.533Z] [api]     [35mport[39m: 3001
+[2026-08-18T15:10:50.765Z] [api] [ELIFECYCLE] Command failed.
+[2026-08-18T15:10:50.765Z] [api] /home/ubuntu/zoophilist-workspace/artifacts/api-server:
+[2026-08-18T15:10:50.765Z] [api] [ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL] @workspace/api-server@0.0.0 dev: `PORT=$API_PORT NODE_ENV=development pnpm run build && PORT=$API_PORT NODE_ENV=development pnpm run start`
+[2026-08-18T15:10:50.765Z] [api] Command failed with signal "SIGTERM"
+[2026-08-18T15:10:50.765Z] [ELIFECYCLE] Command failed.
+[2026-08-18T15:10:50.771Z] [web] /home/ubuntu/zoophilist-workspace/artifacts/zoophilist:
+[2026-08-18T15:10:50.771Z] [web] [ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL] @workspace/zoophilist@0.0.0 dev: `vite --config vite.config.ts --host 0.0.0.0`
+[2026-08-18T15:10:50.771Z] [web] Command failed with signal "SIGTERM"
+[2026-08-18T15:10:50.777Z] [api] pnpm --filter @workspace/api-server run dev exited with code SIGTERM
+[2026-08-18T15:10:50.777Z] --> Sending SIGTERM to other processes..
+[2026-08-18T15:10:50.784Z] [web] pnpm --filter @workspace/zoophilist run dev exited with code SIGTERM
+[2026-08-18T15:10:50.791Z] Dev server exited with code -1
+[2026-08-18T15:10:51.843Z] Starting dev server with command: pnpm run dev
+[2026-08-18T15:10:52.468Z] $ API_PORT=3001 concurrently -k -n api,web -c blue,green "pnpm --filter @workspace/api-server run dev" "pnpm --filter @workspace/zoophilist run dev"
+[2026-08-18T15:10:53.402Z] [api] $ PORT=$API_PORT NODE_ENV=development pnpm run build && PORT=$API_PORT NODE_ENV=development pnpm run start
+[2026-08-18T15:10:53.403Z] [web] $ vite --config vite.config.ts --host 0.0.0.0
+[2026-08-18T15:10:53.852Z] [web]
+[2026-08-18T15:10:53.853Z] [web]   VITE v7.3.6  ready in 385 ms
+[2026-08-18T15:10:53.853Z] [web]
+[2026-08-18T15:10:53.853Z] [web]   ➜  Local:   http://localhost:3000/
+[2026-08-18T15:10:53.853Z] [web]   ➜  Network: http://169.254.0.21:3000/
+[2026-08-18T15:10:54.041Z] [api] $ node ./build.mjs
+[2026-08-18T15:10:54.391Z] [api]
+[2026-08-18T15:10:54.391Z] [api]   dist/index.mjs                       3.5mb ⚠️
+[2026-08-18T15:10:54.391Z] [api]   dist/pino-worker.mjs               153.4kb
+[2026-08-18T15:10:54.391Z] [api]   dist/pino-file.mjs                 142.1kb
+[2026-08-18T15:10:54.392Z] [api]   dist/pino-pretty.mjs               114.4kb
+[2026-08-18T15:10:54.392Z] [api]   dist/thread-stream-worker.mjs        7.3kb
+[2026-08-18T15:10:54.392Z] [api]   dist/index.mjs.map                   6.0mb
+[2026-08-18T15:10:54.392Z] [api]   dist/pino-worker.mjs.map           256.9kb
+[2026-08-18T15:10:54.392Z] [api]   dist/pino-file.mjs.map             229.1kb
+[2026-08-18T15:10:54.392Z] [api]   dist/pino-pretty.mjs.map           203.6kb
+[2026-08-18T15:10:54.392Z] [api]   dist/thread-stream-worker.mjs.map   12.0kb
+[2026-08-18T15:10:54.392Z] [api]
+[2026-08-18T15:10:54.392Z] [api] ⚡ Done in 254ms
+[2026-08-18T15:10:55.002Z] [api] $ node --enable-source-maps ./dist/index.mjs
+[2026-08-18T15:10:55.465Z] [api] [15:10:55.454] [32mINFO[39m (12970): [36mServer listening[39m
+[2026-08-18T15:10:55.465Z] [api]     [35mport[39m: 3001
+[2026-08-18T15:27:06.397Z] [ELIFECYCLE] Command failed.
+[2026-08-18T15:27:06.403Z] [web] /home/ubuntu/zoophilist-workspace/artifacts/zoophilist:
+[2026-08-18T15:27:06.403Z] [web] [ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL] @workspace/zoophilist@0.0.0 dev: `vite --config vite.config.ts --host 0.0.0.0`
+[2026-08-18T15:27:06.403Z] [web] Command failed with signal "SIGTERM"
+[2026-08-18T15:27:06.405Z] [api] [ELIFECYCLE] Command failed.
+[2026-08-18T15:27:06.408Z] [api] /home/ubuntu/zoophilist-workspace/artifacts/api-server:
+[2026-08-18T15:27:06.408Z] [api] [ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL] @workspace/api-server@0.0.0 dev: `PORT=$API_PORT NODE_ENV=development pnpm run build && PORT=$API_PORT NODE_ENV=development pnpm run start`
+[2026-08-18T15:27:06.408Z] [api] Command failed with signal "SIGTERM"
+[2026-08-18T15:27:06.420Z] [web] pnpm --filter @workspace/zoophilist run dev exited with code SIGTERM
+[2026-08-18T15:27:06.420Z] --> Sending SIGTERM to other processes..
+[2026-08-18T15:27:06.424Z] [api] pnpm --filter @workspace/api-server run dev exited with code SIGTERM
+[2026-08-18T15:27:06.430Z] Dev server exited with code -1
+[2026-08-18T15:27:07.472Z] Starting dev server with command: pnpm run dev
+[2026-08-18T15:27:08.114Z] $ API_PORT=3001 concurrently -k -n api,web -c blue,green "pnpm --filter @workspace/api-server run dev" "pnpm --filter @workspace/zoophilist run dev"
+[2026-08-18T15:27:09.056Z] [web] $ vite --config vite.config.ts --host 0.0.0.0
+[2026-08-18T15:27:09.078Z] [api] $ PORT=$API_PORT NODE_ENV=development pnpm run build && PORT=$API_PORT NODE_ENV=development pnpm run start
+[2026-08-18T15:27:09.495Z] [web]
+[2026-08-18T15:27:09.495Z] [web]   VITE v7.3.6  ready in 390 ms
+[2026-08-18T15:27:09.495Z] [web]
+[2026-08-18T15:27:09.495Z] [web]   ➜  Local:   http://localhost:3000/
+[2026-08-18T15:27:09.495Z] [web]   ➜  Network: http://169.254.0.21:3000/
+[2026-08-18T15:27:09.728Z] [api] $ node ./build.mjs
+[2026-08-18T15:27:10.143Z] [api]
+[2026-08-18T15:27:10.143Z] [api]   dist/index.mjs                       3.5mb ⚠️
+[2026-08-18T15:27:10.143Z] [api]   dist/pino-worker.mjs               153.4kb
+[2026-08-18T15:27:10.143Z] [api]   dist/pino-file.mjs                 142.1kb
+[2026-08-18T15:27:10.143Z] [api]   dist/pino-pretty.mjs               114.4kb
+[2026-08-18T15:27:10.143Z] [api]   dist/thread-stream-worker.mjs        7.3kb
+[2026-08-18T15:27:10.143Z] [api]   dist/index.mjs.map                   6.0mb
+[2026-08-18T15:27:10.143Z] [api]   dist/pino-worker.mjs.map           256.9kb
+[2026-08-18T15:27:10.143Z] [api]   dist/pino-file.mjs.map             229.1kb
+[2026-08-18T15:27:10.143Z] [api]   dist/pino-pretty.mjs.map           203.6kb
+[2026-08-18T15:27:10.143Z] [api]   dist/thread-stream-worker.mjs.map   12.0kb
+[2026-08-18T15:27:10.143Z] [api]
+[2026-08-18T15:27:10.143Z] [api] ⚡ Done in 313ms
+[2026-08-18T15:27:10.854Z] [api] $ node --enable-source-maps ./dist/index.mjs
+[2026-08-18T15:27:11.418Z] [api] [15:27:11.382] [32mINFO[39m (14430): [36mServer listening[39m
+[2026-08-18T15:27:11.418Z] [api]     [35mport[39m: 3001
+[2026-08-18T15:27:15.473Z] [api] [15:27:14.478] [32mINFO[39m (14430): [36mrequest aborted[39m
+[2026-08-18T15:27:15.473Z] [api]     [35mreq[39m: {
+[2026-08-18T15:27:15.473Z] [api]       "id": 1,
+[2026-08-18T15:27:15.473Z] [api]       "method": "GET",
+[2026-08-18T15:27:15.473Z] [api]       "url": "/api/services"
+[2026-08-18T15:27:15.473Z] [api]     }
+[2026-08-18T15:27:15.473Z] [api]     [35mres[39m: {
+[2026-08-18T15:27:15.473Z] [api]       "statusCode": null
+[2026-08-18T15:27:15.473Z] [api]     }
+[2026-08-18T15:27:15.473Z] [api]     [35mresponseTime[39m: 2757
+[2026-08-18T15:28:50.632Z] [api] [15:28:49.867] [32mINFO[39m (14430): [36mrequest completed[39m
+[2026-08-18T15:28:50.632Z] [api]     [35mreq[39m: {
+[2026-08-18T15:28:50.632Z] [api]       "id": 2,
+[2026-08-18T15:28:50.632Z] [api]       "method": "GET",
+[2026-08-18T15:28:50.632Z] [api]       "url": "/api/services"
+[2026-08-18T15:28:50.632Z] [api]     }
+[2026-08-18T15:28:50.632Z] [api]     [35mres[39m: {
+[2026-08-18T15:28:50.632Z] [api]       "statusCode": 200
+[2026-08-18T15:28:50.632Z] [api]     }
+[2026-08-18T15:28:50.632Z] [api]     [35mresponseTime[39m: 522

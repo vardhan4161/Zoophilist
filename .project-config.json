@@ -1,8 +1,16 @@
 {
   "build_command": "pnpm run build",
-  "capabilities": [],
+  "capabilities": [
+    "db",
+    "server",
+    "user"
+  ],
   "dev_command": "pnpm run dev",
-  "env_vars": {},
+  "env_vars": {
+    "DATABASE_URL": "mysql://3NV9ENLCC6mnxYV.root:9qN7cDFbA0ksdn3AU11E@gateway03.us-east-1.prod.aws.tidbcloud.com:4000/QuEbeRWyTbZgiDBvQwXxsh?ssl={\"rejectUnauthorized\":true}",
+    "DRIZZLE_DATABASE_URL": "mysql://3NV9ENLCC6mnxYV.root:9qN7cDFbA0ksdn3AU11E@gateway03.us-east-1.prod.aws.tidbcloud.com:4000/QuEbeRWyTbZgiDBvQwXxsh?ssl={\"rejectUnauthorized\":true}",
+    "MANUS_WEBDEV_PROJECT_ID": "QuEbeRWyTbZgiDBvQwXxsh"
+  },
   "experiments": null,
   "git_remote": {
     "repo_url": "https://7f0548f6b28a1758d9bf7be630d36cb4.artifacts.cloudflare.net/git/prod/QuEbeRWyTbZgiDBvQwXxsh.git",
@@ -17,13 +25,14 @@
     "BUILT_IN_FORGE_API_KEY": "LpG9DmdyCH2yMHd3LXnFmG",
     "BUILT_IN_FORGE_API_URL": "https://forge.manus.ai",
     "JWT_SECRET": "Pws6P9w7TX95f3mGCDEgjY",
+    "MONGODB_URI": "mongodb+srv://zoophilist_app:xcbTz0F7yYoQLyEd@cluster0.jrbzymj.mongodb.net/zoophilist",
     "OAUTH_SERVER_URL": "https://api.manus.im",
     "OWNER_NAME": "Sai Shravan",
     "OWNER_OPEN_ID": "RGAtqJ4E57EvkeXCxtBpXC",
     "VITE_ANALYTICS_ENDPOINT": "https://manus-analytics.com",
     "VITE_ANALYTICS_WEBSITE_ID": "91c2f07a-8ed1-4507-809a-8a7a4672371a",
     "VITE_APP_ID": "QuEbeRWyTbZgiDBvQwXxsh",
-    "VITE_APP_LOGO": "",
+    "VITE_APP_LOGO": "https://files.manuscdn.com/user_upload_by_module/web_dev_logo/310519663900016716/choRaBYTiTbCYYbf.png",
     "VITE_APP_TITLE": "Zoophilist",
     "VITE_FRONTEND_FORGE_API_KEY": "oFaerGBP2uxRKqijGBTpXa",
     "VITE_FRONTEND_FORGE_API_URL": "https://forge.manus.ai",

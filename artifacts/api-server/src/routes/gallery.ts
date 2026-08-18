@@ -1,18 +1,18 @@
 import { Router, type IRouter } from "express";
-import { eq } from "drizzle-orm";
-import { db, galleryTable } from "@workspace/db";
+import { mongoCollections, newId, type GalleryDocument } from "@workspace/db";
 import {
   CreateGalleryItemBody,
   GetGalleryQueryParams,
   DeleteGalleryItemParams,
 } from "@workspace/api-zod";
+import { requireAdmin } from "./admin";
 
 const router: IRouter = Router();
 
-const formatItem = (item: typeof galleryTable.$inferSelect) => ({
-  ...item,
-  createdAt: item.createdAt.toISOString(),
-});
+const formatItem = (item: any) => {
+  const { _id, ...data } = item;
+  return { ...data, createdAt: new Date(data.createdAt).toISOString(), updatedAt: new Date(data.updatedAt).toISOString() };
+};
 
 router.get("/gallery", async (req, res): Promise<void> => {
   const parsed = GetGalleryQueryParams.safeParse(req.query);
@@ -22,11 +22,9 @@ router.get("/gallery", async (req, res): Promise<void> => {
   }
 
   try {
-    const all = await db.select().from(galleryTable).orderBy(galleryTable.createdAt);
-    const filtered =
-      parsed.data.category && parsed.data.category !== "all"
-        ? all.filter((i) => i.category === parsed.data.category)
-        : all;
+    const { gallery } = await mongoCollections();
+    const filter = parsed.data.category && parsed.data.category !== "all" ? { category: parsed.data.category } : {};
+    const filtered = await gallery.find(filter).sort({ featured: -1, createdAt: -1 }).toArray();
     res.json(filtered.map(formatItem));
   } catch (err) {
     req.log.error({ err }, "Failed to get gallery");
@@ -34,7 +32,7 @@ router.get("/gallery", async (req, res): Promise<void> => {
   }
 });
 
-router.post("/gallery", async (req, res): Promise<void> => {
+router.post("/gallery", requireAdmin, async (req, res): Promise<void> => {
   const parsed = CreateGalleryItemBody.safeParse(req.body);
   if (!parsed.success) {
     res.status(400).json({ error: parsed.error.message });
@@ -42,7 +40,10 @@ router.post("/gallery", async (req, res): Promise<void> => {
   }
 
   try {
-    const [item] = await db.insert(galleryTable).values(parsed.data).returning();
+    const { gallery } = await mongoCollections();
+    const now = new Date();
+    const item: GalleryDocument = { id: newId(), url: parsed.data.url, type: parsed.data.type, category: parsed.data.category ?? undefined, caption: parsed.data.caption ?? undefined, featured: false, createdAt: now, updatedAt: now };
+    await gallery.insertOne(item);
     res.status(201).json(formatItem(item));
   } catch (err) {
     req.log.error({ err }, "Failed to create gallery item");
@@ -50,7 +51,7 @@ router.post("/gallery", async (req, res): Promise<void> => {
   }
 });
 
-router.delete("/gallery/:id", async (req, res): Promise<void> => {
+router.delete("/gallery/:id", requireAdmin, async (req, res): Promise<void> => {
   const params = DeleteGalleryItemParams.safeParse(req.params);
   if (!params.success) {
     res.status(400).json({ error: params.error.message });
@@ -58,7 +59,8 @@ router.delete("/gallery/:id", async (req, res): Promise<void> => {
   }
 
   try {
-    await db.delete(galleryTable).where(eq(galleryTable.id, params.data.id));
+    const { gallery } = await mongoCollections();
+    await gallery.deleteOne({ id: params.data.id });
     res.sendStatus(204);
   } catch (err) {
     req.log.error({ err }, "Failed to delete gallery item");

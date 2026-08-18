@@ -1,0 +1,39 @@
+# Zoophilist 2.0 Delivery Checklist
+
+- [x] Confirm the MongoDB Atlas migration decision.
+- [x] Compare India-compatible SMS providers and select Fast2SMS as the lowest-cost viable option.
+- [ ] Obtain and configure the MongoDB Atlas connection URI plus notification-provider credentials.
+- [ ] Guide the user to each provider’s credential page one at a time and securely record each supplied value.
+- [x] Create a dedicated MongoDB Atlas application user restricted to Cluster0.
+- [ ] Complete all provider setup actions that do not require secret disclosure, payment approval, or user-owned identity verification.
+- [ ] Apply temporary MongoDB Atlas network access from any IP for managed hosting, then restrict it after a fixed egress path is available.
+- [ ] Rotate the temporary MongoDB application password and update the secure connection URI before production release.
+- [x] Audit the user-authorized provider accounts to identify existing setup, verified domains, DLT state, and required credentials; Cloudinary onboarding was completed with explicit approval.
+- [ ] Identify and document the Telegram administrator-alert destination approach without sending messages or changing bot settings.
+- [ ] Enable full-stack application capabilities and configure server-side secrets.
+- [ ] Replace the PostgreSQL persistence layer with MongoDB Atlas and secure the admin authentication flow.
+- [ ] Complete bookings, booking IDs, status transitions, and activity logging.
+- [ ] Implement Cloudinary media uploads, gallery management, and retry handling.
+- [x] Connect public booking photo and video selections to a validated Cloudinary upload flow before booking creation.
+- [x] Replace the inherited booking-success redirect on API error with an accessible retryable error state.
+- [ ] Activate Resend email, Telegram, and SMS notifications for booking and status events with live provider credentials.
+- [x] Implement non-blocking Resend, Telegram, and Fast2SMS notification delivery for booking and status events.
+- [x] Record per-channel booking notification outcomes without blocking booking or status updates.
+- [x] Escape customer-provided values in notification HTML and use approved Fast2SMS DLT template delivery only.
+- [x] Validate the Fast2SMS variable mapping against the approved DLT template configuration and fail safely if it is incomplete or mismatched.
+- [x] Add notification-service tests for configured Resend and Telegram requests plus HTML-escaping regression coverage.
+- [ ] Enforce the 1,000-email allowance through transactional-only sends and test-mode safeguards.
+- [ ] Complete administrative services, gallery, settings, and notification workflows.
+- [ ] Add SEO, accessibility, validation, security controls, and production performance improvements.
+- [x] Document the secure project-settings equivalent of a complete `.env.example` covering MongoDB, administrator, Cloudinary, Resend, Telegram, SMS, dashboard, and CORS configuration.
+- [ ] Replace insecure default admin credentials and in-memory sessions with signed, expiring server-side authentication.
+- [ ] Add secure headers, API rate limits, payload limits, and restricted CORS configuration.
+- [ ] Protect every administrative booking, service, gallery, upload, and settings mutation with authenticated admin sessions.
+- [ ] Execute database, upload, booking, notification, authentication, and persistence tests.
+- [x] Fix the inherited homepage `popularServices.map` runtime failure before production verification.
+- [x] Add a regression test proving homepage service data is normalized before it is rendered.
+- [x] Resolve the MongoDB Atlas connectivity validation timeout and confirm server access.
+- [x] Validate the temporary MongoDB Atlas URI with a server-side ping test.
+- [x] Cache MongoDB schema initialization so public service requests do not repeatedly create indexes.
+- [x] Restore API typecheck coverage after migrating booking routes to MongoDB and adding persistent admin sessions.
+- [ ] Produce the final implementation and readiness report.

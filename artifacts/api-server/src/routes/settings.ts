@@ -1,6 +1,5 @@
 import { Router, type IRouter } from "express";
-import { eq } from "drizzle-orm";
-import { db, settingsTable } from "@workspace/db";
+import { mongoCollections } from "@workspace/db";
 import { requireAdmin } from "./admin";
 import { logger } from "../lib/logger";
 
@@ -35,9 +34,10 @@ let cache: Record<string, string> | null = null;
 async function loadSettings(): Promise<Record<string, string>> {
   if (cache) return cache;
   try {
-    const rows = await db.select().from(settingsTable);
+    const { settings } = await mongoCollections();
+    const rows = await settings.find({}).toArray();
     const fromDb: Record<string, string> = {};
-    rows.forEach((r) => { fromDb[r.key] = r.value; });
+    rows.forEach((r: { key: string; value: string }) => { fromDb[r.key] = r.value; });
     // Merge: DB values override defaults; env vars override everything at read time
     cache = { ...DEFAULTS, ...fromDb };
     logger.info("Settings loaded from DB");
@@ -94,12 +94,10 @@ router.put("/settings", requireAdmin, async (req, res): Promise<void> => {
   try {
     // Upsert each changed key into the DB
     await Promise.all(
-      Object.entries(updates).map(([key, value]) =>
-        db
-          .insert(settingsTable)
-          .values({ key, value, updatedAt: new Date() })
-          .onConflictDoUpdate({ target: settingsTable.key, set: { value, updatedAt: new Date() } }),
-      ),
+      Object.entries(updates).map(async ([key, value]) => {
+        const { settings } = await mongoCollections();
+        return settings.updateOne({ key }, { $set: { value, updatedAt: new Date() } }, { upsert: true });
+      }),
     );
 
     // Update cache
