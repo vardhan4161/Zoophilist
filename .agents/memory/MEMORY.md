@@ -1,0 +1,2 @@
+- [Zoophilist project setup](zoophilist-setup.md) — pnpm monorepo; api-server + zoophilist frontend + shared libs; OpenAPI→orval pipeline regenerates api-zod and api-client-react together
+- [Booking notifications pattern](zoophilist-notifications.md) — Resend + Telegram fired post-response in bookings.ts; settings loaded from DB via proxy in settings.ts

@@ -1,0 +1,37 @@
+[2026-08-18T12:18:26.258Z] Starting dev server with command: pnpm run dev
+[2026-08-18T12:18:28.406Z] > zoophilist-workspace@1.0.0 dev /home/ubuntu/zoophilist-workspace
+[2026-08-18T12:18:28.406Z] > vite --host
+[2026-08-18T12:18:28.937Z] VITE v7.1.9  ready in 483 ms
+[2026-08-18T12:18:28.937Z] ➜  Local:   http://localhost:3000/
+[2026-08-18T12:18:28.937Z] ➜  Network: http://169.254.0.21:3000/
+[2026-08-18T12:21:33.488Z] ELIFECYCLE  Command failed.
+[2026-08-18T12:21:33.512Z] Dev server exited with code -1
+[2026-08-18T12:21:34.598Z] Starting dev server with command: pnpm run dev
+[2026-08-18T12:21:35.198Z] $ pnpm --filter @workspace/zoophilist run dev
+[2026-08-18T12:21:35.821Z] $ vite --config vite.config.ts --host 0.0.0.0
+[2026-08-18T12:21:36.326Z] VITE v7.3.6  ready in 457 ms
+[2026-08-18T12:21:36.326Z] ➜  Local:   http://localhost:3000/
+[2026-08-18T12:21:36.326Z] ➜  Network: http://169.254.0.21:3000/
+[2026-08-18T12:21:39.501Z] [RUNTIME_ERROR]{"type":"runtime-error","timestamp":1787055699501,"name":"Error","message":"popularServices.map is not a function","stack":"    at Home /home/ubuntu/zoophilist-workspace/artifacts/zoophilist/src/pages/home.tsx:350:30\n\n\n\n\n\n\n\n\n","loc":{"line":350,"column":30,"file":"/home/ubuntu/zoophilist-workspace/artifacts/zoophilist/src/pages/home.tsx"},"frame":"348|  \n349|            <StaggerContainer className=\"grid md:grid-cols-3 gap-6\">\n350|              {popularServices.map((service) => (\n   |                               ^\n351|                <StaggerItem key={service.id} className=\"h-full\">\n352|                  <div className=\"relative h-full glass-card rounded-2xl p-7 flex flex-col overflow-hidden group hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5\">"}
+[2026-08-18T12:22:12.815Z] 12:22:12 PM [vite] (client) hmr update /src/pages/home.tsx, /src/index.css
+[2026-08-18T12:25:12.023Z] 12:25:12 PM [vite] (client) hmr update /src/pages/home.tsx, /src/index.css
+[2026-08-18T12:25:12.023Z] 12:25:12 PM [vite] (client) hmr update /src/App.tsx, /src/index.css
+[2026-08-18T12:25:12.029Z] 12:25:12 PM [vite] (client) hmr update /src/pages/about.tsx, /src/index.css
+[2026-08-18T12:25:12.034Z] 12:25:12 PM [vite] (client) hmr update /src/pages/services.tsx, /src/index.css
+[2026-08-18T12:25:14.562Z] 12:25:14 PM [vite] (client) hmr update /src/components/footer.tsx, /src/index.css
+[2026-08-18T12:25:34.744Z] 12:25:34 PM [vite] (client) hmr update /src/pages/success-stories.tsx, /src/index.css
+[2026-08-18T12:25:46.566Z] 12:25:46 PM [vite] (client) hmr update /src/pages/services.tsx, /src/index.css
+[2026-08-18T12:25:57.790Z] 12:25:57 PM [vite] (client) hmr update /src/pages/book.tsx, /src/index.css
+[2026-08-18T12:25:57.792Z] 12:25:57 PM [vite] (client) hmr update /src/pages/service-detail.tsx, /src/index.css
+[2026-08-18T12:26:32.638Z] /home/ubuntu/zoophilist-workspace/artifacts/zoophilist:
+[2026-08-18T12:26:32.638Z] [ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL] @workspace/zoophilist@0.0.0 dev: `vite --config vite.config.ts --host 0.0.0.0`
+[2026-08-18T12:26:32.638Z] Command failed with signal "SIGTERM"
+[2026-08-18T12:26:32.639Z] [ELIFECYCLE] Command failed.
+[2026-08-18T12:26:32.647Z] Dev server exited with code -1
+[2026-08-18T12:26:33.719Z] Starting dev server with command: pnpm run dev
+[2026-08-18T12:26:34.452Z] $ pnpm --filter @workspace/zoophilist run dev
+[2026-08-18T12:26:35.095Z] $ vite --config vite.config.ts --host 0.0.0.0
+[2026-08-18T12:26:35.546Z] VITE v7.3.6  ready in 394 ms
+[2026-08-18T12:26:35.546Z] ➜  Local:   http://localhost:3000/
+[2026-08-18T12:26:35.546Z] ➜  Network: http://169.254.0.21:3000/
+[2026-08-18T12:26:58.307Z] 12:26:58 PM [vite] (client) hmr update /src/pages/home.tsx, /src/index.css

@@ -1,0 +1,409 @@
+Read ALL attached documents and ALL attached UI reference images before writing any code.
+
+The attached documents define the business logic, requirements, architecture and technical stack.
+
+The attached UI images are the OFFICIAL design reference.
+
+The UI images take priority over assumptions.
+
+Do NOT redesign the UI.
+
+Do NOT simplify the layouts.
+
+Do NOT replace sections with generic Tailwind components.
+
+Treat the images exactly like a professional Figma file.
+
+Your task is to build the COMPLETE Zoophilist application from start to finish.
+
+Do not stop after creating the project structure.
+
+Continue implementing until the application is fully functional.
+
+------------------------------------------------------------
+
+PROJECT
+
+Zoophilist 2.0
+
+Premium Doorstep Pet Services Platform
+
+------------------------------------------------------------
+
+GOAL
+
+Deliver a production-ready application.
+
+Not a prototype.
+
+Not placeholder pages.
+
+Not wireframes.
+
+A real application.
+
+------------------------------------------------------------
+
+DESIGN REQUIREMENTS
+
+The website must match the attached UI images as closely as possible.
+
+Design quality should be comparable to
+
+Apple
+
+Linear
+
+Stripe
+
+Framer
+
+Vercel
+
+Use
+
+Glassmorphism
+
+Large rounded corners
+
+Floating glass cards
+
+Premium typography
+
+Soft shadows
+
+Animated gradients
+
+Blur backgrounds
+
+Aurora effects
+
+Animated blobs
+
+Scroll animations
+
+Micro interactions
+
+Hover effects
+
+Smooth page transitions
+
+Beautiful whitespace
+
+Responsive layouts
+
+Every page should feel premium.
+
+The first impression should be "Wow".
+
+------------------------------------------------------------
+
+PUBLIC WEBSITE
+
+Build
+
+Home
+
+About
+
+Services
+
+Individual Service
+
+Gallery
+
+Success Stories
+
+Contact
+
+Book Service
+
+Privacy Policy
+
+Terms
+
+404
+
+------------------------------------------------------------
+
+ADMIN
+
+Login
+
+Dashboard
+
+Requests
+
+Services CRUD
+
+Gallery CRUD
+
+Settings
+
+Media Upload
+
+Statistics
+
+------------------------------------------------------------
+
+BOOKING FORM
+
+Customer
+
+Full Name
+
+Phone
+
+Email
+
+City
+
+Area
+
+Complete Address
+
+Pet
+
+Pet Name
+
+Pet Type
+
+Breed
+
+Age
+
+Aggressive
+
+Yes
+
+No
+
+Service
+
+Select Service
+
+Preferred Date
+
+Preferred Time
+
+Notes
+
+Upload Photos
+
+Upload Videos
+
+------------------------------------------------------------
+
+SERVICES
+
+Spa Bath
+
+₹899
+
+Grooming
+
+₹1599
+
+Hair Cut
+
+₹1199
+
+Medical Bath
+
+₹1699
+
+Anti Tick Bath (Applying Medicine)
+
+Subscription
+
+Original ₹5899
+
+Offer ₹3899
+
+Benefits
+
+Valid for 2 Months
+
+Choose Any Grooming Service
+
+Only 3 Services
+
+------------------------------------------------------------
+
+CONTACT
+
+Phone
+
++91 9515247704
+
+Email
+
+zoophilistpetservice@gmail.com
+
+------------------------------------------------------------
+
+TECH STACK
+
+Next.js 15
+
+React 19
+
+TypeScript
+
+Tailwind CSS
+
+shadcn/ui
+
+Framer Motion
+
+Prisma ORM
+
+MongoDB Atlas
+
+Auth.js
+
+Cloudinary
+
+Resend
+
+Telegram Bot API
+
+React Hook Form
+
+Zod
+
+------------------------------------------------------------
+
+DATABASE
+
+Configure Prisma
+
+Configure MongoDB
+
+Create production models
+
+Create relationships
+
+Seed initial services
+
+------------------------------------------------------------
+
+NOTIFICATIONS
+
+Email
+
+Telegram
+
+Customer confirmation email
+
+Admin notification email
+
+Telegram notification to team
+
+------------------------------------------------------------
+
+MEDIA
+
+Store images/videos in Cloudinary.
+
+Store metadata in MongoDB.
+
+------------------------------------------------------------
+
+PERFORMANCE
+
+Optimize images
+
+Lazy loading
+
+Dynamic imports
+
+Accessibility
+
+SEO
+
+Lighthouse friendly
+
+------------------------------------------------------------
+
+CODE QUALITY
+
+Strict TypeScript
+
+No duplicated code
+
+Reusable components
+
+Reusable hooks
+
+Reusable utilities
+
+Server Components where appropriate
+
+Client Components only when needed
+
+------------------------------------------------------------
+
+RESPONSIVENESS
+
+Desktop
+
+Laptop
+
+Tablet
+
+Mobile
+
+Mobile-first
+
+------------------------------------------------------------
+
+IMPLEMENTATION STRATEGY
+
+Do NOT stop after creating the project.
+
+Continue until every page is implemented.
+
+Continue until every API is connected.
+
+Continue until MongoDB works.
+
+Continue until Cloudinary works.
+
+Continue until Telegram works.
+
+Continue until Email works.
+
+Continue until Admin works.
+
+Continue until the application builds successfully.
+
+------------------------------------------------------------
+
+BEFORE FINISHING
+
+Run the application.
+
+Fix all TypeScript errors.
+
+Fix all ESLint errors.
+
+Fix hydration errors.
+
+Fix build errors.
+
+Ensure the application compiles successfully.
+
+Verify responsiveness.
+
+Verify accessibility.
+
+------------------------------------------------------------
+
+FINAL DELIVERABLE
+
+A production-ready Zoophilist application matching the attached UI mockups as closely as possible.
+
+If additional assets are required that are not attached (icons, illustrations, placeholder pet images, etc.), use high-quality placeholders while keeping the overall design faithful to the provided UI.
+
+Do not stop until the application is complete or until you need information that genuinely cannot be inferred from the provided documentation or UI.

@@ -1,0 +1,726 @@
+openapi: 3.1.0
+info:
+  # Do not change the title, if the title changes, the import paths will be broken
+  title: Api
+  version: 0.1.0
+  description: Zoophilist Pet Services API
+servers:
+  - url: /api
+    description: Base API path
+tags:
+  - name: health
+    description: Health operations
+  - name: bookings
+    description: Booking operations
+  - name: services
+    description: Pet services
+  - name: gallery
+    description: Gallery media
+  - name: admin
+    description: Admin operations
+
+paths:
+  /healthz:
+    get:
+      operationId: healthCheck
+      tags: [health]
+      summary: Health check
+      responses:
+        "200":
+          description: Healthy
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthStatus"
+
+  /bookings:
+    get:
+      operationId: getBookings
+      tags: [bookings]
+      summary: List all bookings (admin)
+      parameters:
+        - name: status
+          in: query
+          schema:
+            type: string
+            enum: [pending, confirmed, scheduled, completed, cancelled]
+        - name: page
+          in: query
+          schema:
+            type: integer
+            default: 1
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 20
+      responses:
+        "200":
+          description: List of bookings
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BookingListResponse"
+    post:
+      operationId: createBooking
+      tags: [bookings]
+      summary: Create a new booking
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateBookingInput"
+      responses:
+        "201":
+          description: Booking created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Booking"
+        "400":
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /bookings/stats:
+    get:
+      operationId: getBookingStats
+      tags: [bookings]
+      summary: Get booking statistics for dashboard
+      responses:
+        "200":
+          description: Booking statistics
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BookingStats"
+
+  /bookings/{id}:
+    get:
+      operationId: getBookingById
+      tags: [bookings]
+      summary: Get booking by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Booking details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Booking"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+    patch:
+      operationId: updateBookingStatus
+      tags: [bookings]
+      summary: Update booking status
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UpdateBookingStatusInput"
+      responses:
+        "200":
+          description: Updated booking
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Booking"
+    delete:
+      operationId: deleteBooking
+      tags: [bookings]
+      summary: Delete a booking
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "204":
+          description: Deleted
+
+  /services:
+    get:
+      operationId: getServices
+      tags: [services]
+      summary: List all services
+      responses:
+        "200":
+          description: List of services
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Service"
+    post:
+      operationId: createService
+      tags: [services]
+      summary: Create a service (admin)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateServiceInput"
+      responses:
+        "201":
+          description: Created service
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Service"
+
+  /services/{id}:
+    get:
+      operationId: getServiceById
+      tags: [services]
+      summary: Get service by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Service details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Service"
+    patch:
+      operationId: updateService
+      tags: [services]
+      summary: Update a service (admin)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UpdateServiceInput"
+      responses:
+        "200":
+          description: Updated service
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Service"
+    delete:
+      operationId: deleteService
+      tags: [services]
+      summary: Delete a service (admin)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "204":
+          description: Deleted
+
+  /gallery:
+    get:
+      operationId: getGallery
+      tags: [gallery]
+      summary: List gallery items
+      parameters:
+        - name: category
+          in: query
+          schema:
+            type: string
+            enum: [all, grooming, bath, haircut, happypets]
+      responses:
+        "200":
+          description: Gallery items
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/GalleryItem"
+    post:
+      operationId: createGalleryItem
+      tags: [gallery]
+      summary: Add gallery item (admin)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateGalleryItemInput"
+      responses:
+        "201":
+          description: Created gallery item
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GalleryItem"
+
+  /gallery/{id}:
+    delete:
+      operationId: deleteGalleryItem
+      tags: [gallery]
+      summary: Delete gallery item (admin)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "204":
+          description: Deleted
+
+  /admin/login:
+    post:
+      operationId: adminLogin
+      tags: [admin]
+      summary: Admin login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AdminLoginInput"
+      responses:
+        "200":
+          description: Login successful
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AdminAuthResult"
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /admin/me:
+    get:
+      operationId: getAdminMe
+      tags: [admin]
+      summary: Get current admin session
+      responses:
+        "200":
+          description: Admin session
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AdminSession"
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /admin/logout:
+    post:
+      operationId: adminLogout
+      tags: [admin]
+      summary: Admin logout
+      responses:
+        "200":
+          description: Logged out
+
+components:
+  schemas:
+    HealthStatus:
+      type: object
+      properties:
+        status:
+          type: string
+      required:
+        - status
+
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+        message:
+          type: string
+      required:
+        - error
+
+    Booking:
+      type: object
+      properties:
+        id:
+          type: string
+        bookingId:
+          type: string
+        customerName:
+          type: string
+        customerPhone:
+          type: string
+        customerEmail:
+          type: string
+        city:
+          type: string
+        area:
+          type: string
+        address:
+          type: string
+        petName:
+          type: string
+        petType:
+          type: string
+        breed:
+          type: string
+        age:
+          type: string
+        aggressive:
+          type: boolean
+        serviceId:
+          type: string
+        serviceName:
+          type: string
+        preferredDate:
+          type: string
+        preferredTime:
+          type: string
+        notes:
+          type: string
+        internalNotes:
+          type: string
+        photoUrls:
+          type: array
+          items:
+            type: string
+        videoUrls:
+          type: array
+          items:
+            type: string
+        status:
+          type: string
+          enum: [pending, confirmed, scheduled, completed, cancelled]
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+      required:
+        - id
+        - customerName
+        - customerPhone
+        - petName
+        - petType
+        - serviceName
+        - status
+        - createdAt
+        - updatedAt
+
+    CreateBookingInput:
+      type: object
+      properties:
+        customerName:
+          type: string
+        customerPhone:
+          type: string
+        customerEmail:
+          type: string
+        city:
+          type: string
+        area:
+          type: string
+        address:
+          type: string
+        petName:
+          type: string
+        petType:
+          type: string
+        breed:
+          type: string
+        age:
+          type: string
+        aggressive:
+          type: boolean
+        serviceId:
+          type: string
+        serviceName:
+          type: string
+        preferredDate:
+          type: string
+        preferredTime:
+          type: string
+        notes:
+          type: string
+        photoUrls:
+          type: array
+          items:
+            type: string
+        videoUrls:
+          type: array
+          items:
+            type: string
+      required:
+        - customerName
+        - customerPhone
+        - petName
+        - petType
+        - serviceId
+        - serviceName
+
+    UpdateBookingStatusInput:
+      type: object
+      properties:
+        status:
+          type: string
+          enum: [pending, confirmed, scheduled, completed, cancelled]
+        internalNotes:
+          type: string
+
+    BookingListResponse:
+      type: object
+      properties:
+        bookings:
+          type: array
+          items:
+            $ref: "#/components/schemas/Booking"
+        total:
+          type: integer
+        page:
+          type: integer
+        limit:
+          type: integer
+        totalPages:
+          type: integer
+      required:
+        - bookings
+        - total
+        - page
+        - limit
+        - totalPages
+
+    BookingStats:
+      type: object
+      properties:
+        totalRequests:
+          type: integer
+        pending:
+          type: integer
+        confirmed:
+          type: integer
+        scheduled:
+          type: integer
+        completed:
+          type: integer
+        cancelled:
+          type: integer
+        totalRevenue:
+          type: number
+        weeklyRequests:
+          type: integer
+        popularServices:
+          type: array
+          items:
+            $ref: "#/components/schemas/ServiceStat"
+        recentBookings:
+          type: array
+          items:
+            $ref: "#/components/schemas/Booking"
+      required:
+        - totalRequests
+        - pending
+        - confirmed
+        - completed
+        - cancelled
+        - totalRevenue
+        - weeklyRequests
+        - popularServices
+        - recentBookings
+
+    ServiceStat:
+      type: object
+      properties:
+        serviceName:
+          type: string
+        count:
+          type: integer
+        percentage:
+          type: number
+      required:
+        - serviceName
+        - count
+        - percentage
+
+    Service:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        price:
+          type: number
+        originalPrice:
+          type: number
+        description:
+          type: string
+        features:
+          type: array
+          items:
+            type: string
+        isSubscription:
+          type: boolean
+        badge:
+          type: string
+        imageUrl:
+          type: string
+        createdAt:
+          type: string
+      required:
+        - id
+        - name
+        - price
+        - features
+
+    CreateServiceInput:
+      type: object
+      properties:
+        name:
+          type: string
+        price:
+          type: number
+        originalPrice:
+          type: number
+        description:
+          type: string
+        features:
+          type: array
+          items:
+            type: string
+        isSubscription:
+          type: boolean
+        badge:
+          type: string
+        imageUrl:
+          type: string
+      required:
+        - name
+        - price
+        - features
+
+    UpdateServiceInput:
+      type: object
+      properties:
+        name:
+          type: string
+        price:
+          type: number
+        originalPrice:
+          type: number
+        description:
+          type: string
+        features:
+          type: array
+          items:
+            type: string
+        isSubscription:
+          type: boolean
+        badge:
+          type: string
+        imageUrl:
+          type: string
+
+    GalleryItem:
+      type: object
+      properties:
+        id:
+          type: string
+        url:
+          type: string
+        type:
+          type: string
+          enum: [image, video]
+        category:
+          type: string
+        caption:
+          type: string
+        createdAt:
+          type: string
+      required:
+        - id
+        - url
+        - type
+        - category
+        - createdAt
+
+    CreateGalleryItemInput:
+      type: object
+      properties:
+        url:
+          type: string
+        type:
+          type: string
+          enum: [image, video]
+        category:
+          type: string
+        caption:
+          type: string
+      required:
+        - url
+        - type
+        - category
+
+    AdminLoginInput:
+      type: object
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+      required:
+        - username
+        - password
+
+    AdminAuthResult:
+      type: object
+      properties:
+        token:
+          type: string
+        admin:
+          $ref: "#/components/schemas/AdminSession"
+      required:
+        - token
+        - admin
+
+    AdminSession:
+      type: object
+      properties:
+        id:
+          type: string
+        username:
+          type: string
+      required:
+        - id
+        - username

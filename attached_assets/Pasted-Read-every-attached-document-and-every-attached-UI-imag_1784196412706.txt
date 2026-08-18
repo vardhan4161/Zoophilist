@@ -1,0 +1,350 @@
+Read every attached document and every attached UI image completely before writing any code.
+
+The documents define the business logic and technical architecture.
+
+The attached UI images define the COMPLETE design.
+
+Treat the images exactly like a professional Figma design.
+
+The UI images are the SINGLE SOURCE OF TRUTH for the frontend.
+
+DO NOT redesign the UI.
+
+DO NOT simplify sections.
+
+DO NOT replace layouts with generic Tailwind templates.
+
+DO NOT use your own design decisions.
+
+Recreate the design as closely as possible while keeping the code production-ready.
+
+------------------------------------------------------------
+
+PRIMARY GOAL
+
+Build the COMPLETE Zoophilist application from start to finish.
+
+Do NOT stop after the project setup.
+
+Continue until the application is fully functional.
+
+------------------------------------------------------------
+
+RESPONSIVENESS (VERY IMPORTANT)
+
+The website MUST be fully responsive.
+
+It should provide an amazing experience on
+
+• 4K Displays
+• Desktop
+• Laptop
+• Tablet
+• Mobile
+• Foldable devices
+
+Use a true Mobile First approach.
+
+The desktop version should not simply shrink into mobile.
+
+Design dedicated responsive layouts where necessary.
+
+Examples:
+
+Desktop:
+- Multi-column layouts
+- Rich animations
+- Large hero sections
+- Floating decorative elements
+
+Mobile:
+- Optimized navigation
+- Stacked layouts
+- Larger touch targets
+- Simplified animations where needed for performance
+- Sticky CTA buttons
+- Mobile-friendly booking form
+- Smooth scrolling
+- Excellent spacing
+
+Tablet:
+- Adaptive grid layouts
+- Balanced spacing
+
+------------------------------------------------------------
+
+UI REQUIREMENTS
+
+The final website should look premium.
+
+Comparable to
+
+Apple
+
+Linear
+
+Stripe
+
+Framer
+
+Vercel
+
+Use
+
+Glassmorphism
+
+Gradient backgrounds
+
+Aurora effects
+
+Floating cards
+
+Animated blobs
+
+Premium typography
+
+Large spacing
+
+Soft shadows
+
+Gradient buttons
+
+Micro interactions
+
+Page transitions
+
+Scroll reveal animations
+
+Framer Motion animations
+
+Hover effects
+
+Loading skeletons
+
+Beautiful empty states
+
+Professional illustrations
+
+Modern icons
+
+Every section should feel alive.
+
+------------------------------------------------------------
+
+ANIMATIONS
+
+Use Framer Motion throughout the website.
+
+Animate
+
+Hero
+
+Cards
+
+Buttons
+
+Gallery
+
+Booking Form
+
+Navbar
+
+Footer
+
+Page transitions
+
+Statistics
+
+Scroll reveal
+
+Hover interactions
+
+The animations should be smooth and premium.
+
+Avoid excessive or distracting animations.
+
+------------------------------------------------------------
+
+PERFORMANCE
+
+The animations must never reduce performance.
+
+Maintain
+
+Fast loading
+
+Lazy loading
+
+Image optimization
+
+Code splitting
+
+Dynamic imports
+
+Excellent Lighthouse score
+
+------------------------------------------------------------
+
+ACCESSIBILITY
+
+Accessible navigation
+
+Keyboard navigation
+
+ARIA labels
+
+Proper contrast
+
+Semantic HTML
+
+------------------------------------------------------------
+
+SEO
+
+Proper metadata
+
+Open Graph
+
+Twitter Cards
+
+Structured Data
+
+Dynamic sitemap
+
+robots.txt
+
+------------------------------------------------------------
+
+IMPLEMENT EVERYTHING
+
+Public Website
+
+Home
+
+About
+
+Services
+
+Service Details
+
+Gallery
+
+Contact
+
+Book Service
+
+Privacy Policy
+
+Terms
+
+404
+
+------------------------------------------------------------
+
+ADMIN
+
+Login
+
+Dashboard
+
+Requests
+
+Services CRUD
+
+Gallery CRUD
+
+Settings
+
+Media Upload
+
+Analytics
+
+------------------------------------------------------------
+
+BOOKING
+
+Customer Details
+
+Pet Details
+
+Service Details
+
+Uploads
+
+Validation
+
+Success page
+
+Customer confirmation
+
+------------------------------------------------------------
+
+NOTIFICATIONS
+
+Telegram
+
+Email
+
+Customer confirmation email
+
+Admin notification email
+
+------------------------------------------------------------
+
+DATABASE
+
+MongoDB Atlas
+
+Prisma
+
+Seed initial data
+
+------------------------------------------------------------
+
+MEDIA
+
+Cloudinary
+
+Image optimization
+
+Video support
+
+------------------------------------------------------------
+
+CODE QUALITY
+
+Use TypeScript.
+
+No duplicated code.
+
+Reusable components.
+
+Reusable hooks.
+
+Reusable utilities.
+
+Reusable layouts.
+
+Follow clean architecture.
+
+------------------------------------------------------------
+
+IMPORTANT
+
+Continue building until the application is production-ready.
+
+Do not stop after one phase.
+
+Fix all build errors automatically.
+
+Fix TypeScript errors.
+
+Fix hydration issues.
+
+Fix ESLint issues.
+
+Test responsiveness on every breakpoint.
+
+Use the attached UI images as the visual benchmark.
+
+The finished application should look almost identical to the provided designs while remaining maintainable, performant, and production-ready.
