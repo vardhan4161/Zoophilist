@@ -165,7 +165,9 @@ export interface GalleryItem {
   type: GalleryItemType;
   category: string;
   caption?: string;
+  featured?: boolean;
   createdAt: string;
+  updatedAt?: string;
 }
 
 export type CreateGalleryItemInputType = typeof CreateGalleryItemInputType[keyof typeof CreateGalleryItemInputType];
@@ -229,4 +231,3 @@ export const GetGalleryCategory = {
   haircut: 'haircut',
   happypets: 'happypets',
 } as const;
-

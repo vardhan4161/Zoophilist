@@ -145,6 +145,9 @@ export default function Book() {
     <PageTransition className="pb-24">
       <section className="relative pt-36 pb-12 overflow-hidden">
         <AuroraBackground className="opacity-30" />
+        <p className="sr-only" aria-live="polite">
+          {isSubmitting ? "Uploading selected media and submitting your booking." : submissionError ? "Booking submission failed. You can correct the form and try again." : ""}
+        </p>
         <div className="container mx-auto px-4 relative z-10 text-center">
           <FadeInUp>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">

@@ -406,3 +406,1349 @@
 [2026-08-18T15:28:50.632Z] [api]       "statusCode": 200
 [2026-08-18T15:28:50.632Z] [api]     }
 [2026-08-18T15:28:50.632Z] [api]     [35mresponseTime[39m: 522
+[2026-08-18T15:29:52.753Z] [api] [15:29:52.721] [32mINFO[39m (14430): [36mrequest completed[39m
+[2026-08-18T15:29:52.753Z] [api]     [35mreq[39m: {
+[2026-08-18T15:29:52.753Z] [api]       "id": 3,
+[2026-08-18T15:29:52.753Z] [api]       "method": "GET",
+[2026-08-18T15:29:52.753Z] [api]       "url": "/api/services"
+[2026-08-18T15:29:52.753Z] [api]     }
+[2026-08-18T15:29:52.753Z] [api]     [35mres[39m: {
+[2026-08-18T15:29:52.753Z] [api]       "statusCode": 304
+[2026-08-18T15:29:52.753Z] [api]     }
+[2026-08-18T15:29:52.753Z] [api]     [35mresponseTime[39m: 745
+[2026-08-18T15:30:01.810Z] [api] [15:30:00.814] [32mINFO[39m (14430): [36mrequest completed[39m
+[2026-08-18T15:30:01.811Z] [api]     [35mreq[39m: {
+[2026-08-18T15:30:01.811Z] [api]       "id": 4,
+[2026-08-18T15:30:01.811Z] [api]       "method": "GET",
+[2026-08-18T15:30:01.811Z] [api]       "url": "/api/services"
+[2026-08-18T15:30:01.811Z] [api]     }
+[2026-08-18T15:30:01.811Z] [api]     [35mres[39m: {
+[2026-08-18T15:30:01.811Z] [api]       "statusCode": 200
+[2026-08-18T15:30:01.811Z] [api]     }
+[2026-08-18T15:30:01.811Z] [api]     [35mresponseTime[39m: 742
+[2026-08-18T15:30:04.862Z] [api] [15:30:04.180] [32mINFO[39m (14430): [36mrequest completed[39m
+[2026-08-18T15:30:04.862Z] [api]     [35mreq[39m: {
+[2026-08-18T15:30:04.862Z] [api]       "id": 5,
+[2026-08-18T15:30:04.862Z] [api]       "method": "GET",
+[2026-08-18T15:30:04.862Z] [api]       "url": "/api/services"
+[2026-08-18T15:30:04.862Z] [api]     }
+[2026-08-18T15:30:04.862Z] [api]     [35mres[39m: {
+[2026-08-18T15:30:04.862Z] [api]       "statusCode": 304
+[2026-08-18T15:30:04.862Z] [api]     }
+[2026-08-18T15:30:04.863Z] [api]     [35mresponseTime[39m: 754
+[2026-08-18T15:31:07.985Z] [api] [15:31:07.122] [32mINFO[39m (14430): [36mrequest completed[39m
+[2026-08-18T15:31:07.985Z] [api]     [35mreq[39m: {
+[2026-08-18T15:31:07.985Z] [api]       "id": 6,
+[2026-08-18T15:31:07.985Z] [api]       "method": "GET",
+[2026-08-18T15:31:07.985Z] [api]       "url": "/api/services"
+[2026-08-18T15:31:07.985Z] [api]     }
+[2026-08-18T15:31:07.985Z] [api]     [35mres[39m: {
+[2026-08-18T15:31:07.985Z] [api]       "statusCode": 200
+[2026-08-18T15:31:07.985Z] [api]     }
+[2026-08-18T15:31:07.985Z] [api]     [35mresponseTime[39m: 742
+[2026-08-18T15:31:33.063Z] [api] [15:31:32.342] [32mINFO[39m (14430): [36mrequest completed[39m
+[2026-08-18T15:31:33.063Z] [api]     [35mreq[39m: {
+[2026-08-18T15:31:33.063Z] [api]       "id": 7,
+[2026-08-18T15:31:33.063Z] [api]       "method": "GET",
+[2026-08-18T15:31:33.063Z] [api]       "url": "/api/services"
+[2026-08-18T15:31:33.063Z] [api]     }
+[2026-08-18T15:31:33.063Z] [api]     [35mres[39m: {
+[2026-08-18T15:31:33.063Z] [api]       "statusCode": 304
+[2026-08-18T15:31:33.063Z] [api]     }
+[2026-08-18T15:31:33.063Z] [api]     [35mresponseTime[39m: 742
+[2026-08-18T15:31:37.117Z] [api] [15:31:36.123] [32mINFO[39m (14430): [36mrequest completed[39m
+[2026-08-18T15:31:37.117Z] [api]     [35mreq[39m: {
+[2026-08-18T15:31:37.117Z] [api]       "id": 8,
+[2026-08-18T15:31:37.117Z] [api]       "method": "GET",
+[2026-08-18T15:31:37.117Z] [api]       "url": "/api/services"
+[2026-08-18T15:31:37.117Z] [api]     }
+[2026-08-18T15:31:37.117Z] [api]     [35mres[39m: {
+[2026-08-18T15:31:37.117Z] [api]       "statusCode": 304
+[2026-08-18T15:31:37.117Z] [api]     }
+[2026-08-18T15:31:37.117Z] [api]     [35mresponseTime[39m: 518
+[2026-08-18T15:33:19.308Z] [web] 3:33:19 PM [vite] (client) page reload index.html
+[2026-08-18T15:33:19.748Z] [web] 3:33:19 PM [vite] (client) hmr update /src/App.tsx, /src/index.css
+[2026-08-18T15:33:21.289Z] [api] [15:33:20.795] [32mINFO[39m (14430): [36mrequest completed[39m
+[2026-08-18T15:33:21.289Z] [api]     [35mreq[39m: {
+[2026-08-18T15:33:21.289Z] [api]       "id": 9,
+[2026-08-18T15:33:21.289Z] [api]       "method": "GET",
+[2026-08-18T15:33:21.289Z] [api]       "url": "/api/services"
+[2026-08-18T15:33:21.289Z] [api]     }
+[2026-08-18T15:33:21.289Z] [api]     [35mres[39m: {
+[2026-08-18T15:33:21.289Z] [api]       "statusCode": 304
+[2026-08-18T15:33:21.289Z] [api]     }
+[2026-08-18T15:33:21.289Z] [api]     [35mresponseTime[39m: 521
+[2026-08-18T15:33:27.346Z] [api] [15:33:27.031] [32mINFO[39m (14430): [36mrequest completed[39m
+[2026-08-18T15:33:27.346Z] [api]     [35mreq[39m: {
+[2026-08-18T15:33:27.346Z] [api]       "id": 10,
+[2026-08-18T15:33:27.346Z] [api]       "method": "GET",
+[2026-08-18T15:33:27.346Z] [api]       "url": "/api/services"
+[2026-08-18T15:33:27.346Z] [api]     }
+[2026-08-18T15:33:27.346Z] [api]     [35mres[39m: {
+[2026-08-18T15:33:27.346Z] [api]       "statusCode": 304
+[2026-08-18T15:33:27.346Z] [api]     }
+[2026-08-18T15:33:27.346Z] [api]     [35mresponseTime[39m: 519
+[2026-08-18T15:33:30.398Z] [api] [15:33:30.235] [32mINFO[39m (14430): [36mrequest completed[39m
+[2026-08-18T15:33:30.398Z] [api]     [35mreq[39m: {
+[2026-08-18T15:33:30.398Z] [api]       "id": 11,
+[2026-08-18T15:33:30.398Z] [api]       "method": "GET",
+[2026-08-18T15:33:30.398Z] [api]       "url": "/api/services"
+[2026-08-18T15:33:30.399Z] [api]     }
+[2026-08-18T15:33:30.399Z] [api]     [35mres[39m: {
+[2026-08-18T15:33:30.399Z] [api]       "statusCode": 304
+[2026-08-18T15:33:30.399Z] [api]     }
+[2026-08-18T15:33:30.399Z] [api]     [35mresponseTime[39m: 744
+[2026-08-18T15:33:32.501Z] [web] 3:33:32 PM [vite] (client) hmr update /src/pages/book.tsx, /src/index.css
+[2026-08-18T15:33:32.502Z] [web] 3:33:32 PM [vite] (client) hmr update /src/index.css
+[2026-08-18T15:33:36.451Z] [api] [15:33:35.738] [32mINFO[39m (14430): [36mrequest completed[39m
+[2026-08-18T15:33:36.451Z] [api]     [35mreq[39m: {
+[2026-08-18T15:33:36.451Z] [api]       "id": 12,
+[2026-08-18T15:33:36.451Z] [api]       "method": "GET",
+[2026-08-18T15:33:36.451Z] [api]       "url": "/api/services"
+[2026-08-18T15:33:36.451Z] [api]     }
+[2026-08-18T15:33:36.451Z] [api]     [35mres[39m: {
+[2026-08-18T15:33:36.451Z] [api]       "statusCode": 304
+[2026-08-18T15:33:36.451Z] [api]     }
+[2026-08-18T15:33:36.451Z] [api]     [35mresponseTime[39m: 742
+[2026-08-18T15:33:39.502Z] [api] [15:33:38.864] [32mINFO[39m (14430): [36mrequest completed[39m
+[2026-08-18T15:33:39.503Z] [api]     [35mreq[39m: {
+[2026-08-18T15:33:39.503Z] [api]       "id": 13,
+[2026-08-18T15:33:39.503Z] [api]       "method": "GET",
+[2026-08-18T15:33:39.503Z] [api]       "url": "/api/services"
+[2026-08-18T15:33:39.503Z] [api]     }
+[2026-08-18T15:33:39.503Z] [api]     [35mres[39m: {
+[2026-08-18T15:33:39.503Z] [api]       "statusCode": 304
+[2026-08-18T15:33:39.503Z] [api]     }
+[2026-08-18T15:33:39.503Z] [api]     [35mresponseTime[39m: 743
+[2026-08-18T15:33:42.556Z] [api] [15:33:41.735] [32mINFO[39m (14430): [36mrequest completed[39m
+[2026-08-18T15:33:42.556Z] [api]     [35mreq[39m: {
+[2026-08-18T15:33:42.556Z] [api]       "id": 14,
+[2026-08-18T15:33:42.556Z] [api]       "method": "GET",
+[2026-08-18T15:33:42.556Z] [api]       "url": "/api/services"
+[2026-08-18T15:33:42.556Z] [api]     }
+[2026-08-18T15:33:42.556Z] [api]     [35mres[39m: {
+[2026-08-18T15:33:42.556Z] [api]       "statusCode": 304
+[2026-08-18T15:33:42.557Z] [api]     }
+[2026-08-18T15:33:42.557Z] [api]     [35mresponseTime[39m: 743
+[2026-08-18T15:34:41.675Z] [api] [15:34:40.919] [32mINFO[39m (14430): [36mrequest completed[39m
+[2026-08-18T15:34:41.675Z] [api]     [35mreq[39m: {
+[2026-08-18T15:34:41.675Z] [api]       "id": 15,
+[2026-08-18T15:34:41.675Z] [api]       "method": "GET",
+[2026-08-18T15:34:41.675Z] [api]       "url": "/api/services"
+[2026-08-18T15:34:41.675Z] [api]     }
+[2026-08-18T15:34:41.675Z] [api]     [35mres[39m: {
+[2026-08-18T15:34:41.675Z] [api]       "statusCode": 304
+[2026-08-18T15:34:41.675Z] [api]     }
+[2026-08-18T15:34:41.675Z] [api]     [35mresponseTime[39m: 743
+[2026-08-18T15:34:58.744Z] [api] [15:34:57.772] [32mINFO[39m (14430): [36mrequest completed[39m
+[2026-08-18T15:34:58.744Z] [api]     [35mreq[39m: {
+[2026-08-18T15:34:58.744Z] [api]       "id": 16,
+[2026-08-18T15:34:58.744Z] [api]       "method": "GET",
+[2026-08-18T15:34:58.744Z] [api]       "url": "/api/services"
+[2026-08-18T15:34:58.744Z] [api]     }
+[2026-08-18T15:34:58.744Z] [api]     [35mres[39m: {
+[2026-08-18T15:34:58.744Z] [api]       "statusCode": 304
+[2026-08-18T15:34:58.744Z] [api]     }
+[2026-08-18T15:34:58.744Z] [api]     [35mresponseTime[39m: 741
+[2026-08-18T15:35:00.795Z] [api] [15:35:00.123] [32mINFO[39m (14430): [36mrequest completed[39m
+[2026-08-18T15:35:00.795Z] [api]     [35mreq[39m: {
+[2026-08-18T15:35:00.795Z] [api]       "id": 17,
+[2026-08-18T15:35:00.795Z] [api]       "method": "GET",
+[2026-08-18T15:35:00.795Z] [api]       "url": "/api/services"
+[2026-08-18T15:35:00.796Z] [api]     }
+[2026-08-18T15:35:00.796Z] [api]     [35mres[39m: {
+[2026-08-18T15:35:00.796Z] [api]       "statusCode": 304
+[2026-08-18T15:35:00.796Z] [api]     }
+[2026-08-18T15:35:00.796Z] [api]     [35mresponseTime[39m: 741
+[2026-08-18T15:35:48.901Z] [api] [15:35:48.077] [32mINFO[39m (14430): [36mrequest completed[39m
+[2026-08-18T15:35:48.901Z] [api]     [35mreq[39m: {
+[2026-08-18T15:35:48.901Z] [api]       "id": 18,
+[2026-08-18T15:35:48.901Z] [api]       "method": "GET",
+[2026-08-18T15:35:48.901Z] [api]       "url": "/api/services"
+[2026-08-18T15:35:48.901Z] [api]     }
+[2026-08-18T15:35:48.901Z] [api]     [35mres[39m: {
+[2026-08-18T15:35:48.901Z] [api]       "statusCode": 304
+[2026-08-18T15:35:48.901Z] [api]     }
+[2026-08-18T15:35:48.901Z] [api]     [35mresponseTime[39m: 743
+[2026-08-18T15:35:52.955Z] [api] [15:35:52.908] [32mINFO[39m (14430): [36mrequest completed[39m
+[2026-08-18T15:35:52.956Z] [api]     [35mreq[39m: {
+[2026-08-18T15:35:52.956Z] [api]       "id": 19,
+[2026-08-18T15:35:52.956Z] [api]       "method": "GET",
+[2026-08-18T15:35:52.956Z] [api]       "url": "/api/services"
+[2026-08-18T15:35:52.956Z] [api]     }
+[2026-08-18T15:35:52.956Z] [api]     [35mres[39m: {
+[2026-08-18T15:35:52.956Z] [api]       "statusCode": 304
+[2026-08-18T15:35:52.956Z] [api]     }
+[2026-08-18T15:35:52.956Z] [api]     [35mresponseTime[39m: 742
+[2026-08-18T15:36:06.957Z] [web] 3:36:06 PM [vite] (client) hmr update /src/components/navbar.tsx, /src/index.css
+[2026-08-18T15:36:09.022Z] [api] [15:36:08.383] [32mINFO[39m (14430): [36mrequest completed[39m
+[2026-08-18T15:36:09.022Z] [api]     [35mreq[39m: {
+[2026-08-18T15:36:09.022Z] [api]       "id": 20,
+[2026-08-18T15:36:09.022Z] [api]       "method": "GET",
+[2026-08-18T15:36:09.022Z] [api]       "url": "/api/services"
+[2026-08-18T15:36:09.022Z] [api]     }
+[2026-08-18T15:36:09.022Z] [api]     [35mres[39m: {
+[2026-08-18T15:36:09.023Z] [api]       "statusCode": 304
+[2026-08-18T15:36:09.023Z] [api]     }
+[2026-08-18T15:36:09.023Z] [api]     [35mresponseTime[39m: 742
+[2026-08-18T15:36:13.076Z] [api] [15:36:12.999] [32mINFO[39m (14430): [36mrequest completed[39m
+[2026-08-18T15:36:13.076Z] [api]     [35mreq[39m: {
+[2026-08-18T15:36:13.076Z] [api]       "id": 21,
+[2026-08-18T15:36:13.076Z] [api]       "method": "GET",
+[2026-08-18T15:36:13.076Z] [api]       "url": "/api/services"
+[2026-08-18T15:36:13.076Z] [api]     }
+[2026-08-18T15:36:13.076Z] [api]     [35mres[39m: {
+[2026-08-18T15:36:13.076Z] [api]       "statusCode": 304
+[2026-08-18T15:36:13.076Z] [api]     }
+[2026-08-18T15:36:13.076Z] [api]     [35mresponseTime[39m: 517
+[2026-08-18T15:36:16.129Z] [api] [15:36:15.617] [32mINFO[39m (14430): [36mrequest completed[39m
+[2026-08-18T15:36:16.129Z] [api]     [35mreq[39m: {
+[2026-08-18T15:36:16.129Z] [api]       "id": 22,
+[2026-08-18T15:36:16.129Z] [api]       "method": "GET",
+[2026-08-18T15:36:16.129Z] [api]       "url": "/api/services"
+[2026-08-18T15:36:16.129Z] [api]     }
+[2026-08-18T15:36:16.129Z] [api]     [35mres[39m: {
+[2026-08-18T15:36:16.129Z] [api]       "statusCode": 304
+[2026-08-18T15:36:16.129Z] [api]     }
+[2026-08-18T15:36:16.129Z] [api]     [35mresponseTime[39m: 742
+[2026-08-18T15:36:18.929Z] [web] 3:36:18 PM [vite] (client) hmr update /src/components/footer.tsx, /src/index.css
+[2026-08-18T15:36:22.184Z] [api] [15:36:22.001] [32mINFO[39m (14430): [36mrequest completed[39m
+[2026-08-18T15:36:22.184Z] [api]     [35mreq[39m: {
+[2026-08-18T15:36:22.184Z] [api]       "id": 23,
+[2026-08-18T15:36:22.184Z] [api]       "method": "GET",
+[2026-08-18T15:36:22.184Z] [api]       "url": "/api/services"
+[2026-08-18T15:36:22.184Z] [api]     }
+[2026-08-18T15:36:22.184Z] [api]     [35mres[39m: {
+[2026-08-18T15:36:22.184Z] [api]       "statusCode": 304
+[2026-08-18T15:36:22.184Z] [api]     }
+[2026-08-18T15:36:22.184Z] [api]     [35mresponseTime[39m: 741
+[2026-08-18T15:36:25.236Z] [api] [15:36:24.278] [32mINFO[39m (14430): [36mrequest completed[39m
+[2026-08-18T15:36:25.236Z] [api]     [35mreq[39m: {
+[2026-08-18T15:36:25.236Z] [api]       "id": 24,
+[2026-08-18T15:36:25.236Z] [api]       "method": "GET",
+[2026-08-18T15:36:25.236Z] [api]       "url": "/api/services"
+[2026-08-18T15:36:25.236Z] [api]     }
+[2026-08-18T15:36:25.236Z] [api]     [35mres[39m: {
+[2026-08-18T15:36:25.236Z] [api]       "statusCode": 304
+[2026-08-18T15:36:25.236Z] [api]     }
+[2026-08-18T15:36:25.236Z] [api]     [35mresponseTime[39m: 742
+[2026-08-18T15:37:08.334Z] [api] [15:37:08.214] [32mINFO[39m (14430): [36mrequest completed[39m
+[2026-08-18T15:37:08.334Z] [api]     [35mreq[39m: {
+[2026-08-18T15:37:08.334Z] [api]       "id": 25,
+[2026-08-18T15:37:08.334Z] [api]       "method": "GET",
+[2026-08-18T15:37:08.334Z] [api]       "url": "/api/services"
+[2026-08-18T15:37:08.334Z] [api]     }
+[2026-08-18T15:37:08.334Z] [api]     [35mres[39m: {
+[2026-08-18T15:37:08.334Z] [api]       "statusCode": 304
+[2026-08-18T15:37:08.334Z] [api]     }
+[2026-08-18T15:37:08.334Z] [api]     [35mresponseTime[39m: 519
+[2026-08-18T15:37:41.418Z] [api] [15:37:41.102] [32mINFO[39m (14430): [36mrequest completed[39m
+[2026-08-18T15:37:41.418Z] [api]     [35mreq[39m: {
+[2026-08-18T15:37:41.418Z] [api]       "id": 26,
+[2026-08-18T15:37:41.418Z] [api]       "method": "GET",
+[2026-08-18T15:37:41.418Z] [api]       "url": "/api/services"
+[2026-08-18T15:37:41.418Z] [api]     }
+[2026-08-18T15:37:41.418Z] [api]     [35mres[39m: {
+[2026-08-18T15:37:41.418Z] [api]       "statusCode": 304
+[2026-08-18T15:37:41.418Z] [api]     }
+[2026-08-18T15:37:41.418Z] [api]     [35mresponseTime[39m: 741
+[2026-08-18T15:37:44.470Z] [api] [15:37:43.555] [32mINFO[39m (14430): [36mrequest completed[39m
+[2026-08-18T15:37:44.470Z] [api]     [35mreq[39m: {
+[2026-08-18T15:37:44.470Z] [api]       "id": 27,
+[2026-08-18T15:37:44.470Z] [api]       "method": "GET",
+[2026-08-18T15:37:44.470Z] [api]       "url": "/api/services"
+[2026-08-18T15:37:44.471Z] [api]     }
+[2026-08-18T15:37:44.471Z] [api]     [35mres[39m: {
+[2026-08-18T15:37:44.471Z] [api]       "statusCode": 304
+[2026-08-18T15:37:44.471Z] [api]     }
+[2026-08-18T15:37:44.471Z] [api]     [35mresponseTime[39m: 519
+[2026-08-18T15:38:34.575Z] [api] [15:38:33.904] [32mINFO[39m (14430): [36mrequest completed[39m
+[2026-08-18T15:38:34.575Z] [api]     [35mreq[39m: {
+[2026-08-18T15:38:34.575Z] [api]       "id": 28,
+[2026-08-18T15:38:34.575Z] [api]       "method": "GET",
+[2026-08-18T15:38:34.575Z] [api]       "url": "/api/services"
+[2026-08-18T15:38:34.575Z] [api]     }
+[2026-08-18T15:38:34.575Z] [api]     [35mres[39m: {
+[2026-08-18T15:38:34.575Z] [api]       "statusCode": 304
+[2026-08-18T15:38:34.575Z] [api]     }
+[2026-08-18T15:38:34.575Z] [api]     [35mresponseTime[39m: 742
+[2026-08-18T15:38:37.626Z] [api] [15:38:37.459] [32mINFO[39m (14430): [36mrequest completed[39m
+[2026-08-18T15:38:37.626Z] [api]     [35mreq[39m: {
+[2026-08-18T15:38:37.626Z] [api]       "id": 29,
+[2026-08-18T15:38:37.626Z] [api]       "method": "GET",
+[2026-08-18T15:38:37.626Z] [api]       "url": "/api/services"
+[2026-08-18T15:38:37.626Z] [api]     }
+[2026-08-18T15:38:37.626Z] [api]     [35mres[39m: {
+[2026-08-18T15:38:37.626Z] [api]       "statusCode": 304
+[2026-08-18T15:38:37.626Z] [api]     }
+[2026-08-18T15:38:37.626Z] [api]     [35mresponseTime[39m: 740
+[2026-08-18T15:38:44.684Z] [api] [15:38:44.277] [32mINFO[39m (14430): [36mrequest completed[39m
+[2026-08-18T15:38:44.684Z] [api]     [35mreq[39m: {
+[2026-08-18T15:38:44.684Z] [api]       "id": 30,
+[2026-08-18T15:38:44.684Z] [api]       "method": "GET",
+[2026-08-18T15:38:44.684Z] [api]       "url": "/api/services"
+[2026-08-18T15:38:44.684Z] [api]     }
+[2026-08-18T15:38:44.684Z] [api]     [35mres[39m: {
+[2026-08-18T15:38:44.684Z] [api]       "statusCode": 304
+[2026-08-18T15:38:44.684Z] [api]     }
+[2026-08-18T15:38:44.684Z] [api]     [35mresponseTime[39m: 742
+[2026-08-18T15:38:46.735Z] [api] [15:38:46.608] [32mINFO[39m (14430): [36mrequest completed[39m
+[2026-08-18T15:38:46.735Z] [api]     [35mreq[39m: {
+[2026-08-18T15:38:46.735Z] [api]       "id": 31,
+[2026-08-18T15:38:46.735Z] [api]       "method": "GET",
+[2026-08-18T15:38:46.735Z] [api]       "url": "/api/services"
+[2026-08-18T15:38:46.735Z] [api]     }
+[2026-08-18T15:38:46.735Z] [api]     [35mres[39m: {
+[2026-08-18T15:38:46.735Z] [api]       "statusCode": 304
+[2026-08-18T15:38:46.735Z] [api]     }
+[2026-08-18T15:38:46.735Z] [api]     [35mresponseTime[39m: 742
+[2026-08-18T15:39:27.826Z] [api] [15:39:27.201] [32mINFO[39m (14430): [36mrequest completed[39m
+[2026-08-18T15:39:27.826Z] [api]     [35mreq[39m: {
+[2026-08-18T15:39:27.826Z] [api]       "id": 32,
+[2026-08-18T15:39:27.826Z] [api]       "method": "GET",
+[2026-08-18T15:39:27.826Z] [api]       "url": "/api/services"
+[2026-08-18T15:39:27.826Z] [api]     }
+[2026-08-18T15:39:27.826Z] [api]     [35mres[39m: {
+[2026-08-18T15:39:27.826Z] [api]       "statusCode": 304
+[2026-08-18T15:39:27.826Z] [api]     }
+[2026-08-18T15:39:27.826Z] [api]     [35mresponseTime[39m: 742
+[2026-08-18T15:39:41.891Z] [api] [15:39:41.805] [32mINFO[39m (14430): [36mrequest completed[39m
+[2026-08-18T15:39:41.891Z] [api]     [35mreq[39m: {
+[2026-08-18T15:39:41.891Z] [api]       "id": 33,
+[2026-08-18T15:39:41.891Z] [api]       "method": "GET",
+[2026-08-18T15:39:41.891Z] [api]       "url": "/api/services"
+[2026-08-18T15:39:41.891Z] [api]     }
+[2026-08-18T15:39:41.891Z] [api]     [35mres[39m: {
+[2026-08-18T15:39:41.891Z] [api]       "statusCode": 304
+[2026-08-18T15:39:41.891Z] [api]     }
+[2026-08-18T15:39:41.891Z] [api]     [35mresponseTime[39m: 519
+[2026-08-18T15:39:47.946Z] [api] [15:39:47.324] [32mINFO[39m (14430): [36mrequest completed[39m
+[2026-08-18T15:39:47.946Z] [api]     [35mreq[39m: {
+[2026-08-18T15:39:47.946Z] [api]       "id": 34,
+[2026-08-18T15:39:47.946Z] [api]       "method": "GET",
+[2026-08-18T15:39:47.946Z] [api]       "url": "/api/admin/me"
+[2026-08-18T15:39:47.946Z] [api]     }
+[2026-08-18T15:39:47.946Z] [api]     [35mres[39m: {
+[2026-08-18T15:39:47.946Z] [api]       "statusCode": 401
+[2026-08-18T15:39:47.946Z] [api]     }
+[2026-08-18T15:39:47.946Z] [api]     [35mresponseTime[39m: 1
+[2026-08-18T15:40:03.012Z] [api] [15:40:02.294] [32mINFO[39m (14430): [36mrequest completed[39m
+[2026-08-18T15:40:03.012Z] [api]     [35mreq[39m: {
+[2026-08-18T15:40:03.012Z] [api]       "id": 35,
+[2026-08-18T15:40:03.012Z] [api]       "method": "POST",
+[2026-08-18T15:40:03.012Z] [api]       "url": "/api/uploads/booking"
+[2026-08-18T15:40:03.012Z] [api]     }
+[2026-08-18T15:40:03.012Z] [api]     [35mres[39m: {
+[2026-08-18T15:40:03.012Z] [api]       "statusCode": 400
+[2026-08-18T15:40:03.012Z] [api]     }
+[2026-08-18T15:40:03.012Z] [api]     [35mresponseTime[39m: 1
+[2026-08-18T15:40:12.072Z] [api] [15:40:11.255] [33mWARN[39m (14430): [36mCloudinary upload rejected because the server is not configured[39m
+[2026-08-18T15:40:12.072Z] [api]     [35mreq[39m: {
+[2026-08-18T15:40:12.072Z] [api]       "id": 36,
+[2026-08-18T15:40:12.072Z] [api]       "method": "POST",
+[2026-08-18T15:40:12.072Z] [api]       "url": "/api/uploads/booking"
+[2026-08-18T15:40:12.072Z] [api]     }
+[2026-08-18T15:40:12.072Z] [api] [15:40:11.256] [32mINFO[39m (14430): [36mrequest errored[39m
+[2026-08-18T15:40:12.072Z] [api]     [35mreq[39m: {
+[2026-08-18T15:40:12.072Z] [api]       "id": 36,
+[2026-08-18T15:40:12.072Z] [api]       "method": "POST",
+[2026-08-18T15:40:12.072Z] [api]       "url": "/api/uploads/booking"
+[2026-08-18T15:40:12.072Z] [api]     }
+[2026-08-18T15:40:12.072Z] [api]     [35mres[39m: {
+[2026-08-18T15:40:12.072Z] [api]       "statusCode": 503
+[2026-08-18T15:40:12.072Z] [api]     }
+[2026-08-18T15:40:12.072Z] [api]     [35mresponseTime[39m: 6
+[2026-08-18T15:40:12.072Z] [api]     err: {
+[2026-08-18T15:40:12.072Z] [api]       "type": "Error",
+[2026-08-18T15:40:12.072Z] [api]       "message": "failed with status code 503",
+[2026-08-18T15:40:12.073Z] [api]       "stack":
+[2026-08-18T15:40:12.073Z] [api]           Error: failed with status code 503
+[2026-08-18T15:40:12.073Z] [api]               at onResFinished (/home/ubuntu/zoophilist-workspace/node_modules/.pnpm/pino-http@10.5.0/node_modules/pino-http/logger.js:115:39)
+[2026-08-18T15:40:12.073Z] [api]               at ServerResponse.onResponseComplete (/home/ubuntu/zoophilist-workspace/node_modules/.pnpm/pino-http@10.5.0/node_modules/pino-http/logger.js:178:14)
+[2026-08-18T15:40:12.073Z] [api]               at ServerResponse.emit (node:events:536:35)
+[2026-08-18T15:40:12.073Z] [api]               at onFinish (node:_http_outgoing:1081:10)
+[2026-08-18T15:40:12.073Z] [api]               at callback (node:internal/streams/writable:766:21)
+[2026-08-18T15:40:12.073Z] [api]               at afterWrite (node:internal/streams/writable:710:5)
+[2026-08-18T15:40:12.073Z] [api]               at afterWriteTick (node:internal/streams/writable:696:10)
+[2026-08-18T15:40:12.073Z] [api]               at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+[2026-08-18T15:40:12.073Z] [api]     }
+[2026-08-18T15:40:35.149Z] [api] [15:40:34.326] [32mINFO[39m (14430): [36mrequest completed[39m
+[2026-08-18T15:40:35.149Z] [api]     [35mreq[39m: {
+[2026-08-18T15:40:35.149Z] [api]       "id": 37,
+[2026-08-18T15:40:35.149Z] [api]       "method": "GET",
+[2026-08-18T15:40:35.149Z] [api]       "url": "/api/services"
+[2026-08-18T15:40:35.149Z] [api]     }
+[2026-08-18T15:40:35.149Z] [api]     [35mres[39m: {
+[2026-08-18T15:40:35.149Z] [api]       "statusCode": 304
+[2026-08-18T15:40:35.149Z] [api]     }
+[2026-08-18T15:40:35.149Z] [api]     [35mresponseTime[39m: 742
+[2026-08-18T15:40:45.210Z] [api] [15:40:45.091] [32mINFO[39m (14430): [36mrequest completed[39m
+[2026-08-18T15:40:45.210Z] [api]     [35mreq[39m: {
+[2026-08-18T15:40:45.210Z] [api]       "id": 38,
+[2026-08-18T15:40:45.210Z] [api]       "method": "GET",
+[2026-08-18T15:40:45.210Z] [api]       "url": "/api/services"
+[2026-08-18T15:40:45.210Z] [api]     }
+[2026-08-18T15:40:45.210Z] [api]     [35mres[39m: {
+[2026-08-18T15:40:45.210Z] [api]       "statusCode": 304
+[2026-08-18T15:40:45.210Z] [api]     }
+[2026-08-18T15:40:45.210Z] [api]     [35mresponseTime[39m: 741
+[2026-08-18T15:40:49.625Z] [api] [ELIFECYCLE] Command failed.
+[2026-08-18T15:40:49.628Z] [ELIFECYCLE] Command failed.
+[2026-08-18T15:40:49.628Z] [web] /home/ubuntu/zoophilist-workspace/artifacts/zoophilist:
+[2026-08-18T15:40:49.628Z] [web] [ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL] @workspace/zoophilist@0.0.0 dev: `vite --config vite.config.ts --host 0.0.0.0`
+[2026-08-18T15:40:49.628Z] [web] Command failed with signal "SIGTERM"
+[2026-08-18T15:40:49.634Z] [api] /home/ubuntu/zoophilist-workspace/artifacts/api-server:
+[2026-08-18T15:40:49.634Z] [api] [ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL] @workspace/api-server@0.0.0 dev: `PORT=$API_PORT NODE_ENV=development pnpm run build && PORT=$API_PORT NODE_ENV=development pnpm run start`
+[2026-08-18T15:40:49.634Z] [api] Command failed with signal "SIGTERM"
+[2026-08-18T15:40:49.641Z] [web] pnpm --filter @workspace/zoophilist run dev exited with code SIGTERM
+[2026-08-18T15:40:49.641Z] --> Sending SIGTERM to other processes..
+[2026-08-18T15:40:49.645Z] [api] pnpm --filter @workspace/api-server run dev exited with code SIGTERM
+[2026-08-18T15:40:49.650Z] Dev server exited with code -1
+[2026-08-18T15:40:50.725Z] Starting dev server with command: pnpm run dev
+[2026-08-18T15:40:51.339Z] $ API_PORT=3001 concurrently -k -n api,web -c blue,green "pnpm --filter @workspace/api-server run dev" "pnpm --filter @workspace/zoophilist run dev"
+[2026-08-18T15:40:52.217Z] [web] $ vite --config vite.config.ts --host 0.0.0.0
+[2026-08-18T15:40:52.233Z] [api] $ PORT=$API_PORT NODE_ENV=development pnpm run build && PORT=$API_PORT NODE_ENV=development pnpm run start
+[2026-08-18T15:40:52.653Z] [web]
+[2026-08-18T15:40:52.653Z] [web]   VITE v7.3.6  ready in 374 ms
+[2026-08-18T15:40:52.653Z] [web]
+[2026-08-18T15:40:52.653Z] [web]   ➜  Local:   http://localhost:3000/
+[2026-08-18T15:40:52.653Z] [web]   ➜  Network: http://169.254.0.21:3000/
+[2026-08-18T15:40:52.876Z] [api] $ node ./build.mjs
+[2026-08-18T15:40:53.288Z] [api]
+[2026-08-18T15:40:53.288Z] [api]   dist/index.mjs                       3.5mb ⚠️
+[2026-08-18T15:40:53.288Z] [api]   dist/pino-worker.mjs               153.4kb
+[2026-08-18T15:40:53.288Z] [api]   dist/pino-file.mjs                 142.1kb
+[2026-08-18T15:40:53.288Z] [api]   dist/pino-pretty.mjs               114.4kb
+[2026-08-18T15:40:53.288Z] [api]   dist/thread-stream-worker.mjs        7.3kb
+[2026-08-18T15:40:53.288Z] [api]   dist/index.mjs.map                   6.0mb
+[2026-08-18T15:40:53.288Z] [api]   dist/pino-worker.mjs.map           256.9kb
+[2026-08-18T15:40:53.288Z] [api]   dist/pino-file.mjs.map             229.1kb
+[2026-08-18T15:40:53.288Z] [api]   dist/pino-pretty.mjs.map           203.6kb
+[2026-08-18T15:40:53.288Z] [api]   dist/thread-stream-worker.mjs.map   12.0kb
+[2026-08-18T15:40:53.288Z] [api]
+[2026-08-18T15:40:53.288Z] [api] ⚡ Done in 315ms
+[2026-08-18T15:40:53.977Z] [api] $ node --enable-source-maps ./dist/index.mjs
+[2026-08-18T15:40:54.343Z] [web] 3:40:54 PM [vite] http proxy error: /api/services
+[2026-08-18T15:40:54.343Z] [web] Error: connect ECONNREFUSED 127.0.0.1:3001
+[2026-08-18T15:40:54.343Z] [web]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1634:16)
+[2026-08-18T15:40:54.474Z] [api] [15:40:54.447] [32mINFO[39m (19088): [36mServer listening[39m
+[2026-08-18T15:40:54.475Z] [api]     [35mport[39m: 3001
+[2026-08-18T15:40:56.527Z] [api] [15:40:56.353] [32mINFO[39m (19088): [36mrequest aborted[39m
+[2026-08-18T15:40:56.527Z] [api]     [35mreq[39m: {
+[2026-08-18T15:40:56.527Z] [api]       "id": 1,
+[2026-08-18T15:40:56.527Z] [api]       "method": "GET",
+[2026-08-18T15:40:56.527Z] [api]       "url": "/api/services"
+[2026-08-18T15:40:56.527Z] [api]     }
+[2026-08-18T15:40:56.527Z] [api]     [35mres[39m: {
+[2026-08-18T15:40:56.527Z] [api]       "statusCode": null
+[2026-08-18T15:40:56.527Z] [api]     }
+[2026-08-18T15:40:56.527Z] [api]     [35mresponseTime[39m: 955
+[2026-08-18T15:41:35.618Z] [api] [15:41:35.371] [32mINFO[39m (19088): [36mrequest completed[39m
+[2026-08-18T15:41:35.618Z] [api]     [35mreq[39m: {
+[2026-08-18T15:41:35.618Z] [api]       "id": 2,
+[2026-08-18T15:41:35.618Z] [api]       "method": "GET",
+[2026-08-18T15:41:35.618Z] [api]       "url": "/api/services"
+[2026-08-18T15:41:35.618Z] [api]     }
+[2026-08-18T15:41:35.618Z] [api]     [35mres[39m: {
+[2026-08-18T15:41:35.618Z] [api]       "statusCode": 304
+[2026-08-18T15:41:35.618Z] [api]     }
+[2026-08-18T15:41:35.618Z] [api]     [35mresponseTime[39m: 560
+[2026-08-18T15:41:37.670Z] [api] [15:41:37.482] [32mINFO[39m (19088): [36mrequest completed[39m
+[2026-08-18T15:41:37.670Z] [api]     [35mreq[39m: {
+[2026-08-18T15:41:37.670Z] [api]       "id": 3,
+[2026-08-18T15:41:37.670Z] [api]       "method": "GET",
+[2026-08-18T15:41:37.670Z] [api]       "url": "/api/services"
+[2026-08-18T15:41:37.670Z] [api]     }
+[2026-08-18T15:41:37.670Z] [api]     [35mres[39m: {
+[2026-08-18T15:41:37.670Z] [api]       "statusCode": 304
+[2026-08-18T15:41:37.670Z] [api]     }
+[2026-08-18T15:41:37.670Z] [api]     [35mresponseTime[39m: 806
+[2026-08-18T15:42:05.752Z] [api] [15:42:05.499] [32mINFO[39m (19088): [36mrequest completed[39m
+[2026-08-18T15:42:05.752Z] [api]     [35mreq[39m: {
+[2026-08-18T15:42:05.752Z] [api]       "id": 4,
+[2026-08-18T15:42:05.752Z] [api]       "method": "GET",
+[2026-08-18T15:42:05.752Z] [api]       "url": "/api/services"
+[2026-08-18T15:42:05.752Z] [api]     }
+[2026-08-18T15:42:05.752Z] [api]     [35mres[39m: {
+[2026-08-18T15:42:05.752Z] [api]       "statusCode": 304
+[2026-08-18T15:42:05.752Z] [api]     }
+[2026-08-18T15:42:05.752Z] [api]     [35mresponseTime[39m: 807
+[2026-08-18T15:42:09.806Z] [api] [15:42:09.079] [32mINFO[39m (19088): [36mrequest completed[39m
+[2026-08-18T15:42:09.806Z] [api]     [35mreq[39m: {
+[2026-08-18T15:42:09.806Z] [api]       "id": 5,
+[2026-08-18T15:42:09.806Z] [api]       "method": "GET",
+[2026-08-18T15:42:09.806Z] [api]       "url": "/api/services"
+[2026-08-18T15:42:09.806Z] [api]     }
+[2026-08-18T15:42:09.806Z] [api]     [35mres[39m: {
+[2026-08-18T15:42:09.806Z] [api]       "statusCode": 304
+[2026-08-18T15:42:09.806Z] [api]     }
+[2026-08-18T15:42:09.806Z] [api]     [35mresponseTime[39m: 807
+[2026-08-18T15:42:14.861Z] [api] [15:42:14.519] [32mINFO[39m (19088): [36mrequest completed[39m
+[2026-08-18T15:42:14.862Z] [api]     [35mreq[39m: {
+[2026-08-18T15:42:14.862Z] [api]       "id": 6,
+[2026-08-18T15:42:14.862Z] [api]       "method": "GET",
+[2026-08-18T15:42:14.862Z] [api]       "url": "/api/services"
+[2026-08-18T15:42:14.862Z] [api]     }
+[2026-08-18T15:42:14.862Z] [api]     [35mres[39m: {
+[2026-08-18T15:42:14.862Z] [api]       "statusCode": 304
+[2026-08-18T15:42:14.862Z] [api]     }
+[2026-08-18T15:42:14.862Z] [api]     [35mresponseTime[39m: 808
+[2026-08-18T15:42:16.914Z] [api] [15:42:16.816] [32mINFO[39m (19088): [36mrequest completed[39m
+[2026-08-18T15:42:16.914Z] [api]     [35mreq[39m: {
+[2026-08-18T15:42:16.914Z] [api]       "id": 7,
+[2026-08-18T15:42:16.914Z] [api]       "method": "GET",
+[2026-08-18T15:42:16.914Z] [api]       "url": "/api/services"
+[2026-08-18T15:42:16.914Z] [api]     }
+[2026-08-18T15:42:16.914Z] [api]     [35mres[39m: {
+[2026-08-18T15:42:16.914Z] [api]       "statusCode": 304
+[2026-08-18T15:42:16.914Z] [api]     }
+[2026-08-18T15:42:16.914Z] [api]     [35mresponseTime[39m: 806
+[2026-08-18T15:43:05.022Z] [api] [15:43:04.100] [32mINFO[39m (19088): [36mrequest completed[39m
+[2026-08-18T15:43:05.022Z] [api]     [35mreq[39m: {
+[2026-08-18T15:43:05.022Z] [api]       "id": 8,
+[2026-08-18T15:43:05.022Z] [api]       "method": "GET",
+[2026-08-18T15:43:05.022Z] [api]       "url": "/api/services"
+[2026-08-18T15:43:05.022Z] [api]     }
+[2026-08-18T15:43:05.022Z] [api]     [35mres[39m: {
+[2026-08-18T15:43:05.022Z] [api]       "statusCode": 304
+[2026-08-18T15:43:05.022Z] [api]     }
+[2026-08-18T15:43:05.022Z] [api]     [35mresponseTime[39m: 807
+[2026-08-18T15:43:08.074Z] [api] [15:43:07.104] [32mINFO[39m (19088): [36mrequest completed[39m
+[2026-08-18T15:43:08.074Z] [api]     [35mreq[39m: {
+[2026-08-18T15:43:08.074Z] [api]       "id": 9,
+[2026-08-18T15:43:08.074Z] [api]       "method": "GET",
+[2026-08-18T15:43:08.074Z] [api]       "url": "/api/services"
+[2026-08-18T15:43:08.074Z] [api]     }
+[2026-08-18T15:43:08.074Z] [api]     [35mres[39m: {
+[2026-08-18T15:43:08.074Z] [api]       "statusCode": 304
+[2026-08-18T15:43:08.074Z] [api]     }
+[2026-08-18T15:43:08.074Z] [api]     [35mresponseTime[39m: 808
+[2026-08-18T15:43:15.132Z] [api] [15:43:14.480] [32mINFO[39m (19088): [36mrequest completed[39m
+[2026-08-18T15:43:15.132Z] [api]     [35mreq[39m: {
+[2026-08-18T15:43:15.132Z] [api]       "id": 10,
+[2026-08-18T15:43:15.132Z] [api]       "method": "GET",
+[2026-08-18T15:43:15.132Z] [api]       "url": "/api/services"
+[2026-08-18T15:43:15.132Z] [api]     }
+[2026-08-18T15:43:15.132Z] [api]     [35mres[39m: {
+[2026-08-18T15:43:15.132Z] [api]       "statusCode": 304
+[2026-08-18T15:43:15.133Z] [api]     }
+[2026-08-18T15:43:15.133Z] [api]     [35mresponseTime[39m: 808
+[2026-08-18T15:43:18.186Z] [api] [15:43:17.312] [32mINFO[39m (19088): [36mrequest completed[39m
+[2026-08-18T15:43:18.186Z] [api]     [35mreq[39m: {
+[2026-08-18T15:43:18.186Z] [api]       "id": 11,
+[2026-08-18T15:43:18.186Z] [api]       "method": "GET",
+[2026-08-18T15:43:18.186Z] [api]       "url": "/api/services"
+[2026-08-18T15:43:18.186Z] [api]     }
+[2026-08-18T15:43:18.186Z] [api]     [35mres[39m: {
+[2026-08-18T15:43:18.186Z] [api]       "statusCode": 304
+[2026-08-18T15:43:18.186Z] [api]     }
+[2026-08-18T15:43:18.186Z] [api]     [35mresponseTime[39m: 806
+[2026-08-18T15:43:29.247Z] [api] [15:43:28.322] [32mINFO[39m (19088): [36mrequest completed[39m
+[2026-08-18T15:43:29.247Z] [api]     [35mreq[39m: {
+[2026-08-18T15:43:29.247Z] [api]       "id": 12,
+[2026-08-18T15:43:29.247Z] [api]       "method": "GET",
+[2026-08-18T15:43:29.247Z] [api]       "url": "/api/services"
+[2026-08-18T15:43:29.247Z] [api]     }
+[2026-08-18T15:43:29.247Z] [api]     [35mres[39m: {
+[2026-08-18T15:43:29.247Z] [api]       "statusCode": 304
+[2026-08-18T15:43:29.247Z] [api]     }
+[2026-08-18T15:43:29.247Z] [api]     [35mresponseTime[39m: 806
+[2026-08-18T15:43:33.300Z] [api] [15:43:33.173] [32mINFO[39m (19088): [36mrequest completed[39m
+[2026-08-18T15:43:33.300Z] [api]     [35mreq[39m: {
+[2026-08-18T15:43:33.300Z] [api]       "id": 13,
+[2026-08-18T15:43:33.300Z] [api]       "method": "GET",
+[2026-08-18T15:43:33.300Z] [api]       "url": "/api/services"
+[2026-08-18T15:43:33.300Z] [api]     }
+[2026-08-18T15:43:33.300Z] [api]     [35mres[39m: {
+[2026-08-18T15:43:33.300Z] [api]       "statusCode": 304
+[2026-08-18T15:43:33.300Z] [api]     }
+[2026-08-18T15:43:33.300Z] [api]     [35mresponseTime[39m: 557
+[2026-08-18T15:44:53.441Z] [api] [15:44:52.765] [32mINFO[39m (19088): [36mrequest completed[39m
+[2026-08-18T15:44:53.441Z] [api]     [35mreq[39m: {
+[2026-08-18T15:44:53.441Z] [api]       "id": 14,
+[2026-08-18T15:44:53.441Z] [api]       "method": "GET",
+[2026-08-18T15:44:53.441Z] [api]       "url": "/api/services"
+[2026-08-18T15:44:53.441Z] [api]     }
+[2026-08-18T15:44:53.441Z] [api]     [35mres[39m: {
+[2026-08-18T15:44:53.441Z] [api]       "statusCode": 304
+[2026-08-18T15:44:53.441Z] [api]     }
+[2026-08-18T15:44:53.441Z] [api]     [35mresponseTime[39m: 558
+[2026-08-18T15:46:18.588Z] [api] [15:46:17.724] [32mINFO[39m (19088): [36mrequest aborted[39m
+[2026-08-18T15:46:18.588Z] [api]     [35mreq[39m: {
+[2026-08-18T15:46:18.588Z] [api]       "id": 15,
+[2026-08-18T15:46:18.588Z] [api]       "method": "GET",
+[2026-08-18T15:46:18.588Z] [api]       "url": "/api/services"
+[2026-08-18T15:46:18.588Z] [api]     }
+[2026-08-18T15:46:18.588Z] [api]     [35mres[39m: {
+[2026-08-18T15:46:18.588Z] [api]       "statusCode": null
+[2026-08-18T15:46:18.588Z] [api]     }
+[2026-08-18T15:46:18.588Z] [api]     [35mresponseTime[39m: 2278
+[2026-08-18T15:47:45.254Z] [web] 3:47:45 PM [vite] (client) hmr update /src/index.css
+[2026-08-18T15:47:47.737Z] [api] [15:47:46.873] [32mINFO[39m (19088): [36mrequest aborted[39m
+[2026-08-18T15:47:47.737Z] [api]     [35mreq[39m: {
+[2026-08-18T15:47:47.737Z] [api]       "id": 16,
+[2026-08-18T15:47:47.737Z] [api]       "method": "GET",
+[2026-08-18T15:47:47.737Z] [api]       "url": "/api/services"
+[2026-08-18T15:47:47.737Z] [api]     }
+[2026-08-18T15:47:47.737Z] [api]     [35mres[39m: {
+[2026-08-18T15:47:47.737Z] [api]       "statusCode": null
+[2026-08-18T15:47:47.738Z] [api]     }
+[2026-08-18T15:47:47.738Z] [api]     [35mresponseTime[39m: 87851
+[2026-08-18T15:47:49.788Z] [api] [15:47:49.418] [32mINFO[39m (19088): [36mrequest aborted[39m
+[2026-08-18T15:47:49.788Z] [api]     [35mreq[39m: {
+[2026-08-18T15:47:49.788Z] [api]       "id": 17,
+[2026-08-18T15:47:49.788Z] [api]       "method": "GET",
+[2026-08-18T15:47:49.788Z] [api]       "url": "/api/services"
+[2026-08-18T15:47:49.789Z] [api]     }
+[2026-08-18T15:47:49.789Z] [api]     [35mres[39m: {
+[2026-08-18T15:47:49.789Z] [api]       "statusCode": null
+[2026-08-18T15:47:49.789Z] [api]     }
+[2026-08-18T15:47:49.789Z] [api]     [35mresponseTime[39m: 1295
+[2026-08-18T15:47:55.844Z] [api] [15:47:55.440] [32mINFO[39m (19088): [36mrequest completed[39m
+[2026-08-18T15:47:55.844Z] [api]     [35mreq[39m: {
+[2026-08-18T15:47:55.844Z] [api]       "id": 18,
+[2026-08-18T15:47:55.844Z] [api]       "method": "GET",
+[2026-08-18T15:47:55.844Z] [api]       "url": "/api/services"
+[2026-08-18T15:47:55.844Z] [api]     }
+[2026-08-18T15:47:55.844Z] [api]     [35mres[39m: {
+[2026-08-18T15:47:55.844Z] [api]       "statusCode": 200
+[2026-08-18T15:47:55.844Z] [api]     }
+[2026-08-18T15:47:55.845Z] [api]     [35mresponseTime[39m: 4709
+[2026-08-18T15:48:04.904Z] [api] [15:48:04.141] [32mINFO[39m (19088): [36mrequest completed[39m
+[2026-08-18T15:48:04.904Z] [api]     [35mreq[39m: {
+[2026-08-18T15:48:04.904Z] [api]       "id": 19,
+[2026-08-18T15:48:04.904Z] [api]       "method": "GET",
+[2026-08-18T15:48:04.904Z] [api]       "url": "/api/services"
+[2026-08-18T15:48:04.904Z] [api]     }
+[2026-08-18T15:48:04.904Z] [api]     [35mres[39m: {
+[2026-08-18T15:48:04.904Z] [api]       "statusCode": 304
+[2026-08-18T15:48:04.904Z] [api]     }
+[2026-08-18T15:48:04.904Z] [api]     [35mresponseTime[39m: 797
+[2026-08-18T15:48:07.955Z] [api] [15:48:07.167] [32mINFO[39m (19088): [36mrequest completed[39m
+[2026-08-18T15:48:07.955Z] [api]     [35mreq[39m: {
+[2026-08-18T15:48:07.955Z] [api]       "id": 20,
+[2026-08-18T15:48:07.955Z] [api]       "method": "GET",
+[2026-08-18T15:48:07.955Z] [api]       "url": "/api/services"
+[2026-08-18T15:48:07.955Z] [api]     }
+[2026-08-18T15:48:07.955Z] [api]     [35mres[39m: {
+[2026-08-18T15:48:07.955Z] [api]       "statusCode": 304
+[2026-08-18T15:48:07.955Z] [api]     }
+[2026-08-18T15:48:07.955Z] [api]     [35mresponseTime[39m: 798
+[2026-08-18T15:48:16.783Z] [web] 3:48:16 PM [vite] (client) hmr update /src/index.css
+[2026-08-18T15:48:25.024Z] [api] [15:48:24.166] [32mINFO[39m (19088): [36mrequest completed[39m
+[2026-08-18T15:48:25.024Z] [api]     [35mreq[39m: {
+[2026-08-18T15:48:25.024Z] [api]       "id": 21,
+[2026-08-18T15:48:25.024Z] [api]       "method": "GET",
+[2026-08-18T15:48:25.024Z] [api]       "url": "/api/services"
+[2026-08-18T15:48:25.024Z] [api]     }
+[2026-08-18T15:48:25.024Z] [api]     [35mres[39m: {
+[2026-08-18T15:48:25.024Z] [api]       "statusCode": 304
+[2026-08-18T15:48:25.024Z] [api]     }
+[2026-08-18T15:48:25.024Z] [api]     [35mresponseTime[39m: 798
+[2026-08-18T15:48:27.886Z] [web] 3:48:27 PM [vite] (client) hmr update /src/index.css
+[2026-08-18T15:48:29.078Z] [api] [15:48:28.161] [32mINFO[39m (19088): [36mrequest completed[39m
+[2026-08-18T15:48:29.078Z] [api]     [35mreq[39m: {
+[2026-08-18T15:48:29.078Z] [api]       "id": 22,
+[2026-08-18T15:48:29.078Z] [api]       "method": "GET",
+[2026-08-18T15:48:29.078Z] [api]       "url": "/api/services"
+[2026-08-18T15:48:29.078Z] [api]     }
+[2026-08-18T15:48:29.078Z] [api]     [35mres[39m: {
+[2026-08-18T15:48:29.078Z] [api]       "statusCode": 304
+[2026-08-18T15:48:29.078Z] [api]     }
+[2026-08-18T15:48:29.078Z] [api]     [35mresponseTime[39m: 798
+[2026-08-18T15:48:31.129Z] [api] [15:48:30.889] [32mINFO[39m (19088): [36mrequest completed[39m
+[2026-08-18T15:48:31.129Z] [api]     [35mreq[39m: {
+[2026-08-18T15:48:31.129Z] [api]       "id": 23,
+[2026-08-18T15:48:31.129Z] [api]       "method": "GET",
+[2026-08-18T15:48:31.129Z] [api]       "url": "/api/services"
+[2026-08-18T15:48:31.129Z] [api]     }
+[2026-08-18T15:48:31.129Z] [api]     [35mres[39m: {
+[2026-08-18T15:48:31.129Z] [api]       "statusCode": 304
+[2026-08-18T15:48:31.129Z] [api]     }
+[2026-08-18T15:48:31.129Z] [api]     [35mresponseTime[39m: 547
+[2026-08-18T15:48:34.180Z] [api] [15:48:33.797] [32mINFO[39m (19088): [36mrequest completed[39m
+[2026-08-18T15:48:34.180Z] [api]     [35mreq[39m: {
+[2026-08-18T15:48:34.180Z] [api]       "id": 24,
+[2026-08-18T15:48:34.180Z] [api]       "method": "GET",
+[2026-08-18T15:48:34.180Z] [api]       "url": "/api/services"
+[2026-08-18T15:48:34.180Z] [api]     }
+[2026-08-18T15:48:34.180Z] [api]     [35mres[39m: {
+[2026-08-18T15:48:34.180Z] [api]       "statusCode": 304
+[2026-08-18T15:48:34.180Z] [api]     }
+[2026-08-18T15:48:34.180Z] [api]     [35mresponseTime[39m: 560
+[2026-08-18T15:48:36.490Z] [web] 3:48:36 PM [vite] (client) hmr update /src/index.css
+[2026-08-18T15:48:40.233Z] [api] [15:48:39.799] [32mINFO[39m (19088): [36mrequest completed[39m
+[2026-08-18T15:48:40.233Z] [api]     [35mreq[39m: {
+[2026-08-18T15:48:40.233Z] [api]       "id": 25,
+[2026-08-18T15:48:40.233Z] [api]       "method": "GET",
+[2026-08-18T15:48:40.233Z] [api]       "url": "/api/services"
+[2026-08-18T15:48:40.233Z] [api]     }
+[2026-08-18T15:48:40.233Z] [api]     [35mres[39m: {
+[2026-08-18T15:48:40.233Z] [api]       "statusCode": 304
+[2026-08-18T15:48:40.233Z] [api]     }
+[2026-08-18T15:48:40.233Z] [api]     [35mresponseTime[39m: 797
+[2026-08-18T15:48:43.286Z] [api] [15:48:43.212] [32mINFO[39m (19088): [36mrequest completed[39m
+[2026-08-18T15:48:43.286Z] [api]     [35mreq[39m: {
+[2026-08-18T15:48:43.286Z] [api]       "id": 26,
+[2026-08-18T15:48:43.286Z] [api]       "method": "GET",
+[2026-08-18T15:48:43.286Z] [api]       "url": "/api/services"
+[2026-08-18T15:48:43.286Z] [api]     }
+[2026-08-18T15:48:43.286Z] [api]     [35mres[39m: {
+[2026-08-18T15:48:43.286Z] [api]       "statusCode": 304
+[2026-08-18T15:48:43.286Z] [api]     }
+[2026-08-18T15:48:43.286Z] [api]     [35mresponseTime[39m: 805
+[2026-08-18T15:49:18.375Z] [api] [15:49:18.157] [32mINFO[39m (19088): [36mrequest completed[39m
+[2026-08-18T15:49:18.375Z] [api]     [35mreq[39m: {
+[2026-08-18T15:49:18.375Z] [api]       "id": 27,
+[2026-08-18T15:49:18.375Z] [api]       "method": "GET",
+[2026-08-18T15:49:18.375Z] [api]       "url": "/api/services"
+[2026-08-18T15:49:18.375Z] [api]     }
+[2026-08-18T15:49:18.375Z] [api]     [35mres[39m: {
+[2026-08-18T15:49:18.375Z] [api]       "statusCode": 304
+[2026-08-18T15:49:18.375Z] [api]     }
+[2026-08-18T15:49:18.375Z] [api]     [35mresponseTime[39m: 549
+[2026-08-18T15:49:27.526Z] [web] 3:49:27 PM [vite] vite.config.ts changed, restarting server...
+[2026-08-18T15:49:27.567Z] [web] 3:49:27 PM [vite] server restarted.
+[2026-08-18T15:49:30.438Z] [api] [15:49:30.419] [32mINFO[39m (19088): [36mrequest completed[39m
+[2026-08-18T15:49:30.438Z] [api]     [35mreq[39m: {
+[2026-08-18T15:49:30.438Z] [api]       "id": 28,
+[2026-08-18T15:49:30.438Z] [api]       "method": "GET",
+[2026-08-18T15:49:30.438Z] [api]       "url": "/api/services"
+[2026-08-18T15:49:30.438Z] [api]     }
+[2026-08-18T15:49:30.438Z] [api]     [35mres[39m: {
+[2026-08-18T15:49:30.438Z] [api]       "statusCode": 304
+[2026-08-18T15:49:30.438Z] [api]     }
+[2026-08-18T15:49:30.438Z] [api]     [35mresponseTime[39m: 798
+[2026-08-18T15:49:33.491Z] [api] [15:49:32.919] [32mINFO[39m (19088): [36mrequest completed[39m
+[2026-08-18T15:49:33.491Z] [api]     [35mreq[39m: {
+[2026-08-18T15:49:33.491Z] [api]       "id": 29,
+[2026-08-18T15:49:33.491Z] [api]       "method": "GET",
+[2026-08-18T15:49:33.491Z] [api]       "url": "/api/services"
+[2026-08-18T15:49:33.491Z] [api]     }
+[2026-08-18T15:49:33.491Z] [api]     [35mres[39m: {
+[2026-08-18T15:49:33.491Z] [api]       "statusCode": 304
+[2026-08-18T15:49:33.491Z] [api]     }
+[2026-08-18T15:49:33.491Z] [api]     [35mresponseTime[39m: 547
+[2026-08-18T15:49:37.544Z] [api] [15:49:37.189] [32mINFO[39m (19088): [36mrequest completed[39m
+[2026-08-18T15:49:37.544Z] [api]     [35mreq[39m: {
+[2026-08-18T15:49:37.544Z] [api]       "id": 30,
+[2026-08-18T15:49:37.544Z] [api]       "method": "GET",
+[2026-08-18T15:49:37.544Z] [api]       "url": "/api/services"
+[2026-08-18T15:49:37.545Z] [api]     }
+[2026-08-18T15:49:37.545Z] [api]     [35mres[39m: {
+[2026-08-18T15:49:37.545Z] [api]       "statusCode": 304
+[2026-08-18T15:49:37.545Z] [api]     }
+[2026-08-18T15:49:37.545Z] [api]     [35mresponseTime[39m: 832
+[2026-08-18T15:50:08.625Z] [api] [15:50:07.755] [32mINFO[39m (19088): [36mrequest completed[39m
+[2026-08-18T15:50:08.625Z] [api]     [35mreq[39m: {
+[2026-08-18T15:50:08.625Z] [api]       "id": 31,
+[2026-08-18T15:50:08.625Z] [api]       "method": "GET",
+[2026-08-18T15:50:08.625Z] [api]       "url": "/api/services"
+[2026-08-18T15:50:08.625Z] [api]     }
+[2026-08-18T15:50:08.625Z] [api]     [35mres[39m: {
+[2026-08-18T15:50:08.626Z] [api]       "statusCode": 200
+[2026-08-18T15:50:08.626Z] [api]     }
+[2026-08-18T15:50:08.626Z] [api]     [35mresponseTime[39m: 801
+[2026-08-18T15:50:26.695Z] [api] [15:50:25.696] [32mINFO[39m (19088): [36mrequest completed[39m
+[2026-08-18T15:50:26.695Z] [api]     [35mreq[39m: {
+[2026-08-18T15:50:26.695Z] [api]       "id": 32,
+[2026-08-18T15:50:26.695Z] [api]       "method": "GET",
+[2026-08-18T15:50:26.695Z] [api]       "url": "/api/services"
+[2026-08-18T15:50:26.695Z] [api]     }
+[2026-08-18T15:50:26.695Z] [api]     [35mres[39m: {
+[2026-08-18T15:50:26.695Z] [api]       "statusCode": 304
+[2026-08-18T15:50:26.695Z] [api]     }
+[2026-08-18T15:50:26.695Z] [api]     [35mresponseTime[39m: 803
+[2026-08-18T15:50:28.746Z] [api] [15:50:28.180] [32mINFO[39m (19088): [36mrequest completed[39m
+[2026-08-18T15:50:28.746Z] [api]     [35mreq[39m: {
+[2026-08-18T15:50:28.746Z] [api]       "id": 33,
+[2026-08-18T15:50:28.746Z] [api]       "method": "GET",
+[2026-08-18T15:50:28.746Z] [api]       "url": "/api/services"
+[2026-08-18T15:50:28.746Z] [api]     }
+[2026-08-18T15:50:28.746Z] [api]     [35mres[39m: {
+[2026-08-18T15:50:28.746Z] [api]       "statusCode": 304
+[2026-08-18T15:50:28.746Z] [api]     }
+[2026-08-18T15:50:28.746Z] [api]     [35mresponseTime[39m: 803
+[2026-08-18T15:51:28.865Z] [api] [15:51:28.177] [32mINFO[39m (19088): [36mrequest completed[39m
+[2026-08-18T15:51:28.865Z] [api]     [35mreq[39m: {
+[2026-08-18T15:51:28.865Z] [api]       "id": 34,
+[2026-08-18T15:51:28.865Z] [api]       "method": "GET",
+[2026-08-18T15:51:28.865Z] [api]       "url": "/api/services"
+[2026-08-18T15:51:28.865Z] [api]     }
+[2026-08-18T15:51:28.865Z] [api]     [35mres[39m: {
+[2026-08-18T15:51:28.865Z] [api]       "statusCode": 304
+[2026-08-18T15:51:28.865Z] [api]     }
+[2026-08-18T15:51:28.865Z] [api]     [35mresponseTime[39m: 802
+[2026-08-18T15:51:30.916Z] [api] [15:51:30.399] [32mINFO[39m (19088): [36mrequest completed[39m
+[2026-08-18T15:51:30.916Z] [api]     [35mreq[39m: {
+[2026-08-18T15:51:30.916Z] [api]       "id": 35,
+[2026-08-18T15:51:30.916Z] [api]       "method": "GET",
+[2026-08-18T15:51:30.916Z] [api]       "url": "/api/services"
+[2026-08-18T15:51:30.916Z] [api]     }
+[2026-08-18T15:51:30.916Z] [api]     [35mres[39m: {
+[2026-08-18T15:51:30.916Z] [api]       "statusCode": 304
+[2026-08-18T15:51:30.916Z] [api]     }
+[2026-08-18T15:51:30.916Z] [api]     [35mresponseTime[39m: 552
+[2026-08-18T15:51:45.609Z] [web] 3:51:45 PM [vite] (client) hmr update /src/components/admin/admin-layout.tsx, /src/components/admin/admin-header.tsx, /src/pages/home.tsx, /src/pages/services.tsx
+[2026-08-18T15:51:47.983Z] [api] [15:51:47.250] [32mINFO[39m (19088): [36mrequest completed[39m
+[2026-08-18T15:51:47.983Z] [api]     [35mreq[39m: {
+[2026-08-18T15:51:47.983Z] [api]       "id": 36,
+[2026-08-18T15:51:47.983Z] [api]       "method": "GET",
+[2026-08-18T15:51:47.983Z] [api]       "url": "/api/services"
+[2026-08-18T15:51:47.983Z] [api]     }
+[2026-08-18T15:51:47.984Z] [api]     [35mres[39m: {
+[2026-08-18T15:51:47.984Z] [api]       "statusCode": 304
+[2026-08-18T15:51:47.984Z] [api]     }
+[2026-08-18T15:51:47.984Z] [api]     [35mresponseTime[39m: 803
+[2026-08-18T15:51:53.038Z] [api] [15:51:52.187] [32mINFO[39m (19088): [36mrequest completed[39m
+[2026-08-18T15:51:53.038Z] [api]     [35mreq[39m: {
+[2026-08-18T15:51:53.038Z] [api]       "id": 37,
+[2026-08-18T15:51:53.038Z] [api]       "method": "GET",
+[2026-08-18T15:51:53.038Z] [api]       "url": "/api/services"
+[2026-08-18T15:51:53.039Z] [api]     }
+[2026-08-18T15:51:53.039Z] [api]     [35mres[39m: {
+[2026-08-18T15:51:53.039Z] [api]       "statusCode": 304
+[2026-08-18T15:51:53.039Z] [api]     }
+[2026-08-18T15:51:53.039Z] [api]     [35mresponseTime[39m: 804
+[2026-08-18T15:51:56.091Z] [api] [15:51:55.164] [32mINFO[39m (19088): [36mrequest completed[39m
+[2026-08-18T15:51:56.091Z] [api]     [35mreq[39m: {
+[2026-08-18T15:51:56.091Z] [api]       "id": 38,
+[2026-08-18T15:51:56.091Z] [api]       "method": "GET",
+[2026-08-18T15:51:56.091Z] [api]       "url": "/api/services"
+[2026-08-18T15:51:56.091Z] [api]     }
+[2026-08-18T15:51:56.091Z] [api]     [35mres[39m: {
+[2026-08-18T15:51:56.091Z] [api]       "statusCode": 304
+[2026-08-18T15:51:56.091Z] [api]     }
+[2026-08-18T15:51:56.091Z] [api]     [35mresponseTime[39m: 803
+[2026-08-18T15:52:10.157Z] [api] [15:52:09.601] [32mINFO[39m (19088): [36mrequest completed[39m
+[2026-08-18T15:52:10.157Z] [api]     [35mreq[39m: {
+[2026-08-18T15:52:10.157Z] [api]       "id": 39,
+[2026-08-18T15:52:10.157Z] [api]       "method": "GET",
+[2026-08-18T15:52:10.157Z] [api]       "url": "/api/services"
+[2026-08-18T15:52:10.157Z] [api]     }
+[2026-08-18T15:52:10.157Z] [api]     [35mres[39m: {
+[2026-08-18T15:52:10.157Z] [api]       "statusCode": 304
+[2026-08-18T15:52:10.157Z] [api]     }
+[2026-08-18T15:52:10.157Z] [api]     [35mresponseTime[39m: 803
+[2026-08-18T15:54:14.348Z] [api] [15:54:14.180] [32mINFO[39m (19088): [36mrequest completed[39m
+[2026-08-18T15:54:14.348Z] [api]     [35mreq[39m: {
+[2026-08-18T15:54:14.348Z] [api]       "id": 40,
+[2026-08-18T15:54:14.348Z] [api]       "method": "GET",
+[2026-08-18T15:54:14.348Z] [api]       "url": "/api/services"
+[2026-08-18T15:54:14.348Z] [api]     }
+[2026-08-18T15:54:14.348Z] [api]     [35mres[39m: {
+[2026-08-18T15:54:14.348Z] [api]       "statusCode": 304
+[2026-08-18T15:54:14.348Z] [api]     }
+[2026-08-18T15:54:14.348Z] [api]     [35mresponseTime[39m: 803
+[2026-08-18T15:54:17.399Z] [api] [15:54:17.243] [32mINFO[39m (19088): [36mrequest completed[39m
+[2026-08-18T15:54:17.399Z] [api]     [35mreq[39m: {
+[2026-08-18T15:54:17.399Z] [api]       "id": 41,
+[2026-08-18T15:54:17.399Z] [api]       "method": "GET",
+[2026-08-18T15:54:17.399Z] [api]       "url": "/api/services"
+[2026-08-18T15:54:17.399Z] [api]     }
+[2026-08-18T15:54:17.400Z] [api]     [35mres[39m: {
+[2026-08-18T15:54:17.400Z] [api]       "statusCode": 304
+[2026-08-18T15:54:17.400Z] [api]     }
+[2026-08-18T15:54:17.400Z] [api]     [35mresponseTime[39m: 859
+[2026-08-18T15:54:59.432Z] [web] 3:54:59 PM [vite] (client) hmr update /src/index.css
+[2026-08-18T15:55:03.499Z] [api] [15:55:02.970] [32mINFO[39m (19088): [36mrequest completed[39m
+[2026-08-18T15:55:03.499Z] [api]     [35mreq[39m: {
+[2026-08-18T15:55:03.499Z] [api]       "id": 42,
+[2026-08-18T15:55:03.499Z] [api]       "method": "GET",
+[2026-08-18T15:55:03.499Z] [api]       "url": "/api/services"
+[2026-08-18T15:55:03.499Z] [api]     }
+[2026-08-18T15:55:03.499Z] [api]     [35mres[39m: {
+[2026-08-18T15:55:03.499Z] [api]       "statusCode": 304
+[2026-08-18T15:55:03.499Z] [api]     }
+[2026-08-18T15:55:03.499Z] [api]     [35mresponseTime[39m: 803
+[2026-08-18T15:55:05.549Z] [api] [15:55:05.180] [32mINFO[39m (19088): [36mrequest completed[39m
+[2026-08-18T15:55:05.549Z] [api]     [35mreq[39m: {
+[2026-08-18T15:55:05.549Z] [api]       "id": 43,
+[2026-08-18T15:55:05.549Z] [api]       "method": "GET",
+[2026-08-18T15:55:05.549Z] [api]       "url": "/api/services"
+[2026-08-18T15:55:05.549Z] [api]     }
+[2026-08-18T15:55:05.549Z] [api]     [35mres[39m: {
+[2026-08-18T15:55:05.549Z] [api]       "statusCode": 304
+[2026-08-18T15:55:05.549Z] [api]     }
+[2026-08-18T15:55:05.549Z] [api]     [35mresponseTime[39m: 800
+[2026-08-18T15:55:39.637Z] [api] [15:55:39.290] [32mINFO[39m (19088): [36mrequest completed[39m
+[2026-08-18T15:55:39.637Z] [api]     [35mreq[39m: {
+[2026-08-18T15:55:39.637Z] [api]       "id": 44,
+[2026-08-18T15:55:39.637Z] [api]       "method": "PATCH",
+[2026-08-18T15:55:39.637Z] [api]       "url": "/api/gallery/nonexistent-item"
+[2026-08-18T15:55:39.637Z] [api]     }
+[2026-08-18T15:55:39.637Z] [api]     [35mres[39m: {
+[2026-08-18T15:55:39.637Z] [api]       "statusCode": 404
+[2026-08-18T15:55:39.637Z] [api]     }
+[2026-08-18T15:55:39.637Z] [api]     [35mresponseTime[39m: 5
+[2026-08-18T15:55:47.005Z] [api] /home/ubuntu/zoophilist-workspace/artifacts/api-server:
+[2026-08-18T15:55:47.005Z] [api] [ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL] @workspace/api-server@0.0.0 dev: `PORT=$API_PORT NODE_ENV=development pnpm run build && PORT=$API_PORT NODE_ENV=development pnpm run start`
+[2026-08-18T15:55:47.005Z] [api] Command failed with signal "SIGTERM"
+[2026-08-18T15:55:47.012Z] [web] /home/ubuntu/zoophilist-workspace/artifacts/zoophilist:
+[2026-08-18T15:55:47.012Z] [web] [ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL] @workspace/zoophilist@0.0.0 dev: `vite --config vite.config.ts --host 0.0.0.0`
+[2026-08-18T15:55:47.012Z] [web] Command failed with signal "SIGTERM"
+[2026-08-18T15:55:47.015Z] [api] [ELIFECYCLE] Command failed.
+[2026-08-18T15:55:47.016Z] [ELIFECYCLE] Command failed.
+[2026-08-18T15:55:47.019Z] [web] pnpm --filter @workspace/zoophilist run dev exited with code SIGTERM
+[2026-08-18T15:55:47.020Z] --> Sending SIGTERM to other processes..
+[2026-08-18T15:55:47.024Z] [api] pnpm --filter @workspace/api-server run dev exited with code SIGTERM
+[2026-08-18T15:55:47.028Z] Dev server exited with code -1
+[2026-08-18T15:55:48.100Z] Starting dev server with command: pnpm run dev
+[2026-08-18T15:55:48.700Z] $ API_PORT=3001 concurrently -k -n api,web -c blue,green "pnpm --filter @workspace/api-server run dev" "pnpm --filter @workspace/zoophilist run dev"
+[2026-08-18T15:55:49.564Z] [api] $ PORT=$API_PORT NODE_ENV=development pnpm run build && PORT=$API_PORT NODE_ENV=development pnpm run start
+[2026-08-18T15:55:49.578Z] [web] $ vite --config vite.config.ts --host 0.0.0.0
+[2026-08-18T15:55:49.971Z] [web]
+[2026-08-18T15:55:49.971Z] [web]   VITE v7.3.6  ready in 350 ms
+[2026-08-18T15:55:49.971Z] [web]
+[2026-08-18T15:55:49.971Z] [web]   ➜  Local:   http://localhost:3000/
+[2026-08-18T15:55:49.971Z] [web]   ➜  Network: http://169.254.0.21:3000/
+[2026-08-18T15:55:50.175Z] [api] $ node ./build.mjs
+[2026-08-18T15:55:50.542Z] [api]
+[2026-08-18T15:55:50.542Z] [api]   dist/index.mjs                       3.5mb ⚠️
+[2026-08-18T15:55:50.542Z] [api]   dist/pino-worker.mjs               153.4kb
+[2026-08-18T15:55:50.542Z] [api]   dist/pino-file.mjs                 142.1kb
+[2026-08-18T15:55:50.542Z] [api]   dist/pino-pretty.mjs               114.4kb
+[2026-08-18T15:55:50.542Z] [api]   dist/thread-stream-worker.mjs        7.3kb
+[2026-08-18T15:55:50.542Z] [api]   dist/index.mjs.map                   6.0mb
+[2026-08-18T15:55:50.542Z] [api]   dist/pino-worker.mjs.map           256.9kb
+[2026-08-18T15:55:50.542Z] [api]   dist/pino-file.mjs.map             229.1kb
+[2026-08-18T15:55:50.542Z] [api]   dist/pino-pretty.mjs.map           203.6kb
+[2026-08-18T15:55:50.542Z] [api]   dist/thread-stream-worker.mjs.map   12.0kb
+[2026-08-18T15:55:50.542Z] [api]
+[2026-08-18T15:55:50.542Z] [api] ⚡ Done in 273ms
+[2026-08-18T15:55:51.156Z] [api] $ node --enable-source-maps ./dist/index.mjs
+[2026-08-18T15:55:51.621Z] [web] 3:55:51 PM [vite] http proxy error: /api/services
+[2026-08-18T15:55:51.621Z] [web] Error: connect ECONNREFUSED 127.0.0.1:3001
+[2026-08-18T15:55:51.621Z] [web]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1634:16)
+[2026-08-18T15:55:51.683Z] [api] [15:55:51.640] [32mINFO[39m (20995): [36mServer listening[39m
+[2026-08-18T15:55:51.683Z] [api]     [35mport[39m: 3001
+[2026-08-18T15:55:54.737Z] [api] [15:55:53.757] [32mINFO[39m (20995): [36mrequest aborted[39m
+[2026-08-18T15:55:54.737Z] [api]     [35mreq[39m: {
+[2026-08-18T15:55:54.737Z] [api]       "id": 1,
+[2026-08-18T15:55:54.737Z] [api]       "method": "GET",
+[2026-08-18T15:55:54.737Z] [api]       "url": "/api/services"
+[2026-08-18T15:55:54.737Z] [api]     }
+[2026-08-18T15:55:54.737Z] [api]     [35mres[39m: {
+[2026-08-18T15:55:54.737Z] [api]       "statusCode": null
+[2026-08-18T15:55:54.737Z] [api]     }
+[2026-08-18T15:55:54.737Z] [api]     [35mresponseTime[39m: 1085
+[2026-08-18T15:56:04.798Z] [api] [15:56:04.157] [32mINFO[39m (20995): [36mrequest completed[39m
+[2026-08-18T15:56:04.798Z] [api]     [35mreq[39m: {
+[2026-08-18T15:56:04.798Z] [api]       "id": 3,
+[2026-08-18T15:56:04.798Z] [api]       "method": "PATCH",
+[2026-08-18T15:56:04.798Z] [api]       "url": "/api/gallery/nonexistent-item"
+[2026-08-18T15:56:04.798Z] [api]     }
+[2026-08-18T15:56:04.798Z] [api]     [35mres[39m: {
+[2026-08-18T15:56:04.798Z] [api]       "statusCode": 401
+[2026-08-18T15:56:04.798Z] [api]     }
+[2026-08-18T15:56:04.798Z] [api]     [35mresponseTime[39m: 8
+[2026-08-18T15:56:09.853Z] [api] [15:56:09.069] [32mINFO[39m (20995): [36mrequest completed[39m
+[2026-08-18T15:56:09.854Z] [api]     [35mreq[39m: {
+[2026-08-18T15:56:09.854Z] [api]       "id": 2,
+[2026-08-18T15:56:09.854Z] [api]       "method": "GET",
+[2026-08-18T15:56:09.854Z] [api]       "url": "/api/services"
+[2026-08-18T15:56:09.854Z] [api]     }
+[2026-08-18T15:56:09.854Z] [api]     [35mres[39m: {
+[2026-08-18T15:56:09.854Z] [api]       "statusCode": 304
+[2026-08-18T15:56:09.854Z] [api]     }
+[2026-08-18T15:56:09.854Z] [api]     [35mresponseTime[39m: 16377
+[2026-08-18T15:56:23.917Z] [api] [15:56:23.121] [32mINFO[39m (20995): [36mrequest completed[39m
+[2026-08-18T15:56:23.917Z] [api]     [35mreq[39m: {
+[2026-08-18T15:56:23.917Z] [api]       "id": 4,
+[2026-08-18T15:56:23.917Z] [api]       "method": "GET",
+[2026-08-18T15:56:23.917Z] [api]       "url": "/api/services"
+[2026-08-18T15:56:23.917Z] [api]     }
+[2026-08-18T15:56:23.917Z] [api]     [35mres[39m: {
+[2026-08-18T15:56:23.917Z] [api]       "statusCode": 304
+[2026-08-18T15:56:23.917Z] [api]     }
+[2026-08-18T15:56:23.917Z] [api]     [35mresponseTime[39m: 822
+[2026-08-18T15:56:29.972Z] [api] [15:56:29.434] [32mINFO[39m (20995): [36mrequest completed[39m
+[2026-08-18T15:56:29.972Z] [api]     [35mreq[39m: {
+[2026-08-18T15:56:29.973Z] [api]       "id": 5,
+[2026-08-18T15:56:29.973Z] [api]       "method": "GET",
+[2026-08-18T15:56:29.973Z] [api]       "url": "/api/services"
+[2026-08-18T15:56:29.973Z] [api]     }
+[2026-08-18T15:56:29.973Z] [api]     [35mres[39m: {
+[2026-08-18T15:56:29.973Z] [api]       "statusCode": 200
+[2026-08-18T15:56:29.973Z] [api]     }
+[2026-08-18T15:56:29.973Z] [api]     [35mresponseTime[39m: 820
+[2026-08-18T15:56:32.024Z] [api] [15:56:31.124] [32mINFO[39m (20995): [36mrequest completed[39m
+[2026-08-18T15:56:32.024Z] [api]     [35mreq[39m: {
+[2026-08-18T15:56:32.024Z] [api]       "id": 6,
+[2026-08-18T15:56:32.024Z] [api]       "method": "GET",
+[2026-08-18T15:56:32.024Z] [api]       "url": "/api/services"
+[2026-08-18T15:56:32.024Z] [api]     }
+[2026-08-18T15:56:32.024Z] [api]     [35mres[39m: {
+[2026-08-18T15:56:32.024Z] [api]       "statusCode": 304
+[2026-08-18T15:56:32.024Z] [api]     }
+[2026-08-18T15:56:32.024Z] [api]     [35mresponseTime[39m: 822
+[2026-08-18T15:57:14.122Z] [api] [15:57:13.835] [32mINFO[39m (20995): [36mrequest completed[39m
+[2026-08-18T15:57:14.122Z] [api]     [35mreq[39m: {
+[2026-08-18T15:57:14.122Z] [api]       "id": 7,
+[2026-08-18T15:57:14.122Z] [api]       "method": "GET",
+[2026-08-18T15:57:14.122Z] [api]       "url": "/api/services"
+[2026-08-18T15:57:14.122Z] [api]     }
+[2026-08-18T15:57:14.122Z] [api]     [35mres[39m: {
+[2026-08-18T15:57:14.122Z] [api]       "statusCode": 304
+[2026-08-18T15:57:14.122Z] [api]     }
+[2026-08-18T15:57:14.122Z] [api]     [35mresponseTime[39m: 579
+[2026-08-18T15:57:17.176Z] [api] [15:57:16.875] [32mINFO[39m (20995): [36mrequest completed[39m
+[2026-08-18T15:57:17.176Z] [api]     [35mreq[39m: {
+[2026-08-18T15:57:17.176Z] [api]       "id": 8,
+[2026-08-18T15:57:17.176Z] [api]       "method": "GET",
+[2026-08-18T15:57:17.176Z] [api]       "url": "/api/services"
+[2026-08-18T15:57:17.176Z] [api]     }
+[2026-08-18T15:57:17.176Z] [api]     [35mres[39m: {
+[2026-08-18T15:57:17.176Z] [api]       "statusCode": 304
+[2026-08-18T15:57:17.176Z] [api]     }
+[2026-08-18T15:57:17.176Z] [api]     [35mresponseTime[39m: 577
+[2026-08-18T15:57:28.238Z] [api] [15:57:27.365] [32mINFO[39m (20995): [36mrequest aborted[39m
+[2026-08-18T15:57:28.238Z] [api]     [35mreq[39m: {
+[2026-08-18T15:57:28.238Z] [api]       "id": 9,
+[2026-08-18T15:57:28.238Z] [api]       "method": "GET",
+[2026-08-18T15:57:28.238Z] [api]       "url": "/api/services"
+[2026-08-18T15:57:28.238Z] [api]     }
+[2026-08-18T15:57:28.238Z] [api]     [35mres[39m: {
+[2026-08-18T15:57:28.238Z] [api]       "statusCode": null
+[2026-08-18T15:57:28.238Z] [api]     }
+[2026-08-18T15:57:28.238Z] [api]     [35mresponseTime[39m: 604
+[2026-08-18T15:57:36.297Z] [api] [15:57:35.931] [32mINFO[39m (20995): [36mrequest completed[39m
+[2026-08-18T15:57:36.297Z] [api]     [35mreq[39m: {
+[2026-08-18T15:57:36.297Z] [api]       "id": 10,
+[2026-08-18T15:57:36.297Z] [api]       "method": "GET",
+[2026-08-18T15:57:36.297Z] [api]       "url": "/api/services"
+[2026-08-18T15:57:36.297Z] [api]     }
+[2026-08-18T15:57:36.297Z] [api]     [35mres[39m: {
+[2026-08-18T15:57:36.297Z] [api]       "statusCode": 200
+[2026-08-18T15:57:36.297Z] [api]     }
+[2026-08-18T15:57:36.297Z] [api]     [35mresponseTime[39m: 823
+[2026-08-18T15:57:39.349Z] [api] [15:57:38.582] [32mINFO[39m (20995): [36mrequest completed[39m
+[2026-08-18T15:57:39.349Z] [api]     [35mreq[39m: {
+[2026-08-18T15:57:39.349Z] [api]       "id": 11,
+[2026-08-18T15:57:39.349Z] [api]       "method": "GET",
+[2026-08-18T15:57:39.349Z] [api]       "url": "/api/services"
+[2026-08-18T15:57:39.349Z] [api]     }
+[2026-08-18T15:57:39.349Z] [api]     [35mres[39m: {
+[2026-08-18T15:57:39.349Z] [api]       "statusCode": 200
+[2026-08-18T15:57:39.349Z] [api]     }
+[2026-08-18T15:57:39.349Z] [api]     [35mresponseTime[39m: 833
+[2026-08-18T15:58:15.437Z] [api] [15:58:14.857] [32mINFO[39m (20995): [36mrequest completed[39m
+[2026-08-18T15:58:15.438Z] [api]     [35mreq[39m: {
+[2026-08-18T15:58:15.438Z] [api]       "id": 12,
+[2026-08-18T15:58:15.438Z] [api]       "method": "GET",
+[2026-08-18T15:58:15.438Z] [api]       "url": "/api/services"
+[2026-08-18T15:58:15.438Z] [api]     }
+[2026-08-18T15:58:15.438Z] [api]     [35mres[39m: {
+[2026-08-18T15:58:15.438Z] [api]       "statusCode": 200
+[2026-08-18T15:58:15.438Z] [api]     }
+[2026-08-18T15:58:15.438Z] [api]     [35mresponseTime[39m: 579
+[2026-08-18T15:58:47.523Z] [api] [15:58:46.840] [32mINFO[39m (20995): [36mrequest completed[39m
+[2026-08-18T15:58:47.523Z] [api]     [35mreq[39m: {
+[2026-08-18T15:58:47.523Z] [api]       "id": 13,
+[2026-08-18T15:58:47.523Z] [api]       "method": "GET",
+[2026-08-18T15:58:47.523Z] [api]       "url": "/api/services"
+[2026-08-18T15:58:47.523Z] [api]     }
+[2026-08-18T15:58:47.523Z] [api]     [35mres[39m: {
+[2026-08-18T15:58:47.523Z] [api]       "statusCode": 304
+[2026-08-18T15:58:47.523Z] [api]     }
+[2026-08-18T15:58:47.523Z] [api]     [35mresponseTime[39m: 826
+[2026-08-18T15:59:02.589Z] [api] [15:59:01.931] [32mINFO[39m (20995): [36mrequest completed[39m
+[2026-08-18T15:59:02.589Z] [api]     [35mreq[39m: {
+[2026-08-18T15:59:02.589Z] [api]       "id": 14,
+[2026-08-18T15:59:02.589Z] [api]       "method": "GET",
+[2026-08-18T15:59:02.589Z] [api]       "url": "/api/services"
+[2026-08-18T15:59:02.589Z] [api]     }
+[2026-08-18T15:59:02.589Z] [api]     [35mres[39m: {
+[2026-08-18T15:59:02.589Z] [api]       "statusCode": 304
+[2026-08-18T15:59:02.589Z] [api]     }
+[2026-08-18T15:59:02.589Z] [api]     [35mresponseTime[39m: 822
+[2026-08-18T15:59:04.639Z] [api] [15:59:04.318] [32mINFO[39m (20995): [36mrequest completed[39m
+[2026-08-18T15:59:04.639Z] [api]     [35mreq[39m: {
+[2026-08-18T15:59:04.639Z] [api]       "id": 15,
+[2026-08-18T15:59:04.639Z] [api]       "method": "GET",
+[2026-08-18T15:59:04.639Z] [api]       "url": "/api/services"
+[2026-08-18T15:59:04.639Z] [api]     }
+[2026-08-18T15:59:04.639Z] [api]     [35mres[39m: {
+[2026-08-18T15:59:04.639Z] [api]       "statusCode": 304
+[2026-08-18T15:59:04.639Z] [api]     }
+[2026-08-18T15:59:04.639Z] [api]     [35mresponseTime[39m: 821
+[2026-08-18T16:01:40.865Z] [api] [16:01:40.008] [32mINFO[39m (20995): [36mrequest aborted[39m
+[2026-08-18T16:01:40.865Z] [api]     [35mreq[39m: {
+[2026-08-18T16:01:40.865Z] [api]       "id": 16,
+[2026-08-18T16:01:40.865Z] [api]       "method": "GET",
+[2026-08-18T16:01:40.865Z] [api]       "url": "/api/services"
+[2026-08-18T16:01:40.865Z] [api]     }
+[2026-08-18T16:01:40.865Z] [api]     [35mres[39m: {
+[2026-08-18T16:01:40.865Z] [api]       "statusCode": null
+[2026-08-18T16:01:40.865Z] [api]     }
+[2026-08-18T16:01:40.865Z] [api]     [35mresponseTime[39m: 1156
+[2026-08-18T16:01:47.923Z] [api] [16:01:47.726] [32mINFO[39m (20995): [36mrequest completed[39m
+[2026-08-18T16:01:47.923Z] [api]     [35mreq[39m: {
+[2026-08-18T16:01:47.923Z] [api]       "id": 17,
+[2026-08-18T16:01:47.923Z] [api]       "method": "GET",
+[2026-08-18T16:01:47.923Z] [api]       "url": "/api/services"
+[2026-08-18T16:01:47.923Z] [api]     }
+[2026-08-18T16:01:47.923Z] [api]     [35mres[39m: {
+[2026-08-18T16:01:47.923Z] [api]       "statusCode": 200
+[2026-08-18T16:01:47.923Z] [api]     }
+[2026-08-18T16:01:47.923Z] [api]     [35mresponseTime[39m: 6314
+[2026-08-18T16:02:05.993Z] [api] [16:02:05.744] [32mINFO[39m (20995): [36mrequest completed[39m
+[2026-08-18T16:02:05.993Z] [api]     [35mreq[39m: {
+[2026-08-18T16:02:05.993Z] [api]       "id": 18,
+[2026-08-18T16:02:05.993Z] [api]       "method": "GET",
+[2026-08-18T16:02:05.993Z] [api]       "url": "/api/services"
+[2026-08-18T16:02:05.993Z] [api]     }
+[2026-08-18T16:02:05.993Z] [api]     [35mres[39m: {
+[2026-08-18T16:02:05.993Z] [api]       "statusCode": 304
+[2026-08-18T16:02:05.993Z] [api]     }
+[2026-08-18T16:02:05.993Z] [api]     [35mresponseTime[39m: 470
+[2026-08-18T16:03:02.107Z] [api] [16:03:01.904] [32mINFO[39m (20995): [36mrequest completed[39m
+[2026-08-18T16:03:02.107Z] [api]     [35mreq[39m: {
+[2026-08-18T16:03:02.107Z] [api]       "id": 19,
+[2026-08-18T16:03:02.107Z] [api]       "method": "GET",
+[2026-08-18T16:03:02.107Z] [api]       "url": "/api/services"
+[2026-08-18T16:03:02.107Z] [api]     }
+[2026-08-18T16:03:02.107Z] [api]     [35mres[39m: {
+[2026-08-18T16:03:02.107Z] [api]       "statusCode": 304
+[2026-08-18T16:03:02.107Z] [api]     }
+[2026-08-18T16:03:02.107Z] [api]     [35mresponseTime[39m: 733
+[2026-08-18T16:03:06.160Z] [api] [16:03:05.848] [32mINFO[39m (20995): [36mrequest completed[39m
+[2026-08-18T16:03:06.160Z] [api]     [35mreq[39m: {
+[2026-08-18T16:03:06.160Z] [api]       "id": 20,
+[2026-08-18T16:03:06.160Z] [api]       "method": "GET",
+[2026-08-18T16:03:06.160Z] [api]       "url": "/api/services"
+[2026-08-18T16:03:06.160Z] [api]     }
+[2026-08-18T16:03:06.160Z] [api]     [35mres[39m: {
+[2026-08-18T16:03:06.160Z] [api]       "statusCode": 304
+[2026-08-18T16:03:06.160Z] [api]     }
+[2026-08-18T16:03:06.160Z] [api]     [35mresponseTime[39m: 471
+[2026-08-18T16:03:15.219Z] [api] [16:03:15.184] [32mINFO[39m (20995): [36mrequest completed[39m
+[2026-08-18T16:03:15.219Z] [api]     [35mreq[39m: {
+[2026-08-18T16:03:15.219Z] [api]       "id": 21,
+[2026-08-18T16:03:15.219Z] [api]       "method": "GET",
+[2026-08-18T16:03:15.219Z] [api]       "url": "/api/services"
+[2026-08-18T16:03:15.219Z] [api]     }
+[2026-08-18T16:03:15.219Z] [api]     [35mres[39m: {
+[2026-08-18T16:03:15.219Z] [api]       "statusCode": 304
+[2026-08-18T16:03:15.219Z] [api]     }
+[2026-08-18T16:03:15.219Z] [api]     [35mresponseTime[39m: 732
+[2026-08-18T16:03:22.274Z] [api] [16:03:22.048] [32mINFO[39m (20995): [36mrequest completed[39m
+[2026-08-18T16:03:22.274Z] [api]     [35mreq[39m: {
+[2026-08-18T16:03:22.274Z] [api]       "id": 22,
+[2026-08-18T16:03:22.274Z] [api]       "method": "GET",
+[2026-08-18T16:03:22.274Z] [api]       "url": "/api/services"
+[2026-08-18T16:03:22.274Z] [api]     }
+[2026-08-18T16:03:22.274Z] [api]     [35mres[39m: {
+[2026-08-18T16:03:22.274Z] [api]       "statusCode": 304
+[2026-08-18T16:03:22.274Z] [api]     }
+[2026-08-18T16:03:22.274Z] [api]     [35mresponseTime[39m: 736
+[2026-08-18T16:03:25.327Z] [api] [16:03:24.883] [32mINFO[39m (20995): [36mrequest completed[39m
+[2026-08-18T16:03:25.328Z] [api]     [35mreq[39m: {
+[2026-08-18T16:03:25.328Z] [api]       "id": 23,
+[2026-08-18T16:03:25.328Z] [api]       "method": "GET",
+[2026-08-18T16:03:25.328Z] [api]       "url": "/api/services"
+[2026-08-18T16:03:25.328Z] [api]     }
+[2026-08-18T16:03:25.328Z] [api]     [35mres[39m: {
+[2026-08-18T16:03:25.328Z] [api]       "statusCode": 304
+[2026-08-18T16:03:25.328Z] [api]     }
+[2026-08-18T16:03:25.328Z] [api]     [35mresponseTime[39m: 502
+[2026-08-18T16:03:56.411Z] [api] [16:03:56.068] [32mINFO[39m (20995): [36mrequest aborted[39m
+[2026-08-18T16:03:56.411Z] [api]     [35mreq[39m: {
+[2026-08-18T16:03:56.411Z] [api]       "id": 24,
+[2026-08-18T16:03:56.411Z] [api]       "method": "GET",
+[2026-08-18T16:03:56.411Z] [api]       "url": "/api/services"
+[2026-08-18T16:03:56.411Z] [api]     }
+[2026-08-18T16:03:56.411Z] [api]     [35mres[39m: {
+[2026-08-18T16:03:56.411Z] [api]       "statusCode": null
+[2026-08-18T16:03:56.411Z] [api]     }
+[2026-08-18T16:03:56.411Z] [api]     [35mresponseTime[39m: 667
+[2026-08-18T16:03:58.463Z] [api] [16:03:57.904] [32mINFO[39m (20995): [36mrequest completed[39m
+[2026-08-18T16:03:58.463Z] [api]     [35mreq[39m: {
+[2026-08-18T16:03:58.463Z] [api]       "id": 25,
+[2026-08-18T16:03:58.463Z] [api]       "method": "GET",
+[2026-08-18T16:03:58.463Z] [api]       "url": "/api/services"
+[2026-08-18T16:03:58.463Z] [api]     }
+[2026-08-18T16:03:58.463Z] [api]     [35mres[39m: {
+[2026-08-18T16:03:58.463Z] [api]       "statusCode": 200
+[2026-08-18T16:03:58.463Z] [api]     }
+[2026-08-18T16:03:58.463Z] [api]     [35mresponseTime[39m: 471
+[2026-08-18T16:04:27.546Z] [api] [16:04:27.179] [32mINFO[39m (20995): [36mrequest completed[39m
+[2026-08-18T16:04:27.546Z] [api]     [35mreq[39m: {
+[2026-08-18T16:04:27.546Z] [api]       "id": 26,
+[2026-08-18T16:04:27.546Z] [api]       "method": "GET",
+[2026-08-18T16:04:27.546Z] [api]       "url": "/api/services"
+[2026-08-18T16:04:27.546Z] [api]     }
+[2026-08-18T16:04:27.546Z] [api]     [35mres[39m: {
+[2026-08-18T16:04:27.546Z] [api]       "statusCode": 304
+[2026-08-18T16:04:27.546Z] [api]     }
+[2026-08-18T16:04:27.546Z] [api]     [35mresponseTime[39m: 732
+[2026-08-18T16:04:29.596Z] [api] [16:04:28.883] [32mINFO[39m (20995): [36mrequest completed[39m
+[2026-08-18T16:04:29.596Z] [api]     [35mreq[39m: {
+[2026-08-18T16:04:29.596Z] [api]       "id": 27,
+[2026-08-18T16:04:29.596Z] [api]       "method": "GET",
+[2026-08-18T16:04:29.596Z] [api]       "url": "/api/services"
+[2026-08-18T16:04:29.597Z] [api]     }
+[2026-08-18T16:04:29.597Z] [api]     [35mres[39m: {
+[2026-08-18T16:04:29.597Z] [api]       "statusCode": 200
+[2026-08-18T16:04:29.597Z] [api]     }
+[2026-08-18T16:04:29.597Z] [api]     [35mresponseTime[39m: 472
+[2026-08-18T16:05:04.682Z] [api] [16:05:04.023] [32mINFO[39m (20995): [36mrequest aborted[39m
+[2026-08-18T16:05:04.683Z] [api]     [35mreq[39m: {
+[2026-08-18T16:05:04.683Z] [api]       "id": 28,
+[2026-08-18T16:05:04.683Z] [api]       "method": "GET",
+[2026-08-18T16:05:04.683Z] [api]       "url": "/api/services"
+[2026-08-18T16:05:04.683Z] [api]     }
+[2026-08-18T16:05:04.683Z] [api]     [35mres[39m: {
+[2026-08-18T16:05:04.683Z] [api]       "statusCode": null
+[2026-08-18T16:05:04.683Z] [api]     }
+[2026-08-18T16:05:04.683Z] [api]     [35mresponseTime[39m: 611
+[2026-08-18T16:05:06.734Z] [api] [16:05:05.894] [32mINFO[39m (20995): [36mrequest completed[39m
+[2026-08-18T16:05:06.734Z] [api]     [35mreq[39m: {
+[2026-08-18T16:05:06.734Z] [api]       "id": 29,
+[2026-08-18T16:05:06.734Z] [api]       "method": "GET",
+[2026-08-18T16:05:06.734Z] [api]       "url": "/api/services"
+[2026-08-18T16:05:06.734Z] [api]     }
+[2026-08-18T16:05:06.734Z] [api]     [35mres[39m: {
+[2026-08-18T16:05:06.734Z] [api]       "statusCode": 200
+[2026-08-18T16:05:06.734Z] [api]     }
+[2026-08-18T16:05:06.734Z] [api]     [35mresponseTime[39m: 472
+[2026-08-18T16:05:43.826Z] [api] [16:05:43.031] [32mINFO[39m (20995): [36mrequest completed[39m
+[2026-08-18T16:05:43.826Z] [api]     [35mreq[39m: {
+[2026-08-18T16:05:43.826Z] [api]       "id": 30,
+[2026-08-18T16:05:43.826Z] [api]       "method": "GET",
+[2026-08-18T16:05:43.826Z] [api]       "url": "/api/services"
+[2026-08-18T16:05:43.826Z] [api]     }
+[2026-08-18T16:05:43.826Z] [api]     [35mres[39m: {
+[2026-08-18T16:05:43.826Z] [api]       "statusCode": 304
+[2026-08-18T16:05:43.826Z] [api]     }
+[2026-08-18T16:05:43.826Z] [api]     [35mresponseTime[39m: 733
+[2026-08-18T16:05:45.878Z] [api] [16:05:45.673] [32mINFO[39m (20995): [36mrequest completed[39m
+[2026-08-18T16:05:45.878Z] [api]     [35mreq[39m: {
+[2026-08-18T16:05:45.878Z] [api]       "id": 31,
+[2026-08-18T16:05:45.878Z] [api]       "method": "GET",
+[2026-08-18T16:05:45.878Z] [api]       "url": "/api/services"
+[2026-08-18T16:05:45.878Z] [api]     }
+[2026-08-18T16:05:45.878Z] [api]     [35mres[39m: {
+[2026-08-18T16:05:45.878Z] [api]       "statusCode": 304
+[2026-08-18T16:05:45.878Z] [api]     }
+[2026-08-18T16:05:45.878Z] [api]     [35mresponseTime[39m: 472
+[2026-08-18T16:06:15.961Z] [api] [16:06:15.906] [32mINFO[39m (20995): [36mrequest completed[39m
+[2026-08-18T16:06:15.962Z] [api]     [35mreq[39m: {
+[2026-08-18T16:06:15.962Z] [api]       "id": 32,
+[2026-08-18T16:06:15.962Z] [api]       "method": "GET",
+[2026-08-18T16:06:15.962Z] [api]       "url": "/api/services"
+[2026-08-18T16:06:15.962Z] [api]     }
+[2026-08-18T16:06:15.962Z] [api]     [35mres[39m: {
+[2026-08-18T16:06:15.962Z] [api]       "statusCode": 304
+[2026-08-18T16:06:15.962Z] [api]     }
+[2026-08-18T16:06:15.962Z] [api]     [35mresponseTime[39m: 733
+[2026-08-18T16:06:19.014Z] [api] [16:06:18.890] [32mINFO[39m (20995): [36mrequest completed[39m
+[2026-08-18T16:06:19.014Z] [api]     [35mreq[39m: {
+[2026-08-18T16:06:19.014Z] [api]       "id": 33,
+[2026-08-18T16:06:19.014Z] [api]       "method": "GET",
+[2026-08-18T16:06:19.014Z] [api]       "url": "/api/services"
+[2026-08-18T16:06:19.014Z] [api]     }
+[2026-08-18T16:06:19.014Z] [api]     [35mres[39m: {
+[2026-08-18T16:06:19.014Z] [api]       "statusCode": 304
+[2026-08-18T16:06:19.014Z] [api]     }
+[2026-08-18T16:06:19.014Z] [api]     [35mresponseTime[39m: 472
+[2026-08-18T16:06:26.068Z] [api] [16:06:25.760] [32mINFO[39m (20995): [36mrequest completed[39m
+[2026-08-18T16:06:26.068Z] [api]     [35mreq[39m: {
+[2026-08-18T16:06:26.068Z] [api]       "id": 34,
+[2026-08-18T16:06:26.068Z] [api]       "method": "GET",
+[2026-08-18T16:06:26.068Z] [api]       "url": "/api/services"
+[2026-08-18T16:06:26.068Z] [api]     }
+[2026-08-18T16:06:26.068Z] [api]     [35mres[39m: {
+[2026-08-18T16:06:26.068Z] [api]       "statusCode": 304
+[2026-08-18T16:06:26.068Z] [api]     }
+[2026-08-18T16:06:26.068Z] [api]     [35mresponseTime[39m: 729
+[2026-08-18T16:06:40.129Z] [api] [16:06:39.314] [32mINFO[39m (20995): [36mrequest completed[39m
+[2026-08-18T16:06:40.129Z] [api]     [35mreq[39m: {
+[2026-08-18T16:06:40.130Z] [api]       "id": 35,
+[2026-08-18T16:06:40.130Z] [api]       "method": "GET",
+[2026-08-18T16:06:40.130Z] [api]       "url": "/api/services"
+[2026-08-18T16:06:40.130Z] [api]     }
+[2026-08-18T16:06:40.130Z] [api]     [35mres[39m: {
+[2026-08-18T16:06:40.130Z] [api]       "statusCode": 304
+[2026-08-18T16:06:40.130Z] [api]     }
+[2026-08-18T16:06:40.130Z] [api]     [35mresponseTime[39m: 728
+[2026-08-18T16:06:59.198Z] [api] [16:06:58.510] [32mINFO[39m (20995): [36mrequest completed[39m
+[2026-08-18T16:06:59.198Z] [api]     [35mreq[39m: {
+[2026-08-18T16:06:59.198Z] [api]       "id": 36,
+[2026-08-18T16:06:59.198Z] [api]       "method": "GET",
+[2026-08-18T16:06:59.198Z] [api]       "url": "/api/services"
+[2026-08-18T16:06:59.198Z] [api]     }
+[2026-08-18T16:06:59.198Z] [api]     [35mres[39m: {
+[2026-08-18T16:06:59.198Z] [api]       "statusCode": 304
+[2026-08-18T16:06:59.199Z] [api]     }
+[2026-08-18T16:06:59.199Z] [api]     [35mresponseTime[39m: 728
+[2026-08-18T16:07:02.250Z] [api] [16:07:01.768] [32mINFO[39m (20995): [36mrequest completed[39m
+[2026-08-18T16:07:02.251Z] [api]     [35mreq[39m: {
+[2026-08-18T16:07:02.251Z] [api]       "id": 37,
+[2026-08-18T16:07:02.251Z] [api]       "method": "GET",
+[2026-08-18T16:07:02.251Z] [api]       "url": "/api/services"
+[2026-08-18T16:07:02.251Z] [api]     }
+[2026-08-18T16:07:02.251Z] [api]     [35mres[39m: {
+[2026-08-18T16:07:02.251Z] [api]       "statusCode": 304
+[2026-08-18T16:07:02.251Z] [api]     }
+[2026-08-18T16:07:02.251Z] [api]     [35mresponseTime[39m: 467
+[2026-08-18T16:07:28.329Z] [api] [16:07:27.816] [32mINFO[39m (20995): [36mrequest completed[39m
+[2026-08-18T16:07:28.329Z] [api]     [35mreq[39m: {
+[2026-08-18T16:07:28.329Z] [api]       "id": 38,
+[2026-08-18T16:07:28.329Z] [api]       "method": "GET",
+[2026-08-18T16:07:28.329Z] [api]       "url": "/api/services"
+[2026-08-18T16:07:28.329Z] [api]     }
+[2026-08-18T16:07:28.329Z] [api]     [35mres[39m: {
+[2026-08-18T16:07:28.329Z] [api]       "statusCode": 304
+[2026-08-18T16:07:28.329Z] [api]     }
+[2026-08-18T16:07:28.329Z] [api]     [35mresponseTime[39m: 467
+[2026-08-18T16:07:31.382Z] [api] [16:07:31.264] [32mINFO[39m (20995): [36mrequest completed[39m
+[2026-08-18T16:07:31.382Z] [api]     [35mreq[39m: {
+[2026-08-18T16:07:31.382Z] [api]       "id": 39,
+[2026-08-18T16:07:31.382Z] [api]       "method": "GET",
+[2026-08-18T16:07:31.382Z] [api]       "url": "/api/services"
+[2026-08-18T16:07:31.382Z] [api]     }
+[2026-08-18T16:07:31.382Z] [api]     [35mres[39m: {
+[2026-08-18T16:07:31.382Z] [api]       "statusCode": 304
+[2026-08-18T16:07:31.382Z] [api]     }
+[2026-08-18T16:07:31.382Z] [api]     [35mresponseTime[39m: 728
+[2026-08-18T16:07:41.443Z] [api] [16:07:40.944] [32mINFO[39m (20995): [36mrequest completed[39m
+[2026-08-18T16:07:41.443Z] [api]     [35mreq[39m: {
+[2026-08-18T16:07:41.443Z] [api]       "id": 40,
+[2026-08-18T16:07:41.443Z] [api]       "method": "GET",
+[2026-08-18T16:07:41.443Z] [api]       "url": "/api/services"
+[2026-08-18T16:07:41.443Z] [api]     }
+[2026-08-18T16:07:41.443Z] [api]     [35mres[39m: {
+[2026-08-18T16:07:41.443Z] [api]       "statusCode": 304
+[2026-08-18T16:07:41.443Z] [api]     }
+[2026-08-18T16:07:41.443Z] [api]     [35mresponseTime[39m: 467
+[2026-08-18T16:07:45.497Z] [api] [16:07:45.239] [32mINFO[39m (20995): [36mrequest completed[39m
+[2026-08-18T16:07:45.497Z] [api]     [35mreq[39m: {
+[2026-08-18T16:07:45.497Z] [api]       "id": 41,
+[2026-08-18T16:07:45.497Z] [api]       "method": "GET",
+[2026-08-18T16:07:45.497Z] [api]       "url": "/api/services"
+[2026-08-18T16:07:45.497Z] [api]     }
+[2026-08-18T16:07:45.497Z] [api]     [35mres[39m: {
+[2026-08-18T16:07:45.497Z] [api]       "statusCode": 304
+[2026-08-18T16:07:45.497Z] [api]     }
+[2026-08-18T16:07:45.497Z] [api]     [35mresponseTime[39m: 737
+[2026-08-18T16:09:31.667Z] [api] [16:09:31.394] [32mINFO[39m (20995): [36mrequest aborted[39m
+[2026-08-18T16:09:31.667Z] [api]     [35mreq[39m: {
+[2026-08-18T16:09:31.668Z] [api]       "id": 42,
+[2026-08-18T16:09:31.668Z] [api]       "method": "GET",
+[2026-08-18T16:09:31.668Z] [api]       "url": "/api/services"
+[2026-08-18T16:09:31.668Z] [api]     }
+[2026-08-18T16:09:31.668Z] [api]     [35mres[39m: {
+[2026-08-18T16:09:31.668Z] [api]       "statusCode": null
+[2026-08-18T16:09:31.668Z] [api]     }
+[2026-08-18T16:09:31.668Z] [api]     [35mresponseTime[39m: 1452
+[2026-08-18T16:09:42.728Z] [api] [16:09:42.711] [32mINFO[39m (20995): [36mrequest completed[39m
+[2026-08-18T16:09:42.728Z] [api]     [35mreq[39m: {
+[2026-08-18T16:09:42.728Z] [api]       "id": 43,
+[2026-08-18T16:09:42.728Z] [api]       "method": "GET",
+[2026-08-18T16:09:42.728Z] [api]       "url": "/api/services"
+[2026-08-18T16:09:42.728Z] [api]     }
+[2026-08-18T16:09:42.728Z] [api]     [35mres[39m: {
+[2026-08-18T16:09:42.728Z] [api]       "statusCode": 200
+[2026-08-18T16:09:42.728Z] [api]     }
+[2026-08-18T16:09:42.728Z] [api]     [35mresponseTime[39m: 3860

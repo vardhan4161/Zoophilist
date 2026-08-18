@@ -367,7 +367,9 @@ export const GetGalleryResponseItem = zod.object({
   "type": zod.enum(['image', 'video']),
   "category": zod.string(),
   "caption": zod.string().optional(),
-  "createdAt": zod.string()
+  "featured": zod.boolean().optional(),
+  "createdAt": zod.string(),
+  "updatedAt": zod.string().optional()
 })
 export const GetGalleryResponse = zod.array(GetGalleryResponseItem)
 
@@ -388,7 +390,26 @@ export const CreateGalleryItemResponse = zod.object({
   "type": zod.enum(['image', 'video']),
   "category": zod.string(),
   "caption": zod.string().optional(),
+  "featured": zod.boolean().optional(),
   "createdAt": zod.string()
+})
+
+
+/**
+ * @summary Update gallery metadata (admin)
+ */
+export const UpdateGalleryItemParams = zod.object({
+  "id": zod.coerce.string()
+})
+
+export const UpdateGalleryItemBody = zod.object({
+  "category": zod.string().min(1).optional(),
+  "caption": zod.string().max(300).optional(),
+  "featured": zod.boolean().optional()
+}).refine((data) => Object.keys(data).length > 0, { message: "At least one gallery field must be updated" })
+
+export const UpdateGalleryItemResponse = CreateGalleryItemResponse.extend({
+  "updatedAt": zod.string()
 })
 
 
@@ -432,5 +453,3 @@ export const GetAdminMeResponse = zod.object({
  * @summary Admin logout
  */
 export const AdminLogoutResponse = zod.unknown()
-
-

@@ -46,6 +46,7 @@ export function Navbar() {
 
         {/* Desktop: Glass pill nav */}
         <nav
+          aria-label="Primary navigation"
           className={cn(
             "hidden md:flex items-center gap-1 px-3 py-2 rounded-full transition-all duration-500",
             scrolled
@@ -102,6 +103,8 @@ export function Navbar() {
           onClick={() => setMobileOpen(!mobileOpen)}
           className="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-white/10 transition-colors"
           aria-label="Toggle menu"
+          aria-controls="mobile-primary-navigation"
+          aria-expanded={mobileOpen}
         >
           {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
@@ -130,7 +133,7 @@ export function Navbar() {
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
               className="fixed top-24 left-4 right-4 z-50 md:hidden rounded-2xl bg-card/95 backdrop-blur-2xl border border-white/10 shadow-2xl p-4"
             >
-              <nav className="flex flex-col gap-1">
+              <nav id="mobile-primary-navigation" aria-label="Mobile primary navigation" className="flex flex-col gap-1">
                 {navLinks.map((link) => {
                   const active = location === link.href;
                   return (

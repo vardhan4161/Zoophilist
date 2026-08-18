@@ -7,11 +7,19 @@ import { mongoCollections, newId } from "@workspace/db";
 const router: IRouter = Router();
 const ADMIN_ID = "zoophilist-admin";
 const SESSION_DURATION_MS = 12 * 60 * 60 * 1000;
+const SECRET_MIN_LENGTH: Record<"ADMIN_USERNAME" | "ADMIN_PASSWORD" | "SESSION_SECRET", number> = {
+  ADMIN_USERNAME: 3,
+  ADMIN_PASSWORD: 12,
+  SESSION_SECRET: 32,
+};
+
+export function validateAdminSecret(name: "ADMIN_USERNAME" | "ADMIN_PASSWORD" | "SESSION_SECRET", value: string | undefined): string {
+  if (!value || value.length < SECRET_MIN_LENGTH[name]) throw new Error(`${name} is not configured`);
+  return value;
+}
 
 function requiredSecret(name: "ADMIN_USERNAME" | "ADMIN_PASSWORD" | "SESSION_SECRET"): string {
-  const value = process.env[name];
-  if (!value || value.length < 12) throw new Error(`${name} is not configured`);
-  return value;
+  return validateAdminSecret(name, process.env[name]);
 }
 
 function tokenHash(token: string): string {

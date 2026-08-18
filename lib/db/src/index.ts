@@ -1,5 +1,5 @@
 import { randomUUID } from "node:crypto";
-import { MongoClient, type Db } from "mongodb";
+import { MongoClient, type Collection, type Db } from "mongodb";
 
 export const bookingStatuses = ["pending", "confirmed", "scheduled", "completed", "cancelled"] as const;
 export type BookingStatus = (typeof bookingStatuses)[number];
@@ -8,6 +8,8 @@ export type BookingDocument = { id: string; bookingId: string; customerName: str
 export type GalleryDocument = { id: string; url: string; publicId?: string; type: "image" | "video"; category?: string; caption?: string; featured: boolean; createdAt: Date; updatedAt: Date };
 export type SettingDocument = { key: string; value: string; updatedAt: Date };
 export type NotificationDocument = { id: string; bookingId: string; channel: "email" | "telegram" | "sms"; event: string; status: "sent" | "failed" | "skipped"; detail?: string; createdAt: Date };
+export type EmailQuotaDocument = { key: string; sent: number; createdAt: Date; updatedAt: Date };
+type EmailQuotaStore = Pick<Collection<EmailQuotaDocument>, "findOneAndUpdate" | "findOne">;
 export type ActivityDocument = { id: string; action: string; targetType: string; targetId?: string; metadata?: Record<string, unknown>; createdAt: Date };
 export type AdminSessionDocument = { id: string; username: string; tokenHash: string; expiresAt: Date; createdAt: Date };
 
@@ -28,7 +30,7 @@ export async function getMongoDb(): Promise<Db> {
 export async function mongoCollections() {
   const db = await getMongoDb();
   return {
-    services: db.collection<ServiceDocument>("services"), bookings: db.collection<BookingDocument>("bookings"), gallery: db.collection<GalleryDocument>("gallery"), settings: db.collection<SettingDocument>("settings"), notifications: db.collection<NotificationDocument>("notifications"), activityLogs: db.collection<ActivityDocument>("activityLogs"), adminSessions: db.collection<AdminSessionDocument>("adminSessions"), counters: db.collection<{ key: string; value: number }>("counters"),
+    services: db.collection<ServiceDocument>("services"), bookings: db.collection<BookingDocument>("bookings"), gallery: db.collection<GalleryDocument>("gallery"), settings: db.collection<SettingDocument>("settings"), notifications: db.collection<NotificationDocument>("notifications"), emailQuotas: db.collection<EmailQuotaDocument>("emailQuotas"), activityLogs: db.collection<ActivityDocument>("activityLogs"), adminSessions: db.collection<AdminSessionDocument>("adminSessions"), counters: db.collection<{ key: string; value: number }>("counters"),
   } as const;
 }
 
@@ -43,8 +45,8 @@ const DEFAULT_SERVICES: Array<Pick<ServiceDocument, "name" | "price" | "descript
 export async function initializeMongoData(): Promise<void> {
   if (initialization) return initialization;
   initialization = (async () => {
-    const { services, bookings, gallery, settings, notifications, activityLogs, adminSessions, counters } = await mongoCollections();
-    await Promise.all([services.createIndex({ id: 1 }, { unique: true }), bookings.createIndex({ id: 1 }, { unique: true }), bookings.createIndex({ bookingId: 1 }, { unique: true }), bookings.createIndex({ status: 1, createdAt: -1 }), gallery.createIndex({ id: 1 }, { unique: true }), settings.createIndex({ key: 1 }, { unique: true }), notifications.createIndex({ bookingId: 1, createdAt: -1 }), activityLogs.createIndex({ createdAt: -1 }), adminSessions.createIndex({ id: 1 }, { unique: true }), adminSessions.createIndex({ expiresAt: 1 }, { expireAfterSeconds: 0 }), counters.createIndex({ key: 1 }, { unique: true })]);
+    const { services, bookings, gallery, settings, notifications, emailQuotas, activityLogs, adminSessions, counters } = await mongoCollections();
+    await Promise.all([services.createIndex({ id: 1 }, { unique: true }), bookings.createIndex({ id: 1 }, { unique: true }), bookings.createIndex({ bookingId: 1 }, { unique: true }), bookings.createIndex({ status: 1, createdAt: -1 }), gallery.createIndex({ id: 1 }, { unique: true }), settings.createIndex({ key: 1 }, { unique: true }), notifications.createIndex({ bookingId: 1, createdAt: -1 }), emailQuotas.createIndex({ key: 1 }, { unique: true }), activityLogs.createIndex({ createdAt: -1 }), adminSessions.createIndex({ id: 1 }, { unique: true }), adminSessions.createIndex({ expiresAt: 1 }, { expireAfterSeconds: 0 }), counters.createIndex({ key: 1 }, { unique: true })]);
     if (await services.countDocuments() === 0) {
       const now = new Date();
       await services.insertMany(DEFAULT_SERVICES.map((service) => ({ ...service, id: randomUUID(), isHidden: false, createdAt: now, updatedAt: now })));
@@ -61,6 +63,25 @@ export async function nextBookingId(): Promise<string> {
   const year = new Date().getUTCFullYear(); const key = `booking:${year}`;
   const counter = await counters.findOneAndUpdate({ key }, { $inc: { value: 1 }, $setOnInsert: { key } }, { upsert: true, returnDocument: "after" });
   return `ZOO-${year}-${String(counter?.value ?? 1).padStart(6, "0")}`;
+}
+
+export async function reserveMonthlyEmailSlot(requestedLimit = 1_000, now = new Date(), quotaStore?: EmailQuotaStore): Promise<{ reserved: boolean; limit: number; used: number }> {
+  const limit = Math.min(1_000, Math.max(0, Number.isFinite(requestedLimit) ? Math.floor(requestedLimit) : 1_000));
+  const key = `resend:${now.getUTCFullYear()}-${String(now.getUTCMonth() + 1).padStart(2, "0")}`;
+  if (limit === 0) return { reserved: false, limit, used: 0 };
+  const emailQuotas = quotaStore ?? (await mongoCollections()).emailQuotas;
+  try {
+    const quota = await emailQuotas.findOneAndUpdate(
+      { key, sent: { $lt: limit } },
+      { $inc: { sent: 1 }, $setOnInsert: { key, createdAt: now }, $set: { updatedAt: now } },
+      { upsert: true, returnDocument: "after" },
+    );
+    if (quota) return { reserved: true, limit, used: quota.sent };
+  } catch (error: any) {
+    if (error?.code !== 11000) throw error;
+  }
+  const existing = await emailQuotas.findOne({ key });
+  return { reserved: false, limit, used: existing?.sent ?? limit };
 }
 
 export const newId = () => randomUUID();

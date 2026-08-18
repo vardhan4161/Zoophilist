@@ -51,6 +51,20 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, 'dist/public'),
     emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (!id.includes('node_modules')) return undefined;
+          if (id.includes('/node_modules/react/') || id.includes('/node_modules/react-dom/') || id.includes('/node_modules/scheduler/')) return 'react-vendor';
+          if (id.includes('@tanstack/react-query')) return 'query-vendor';
+          if (id.includes('framer-motion')) return 'motion-vendor';
+          if (id.includes('lucide-react')) return 'icons-vendor';
+          if (id.includes('@radix-ui/')) return 'radix-vendor';
+          if (id.includes('recharts')) return 'charts-vendor';
+          return undefined;
+        },
+      },
+    },
   },
   server: {
     port,

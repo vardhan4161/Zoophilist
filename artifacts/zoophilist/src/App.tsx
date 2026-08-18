@@ -1,35 +1,37 @@
+import { lazy, Suspense } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { Route, Switch, Router as WouterRouter } from 'wouter';
 
 import { SharedShell } from '@/components/shared-shell';
-import Home from '@/pages/home';
-import About from '@/pages/about';
-import Services from '@/pages/services';
-import ServiceDetail from '@/pages/service-detail';
-import Gallery from '@/pages/gallery';
-import Contact from '@/pages/contact';
-import Book from '@/pages/book';
-import BookingSuccess from '@/pages/booking-success';
-import Privacy from '@/pages/privacy';
-import Terms from '@/pages/terms';
-import NotFound from '@/pages/not-found';
-
 import { AdminLayout } from '@/components/admin/admin-layout';
-import AdminLogin from '@/pages/admin/login';
-import AdminDashboard from '@/pages/admin/dashboard';
-import AdminRequests from '@/pages/admin/requests';
-import AdminServices from '@/pages/admin/services';
-import AdminGallery from '@/pages/admin/gallery';
-import AdminSettings from '@/pages/admin/settings';
+
+const Home = lazy(() => import('@/pages/home'));
+const About = lazy(() => import('@/pages/about'));
+const Services = lazy(() => import('@/pages/services'));
+const ServiceDetail = lazy(() => import('@/pages/service-detail'));
+const Gallery = lazy(() => import('@/pages/gallery'));
+const Contact = lazy(() => import('@/pages/contact'));
+const Book = lazy(() => import('@/pages/book'));
+const BookingSuccess = lazy(() => import('@/pages/booking-success'));
+const Privacy = lazy(() => import('@/pages/privacy'));
+const Terms = lazy(() => import('@/pages/terms'));
+const NotFound = lazy(() => import('@/pages/not-found'));
+const AdminLogin = lazy(() => import('@/pages/admin/login'));
+const AdminDashboard = lazy(() => import('@/pages/admin/dashboard'));
+const AdminRequests = lazy(() => import('@/pages/admin/requests'));
+const AdminServices = lazy(() => import('@/pages/admin/services'));
+const AdminGallery = lazy(() => import('@/pages/admin/gallery'));
+const AdminSettings = lazy(() => import('@/pages/admin/settings'));
 
 const queryClient = new QueryClient();
 
 function Router() {
   return (
     <SharedShell>
-      <Switch>
+      <Suspense fallback={<div className="min-h-screen bg-background" aria-live="polite" aria-label="Loading page" />}>
+        <Switch>
         {/* Public Routes */}
         <Route path="/" component={Home} />
         <Route path="/about" component={About} />
@@ -73,7 +75,8 @@ function Router() {
         </Route>
         
         <Route component={NotFound} />
-      </Switch>
+        </Switch>
+      </Suspense>
     </SharedShell>
   );
 }

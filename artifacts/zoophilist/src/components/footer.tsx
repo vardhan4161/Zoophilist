@@ -97,8 +97,8 @@ export function Footer() {
           </div>
 
           {/* Services */}
-          <div>
-            <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-5">Services</h4>
+          <nav aria-labelledby="footer-services-heading">
+            <h4 id="footer-services-heading" className="text-sm font-semibold text-white uppercase tracking-wider mb-5">Services</h4>
             <ul className="space-y-3">
               {footerLinks.services.map((l) => (
                 <li key={l.label}>
@@ -108,11 +108,11 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
           {/* Company */}
-          <div>
-            <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-5">Company</h4>
+          <nav aria-labelledby="footer-company-heading">
+            <h4 id="footer-company-heading" className="text-sm font-semibold text-white uppercase tracking-wider mb-5">Company</h4>
             <ul className="space-y-3">
               {footerLinks.company.map((l) => (
                 <li key={l.label}>
@@ -129,7 +129,7 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
           {/* Contact */}
           <div>

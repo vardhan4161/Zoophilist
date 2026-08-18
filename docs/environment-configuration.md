@@ -11,6 +11,9 @@ This managed project stores deployment configuration in the secure project setti
 | `ADMIN_EMAIL` | Booking notification recipient | Use `zoophilistpetservice@gmail.com` unless business operations change it. |
 | `RESEND_API_KEY` | Transactional email | Requires a verified sending domain. |
 | `RESEND_FROM_EMAIL` | Transactional email sender | Must use the verified Resend domain. |
+| `RESEND_MONTHLY_LIMIT` | Monthly Resend safeguard | Optional. Defaults to `1000` and is clamped to at most `1000`, reserving a persistent slot before every recipient delivery. |
+| `RESEND_MODE` | Resend delivery mode | Optional. Use `test` to suppress customer and administrator delivery, routing the event only to `RESEND_TEST_RECIPIENT`. Leave unset for live transactional email. |
+| `RESEND_TEST_RECIPIENT` | Resend test-mode recipient | Required when `RESEND_MODE=test`. Use a mailbox controlled by the business owner. |
 | `TELEGRAM_BOT_TOKEN` | Telegram alerts | Create and secure with BotFather. |
 | `TELEGRAM_CHAT_ID` | Telegram alerts | Use the chosen private chat or private group ID. |
 | `FAST2SMS_API_KEY` | Transactional SMS | Used as the Fast2SMS `authorization` query parameter; requires a DLT-approved sender and message template. |

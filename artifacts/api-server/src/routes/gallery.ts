@@ -4,6 +4,8 @@ import {
   CreateGalleryItemBody,
   GetGalleryQueryParams,
   DeleteGalleryItemParams,
+  UpdateGalleryItemBody,
+  UpdateGalleryItemParams,
 } from "@workspace/api-zod";
 import { requireAdmin } from "./admin";
 
@@ -48,6 +50,36 @@ router.post("/gallery", requireAdmin, async (req, res): Promise<void> => {
   } catch (err) {
     req.log.error({ err }, "Failed to create gallery item");
     res.status(500).json({ error: "Failed to create gallery item" });
+  }
+});
+
+router.patch("/gallery/:id", requireAdmin, async (req, res): Promise<void> => {
+  const params = UpdateGalleryItemParams.safeParse(req.params);
+  const parsed = UpdateGalleryItemBody.safeParse(req.body);
+  if (!params.success) {
+    res.status(400).json({ error: params.error.message });
+    return;
+  }
+  if (!parsed.success) {
+    res.status(400).json({ error: parsed.error.message });
+    return;
+  }
+
+  try {
+    const { gallery } = await mongoCollections();
+    const updated = await gallery.findOneAndUpdate(
+      { id: params.data.id },
+      { $set: { ...parsed.data, updatedAt: new Date() } },
+      { returnDocument: "after" },
+    );
+    if (!updated) {
+      res.status(404).json({ error: "Gallery item not found" });
+      return;
+    }
+    res.json(formatItem(updated));
+  } catch (err) {
+    req.log.error({ err }, "Failed to update gallery item");
+    res.status(500).json({ error: "Failed to update gallery item" });
   }
 });
 

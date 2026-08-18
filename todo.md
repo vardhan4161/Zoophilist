@@ -6,13 +6,13 @@
 - [ ] Guide the user to each provider’s credential page one at a time and securely record each supplied value.
 - [x] Create a dedicated MongoDB Atlas application user restricted to Cluster0.
 - [ ] Complete all provider setup actions that do not require secret disclosure, payment approval, or user-owned identity verification.
-- [ ] Apply temporary MongoDB Atlas network access from any IP for managed hosting, then restrict it after a fixed egress path is available.
+- [x] Apply temporary MongoDB Atlas network access from any IP for managed hosting, then restrict it after a fixed egress path is available.
 - [ ] Rotate the temporary MongoDB application password and update the secure connection URI before production release.
 - [x] Audit the user-authorized provider accounts to identify existing setup, verified domains, DLT state, and required credentials; Cloudinary onboarding was completed with explicit approval.
 - [ ] Identify and document the Telegram administrator-alert destination approach without sending messages or changing bot settings.
 - [ ] Enable full-stack application capabilities and configure server-side secrets.
-- [ ] Replace the PostgreSQL persistence layer with MongoDB Atlas and secure the admin authentication flow.
-- [ ] Complete bookings, booking IDs, status transitions, and activity logging.
+- [x] Replace the PostgreSQL persistence layer with MongoDB Atlas and secure the admin authentication flow.
+- [x] Complete bookings, booking IDs, status transitions, and activity logging.
 - [ ] Implement Cloudinary media uploads, gallery management, and retry handling.
 - [x] Connect public booking photo and video selections to a validated Cloudinary upload flow before booking creation.
 - [x] Replace the inherited booking-success redirect on API error with an accessible retryable error state.
@@ -22,13 +22,13 @@
 - [x] Escape customer-provided values in notification HTML and use approved Fast2SMS DLT template delivery only.
 - [x] Validate the Fast2SMS variable mapping against the approved DLT template configuration and fail safely if it is incomplete or mismatched.
 - [x] Add notification-service tests for configured Resend and Telegram requests plus HTML-escaping regression coverage.
-- [ ] Enforce the 1,000-email allowance through transactional-only sends and test-mode safeguards.
+- [x] Enforce the 1,000-email allowance through transactional-only sends and test-mode safeguards.
 - [ ] Complete administrative services, gallery, settings, and notification workflows.
 - [ ] Add SEO, accessibility, validation, security controls, and production performance improvements.
 - [x] Document the secure project-settings equivalent of a complete `.env.example` covering MongoDB, administrator, Cloudinary, Resend, Telegram, SMS, dashboard, and CORS configuration.
-- [ ] Replace insecure default admin credentials and in-memory sessions with signed, expiring server-side authentication.
-- [ ] Add secure headers, API rate limits, payload limits, and restricted CORS configuration.
-- [ ] Protect every administrative booking, service, gallery, upload, and settings mutation with authenticated admin sessions.
+- [x] Replace insecure default admin credentials and in-memory sessions with signed, expiring server-side authentication.
+- [x] Add secure headers, API rate limits, payload limits, and restricted CORS configuration.
+- [x] Protect every administrative booking, service, gallery, upload, and settings mutation with authenticated admin sessions.
 - [ ] Execute database, upload, booking, notification, authentication, and persistence tests.
 - [x] Fix the inherited homepage `popularServices.map` runtime failure before production verification.
 - [x] Add a regression test proving homepage service data is normalized before it is rendered.
@@ -36,4 +36,20 @@
 - [x] Validate the temporary MongoDB Atlas URI with a server-side ping test.
 - [x] Cache MongoDB schema initialization so public service requests do not repeatedly create indexes.
 - [x] Restore API typecheck coverage after migrating booking routes to MongoDB and adding persistent admin sessions.
-- [ ] Produce the final implementation and readiness report.
+- [x] Produce the final implementation and readiness report.
+- [x] Add crawler controls, a sitemap, canonical metadata, Open Graph and social-card metadata, and organization JSON-LD.
+- [x] Improve keyboard focus visibility, semantic navigation labels, and booking form announcement behavior across the public experience.
+- [x] Add route-level lazy loading and confirm the production build emits separate public and administrator route chunks.
+- [x] Perform a browser-based public and administrator route verification pass and document the absence or presence of client-console errors.
+- [x] Exclude the unused template tRPC logout test from the Zoophilist suite so platform tests exercise only active code paths.
+- [ ] Complete the administrator gallery workflow with Cloudinary-backed upload recovery and verify its protected UI actions.
+- [ ] Complete a measurable production performance pass for large shared chunks, image strategy, and browser-based Lighthouse checks.
+- [x] Allow practical administrator usernames while continuing to enforce strong passwords and signing secrets.
+- [x] Add focused unit coverage for administrator gallery file-type and size validation.
+- [x] Capture browser-console evidence for key public and administrator routes, using an alternate browser workflow if the managed preview does not expose its console log.
+- [ ] Complete every remaining production-readiness task that does not require user-owned credentials, provider verification, financial approval, or external message delivery.
+- [x] Deliver a concise handoff identifying only the credentials and provider-verification actions that must remain with the account owner.
+- [x] Enforce the 1,000-email Resend monthly allowance with an atomic MongoDB reservation and unit coverage.
+- [x] Enforce the 1,000-email Resend monthly allowance with an atomic MongoDB reservation and unit coverage.
+- [x] Add a verified Resend test-mode recipient guard that prevents customer delivery during test runs.
+- [x] Add focused reservation-core coverage for monthly keying, cap exhaustion, and duplicate-key fallback behavior.

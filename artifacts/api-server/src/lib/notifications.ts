@@ -1,3 +1,4 @@
+import { reserveMonthlyEmailSlot } from "@workspace/db";
 import { logger } from "./logger";
 
 export interface BookingNotificationData {
@@ -77,6 +78,25 @@ async function resendSend(to: string, subject: string, html: string, apiKey: str
   }
 }
 
+function resendMonthlyLimit(): number {
+  const configured = Number.parseInt(process.env.RESEND_MONTHLY_LIMIT ?? "1000", 10);
+  return Number.isFinite(configured) ? Math.min(1_000, Math.max(0, configured)) : 1_000;
+}
+
+function resendRecipients(booking: BookingNotificationData, adminEmail?: string): { recipients: Array<{ to: string; recipient: "customer" | "admin" }>; error?: string } {
+  if (process.env.RESEND_MODE === "test") {
+    const recipient = process.env.RESEND_TEST_RECIPIENT?.trim();
+    if (!recipient) return { recipients: [], error: "Resend test mode requires RESEND_TEST_RECIPIENT" };
+    return { recipients: [{ to: recipient, recipient: "admin" }] };
+  }
+  return {
+    recipients: [
+      booking.customerEmail ? { to: booking.customerEmail, recipient: "customer" as const } : null,
+      adminEmail ? { to: adminEmail, recipient: "admin" as const } : null,
+    ].filter((recipient): recipient is { to: string; recipient: "customer" | "admin" } => Boolean(recipient)),
+  };
+}
+
 export async function sendBookingEmails(booking: BookingNotificationData, event: BookingNotificationEvent): Promise<NotificationOutcome> {
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.RESEND_FROM_EMAIL;
@@ -84,12 +104,26 @@ export async function sendBookingEmails(booking: BookingNotificationData, event:
   if (!apiKey || !from) return { channel: "email", status: "skipped", detail: "Resend is not configured" };
 
   const subject = `${statusLabel(event, booking.status)} — ${booking.bookingId} | Zoophilist`;
-  const recipients: Array<Promise<NotificationOutcome>> = [];
-  if (booking.customerEmail) recipients.push(resendSend(booking.customerEmail, subject, bookingEmailHtml(booking, event, "customer"), apiKey, from));
-  if (adminEmail) recipients.push(resendSend(adminEmail, subject, bookingEmailHtml(booking, event, "admin"), apiKey, from));
+  const recipientConfiguration = resendRecipients(booking, adminEmail);
+  if (recipientConfiguration.error) return { channel: "email", status: "skipped", detail: recipientConfiguration.error };
+  const { recipients } = recipientConfiguration;
   if (!recipients.length) return { channel: "email", status: "skipped", detail: "No email recipient configured" };
 
-  const outcomes = await Promise.all(recipients);
+  const emailBooking = process.env.RESEND_MODE === "test" ? { ...booking, customerEmail: undefined } : booking;
+  const outcomes: NotificationOutcome[] = [];
+  for (const recipient of recipients) {
+    try {
+      const quota = await reserveMonthlyEmailSlot(resendMonthlyLimit());
+      if (!quota.reserved) {
+        outcomes.push({ channel: "email", status: "skipped", detail: `Resend monthly email limit reached (${quota.limit})` });
+        continue;
+      }
+      outcomes.push(await resendSend(recipient.to, subject, bookingEmailHtml(emailBooking, event, recipient.recipient), apiKey, from));
+    } catch (error) {
+      logger.error({ error }, "Resend quota reservation failed");
+      outcomes.push({ channel: "email", status: "skipped", detail: "Resend email quota could not be reserved" });
+    }
+  }
   if (outcomes.some((outcome) => outcome.status === "sent")) return { channel: "email", status: "sent" };
   return outcomes[0] ?? { channel: "email", status: "skipped" };
 }

@@ -14,6 +14,7 @@ export default defineConfig({
   },
   test: {
     environment: "node",
-    include: ["server/**/*.test.ts", "server/**/*.spec.ts", "artifacts/api-server/**/*.test.ts", "artifacts/api-server/**/*.spec.ts"],
+    include: ["server/**/*.test.ts", "server/**/*.spec.ts", "artifacts/api-server/**/*.test.ts", "artifacts/api-server/**/*.spec.ts", "artifacts/zoophilist/src/**/*.test.ts", "artifacts/zoophilist/src/**/*.spec.ts", "lib/db/src/**/*.test.ts", "lib/db/src/**/*.spec.ts"],
+    exclude: ["**/node_modules/**", "server/auth.logout.test.ts"],
   },
 });
