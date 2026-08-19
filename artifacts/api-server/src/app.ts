@@ -3,6 +3,8 @@ import cors from "cors";
 import helmet from "helmet";
 import rateLimit from "express-rate-limit";
 import pinoHttp from "pino-http";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import router from "./routes";
 import { logger } from "./lib/logger";
 
@@ -19,5 +21,27 @@ app.use(express.json({ limit: "256kb" }));
 app.use(express.urlencoded({ extended: true, limit: "64kb" }));
 
 app.use("/api", router);
+
+/**
+ * Render runs one public HTTP service. In production, this lets the Express
+ * API serve the pre-built Vite client from the same origin, keeping `/api`
+ * calls, cookies, and CORS configuration straightforward. Development keeps
+ * using Vite's proxy because SERVE_STATIC is unset.
+ */
+if (process.env.SERVE_STATIC === "true") {
+  const staticDirectory =
+    process.env.STATIC_DIR ||
+    path.resolve(
+      path.dirname(fileURLToPath(import.meta.url)),
+      "../../zoophilist/dist/public",
+    );
+  const indexFile = path.join(staticDirectory, "index.html");
+
+  app.use(express.static(staticDirectory, { index: "index.html", maxAge: "1h" }));
+  app.get("/{*splat}", (req, res, next) => {
+    if (req.path.startsWith("/api/")) return next();
+    return res.sendFile(indexFile);
+  });
+}
 
 export default app;

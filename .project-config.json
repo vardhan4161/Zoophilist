@@ -11,24 +11,34 @@
     "DRIZZLE_DATABASE_URL": "mysql://3NV9ENLCC6mnxYV.root:9qN7cDFbA0ksdn3AU11E@gateway03.us-east-1.prod.aws.tidbcloud.com:4000/QuEbeRWyTbZgiDBvQwXxsh?ssl={\"rejectUnauthorized\":true}",
     "MANUS_WEBDEV_PROJECT_ID": "QuEbeRWyTbZgiDBvQwXxsh"
   },
-  "experiments": null,
+  "experiments": [
+    "no_db_push"
+  ],
   "git_remote": {
     "repo_url": "https://7f0548f6b28a1758d9bf7be630d36cb4.artifacts.cloudflare.net/git/prod/QuEbeRWyTbZgiDBvQwXxsh.git",
-    "expiration": "2026-08-19T12:18:15.526Z",
-    "token": "art_v2_x_268796d958e5b6e9e0823964b28f0bf346e44895?expires=1787141895",
+    "expiration": "2026-08-20T13:19:52.072Z",
+    "token": "art_v2_x_31cd3cf6ab0461f3019833b40d6db336f9528df2?expires=1787231992",
     "backend": "GIT_BACKEND_ARTIFACTS"
   },
   "name": "zoophilist-workspace",
   "path": "/home/ubuntu/zoophilist-workspace",
   "port": 3000,
   "secrets": {
+    "ADMIN_PASSWORD": "Zoophilist@2026",
+    "ADMIN_USERNAME": "admin",
     "BUILT_IN_FORGE_API_KEY": "LpG9DmdyCH2yMHd3LXnFmG",
     "BUILT_IN_FORGE_API_URL": "https://forge.manus.ai",
+    "CLOUDINARY_API_KEY": "475989172991545",
+    "CLOUDINARY_API_SECRET": "wo7hr6qUXfBhkRHmQfQBPGSXp4w",
+    "CLOUDINARY_CLOUD_NAME": "konrpzex",
     "JWT_SECRET": "Pws6P9w7TX95f3mGCDEgjY",
     "MONGODB_URI": "mongodb+srv://zoophilist_app:xcbTz0F7yYoQLyEd@cluster0.jrbzymj.mongodb.net/zoophilist",
     "OAUTH_SERVER_URL": "https://api.manus.im",
     "OWNER_NAME": "Sai Shravan",
     "OWNER_OPEN_ID": "RGAtqJ4E57EvkeXCxtBpXC",
+    "SESSION_SECRET": "4459c5537e659a33cc62f61d66fdd9fda22854710ea32f83cfc706f24bed9889",
+    "TELEGRAM_BOT_TOKEN": "8407200457:AAGgh3hsxV72Svk8iFUQJs2cBMuQrPCsZ9E",
+    "TELEGRAM_CHAT_ID": "-1004339119278",
     "VITE_ANALYTICS_ENDPOINT": "https://manus-analytics.com",
     "VITE_ANALYTICS_WEBSITE_ID": "91c2f07a-8ed1-4507-809a-8a7a4672371a",
     "VITE_APP_ID": "QuEbeRWyTbZgiDBvQwXxsh",

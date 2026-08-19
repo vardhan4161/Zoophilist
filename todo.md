@@ -53,3 +53,21 @@
 - [x] Enforce the 1,000-email Resend monthly allowance with an atomic MongoDB reservation and unit coverage.
 - [x] Add a verified Resend test-mode recipient guard that prevents customer delivery during test runs.
 - [x] Add focused reservation-core coverage for monthly keying, cap exhaustion, and duplicate-key fallback behavior.
+- [ ] Restore the uncheckpointed provider-setup documentation and checklist entries lost during the sandbox reset.
+- [x] Add the verified Zoophilist alert bot as a Telegram channel administrator with only the required posting permission.
+- [ ] Securely configure the Telegram bot token and verified channel chat identifier, then validate alert delivery without customer data.
+- [ ] Retry the Telegram API validation from an environment with outbound access to api.telegram.org; sandbox read-only checks timed out without a response.
+- [ ] Collect Cloudinary server credentials and verify protected media-upload configuration.
+- [ ] Verify the Resend sending domain, create a transactional API key, and configure the approved sender and administrator recipient.
+- [ ] Complete Fast2SMS DLT prerequisite checks and configure only approved sender, template, and variable mappings.
+- [x] Configure the owner-approved temporary Cloudinary Master Admin upload credential and capture its API secret only in secure project settings.
+- [x] Deactivate the two earlier Cloudinary credentials whose one-time secrets were not captured after verifying the final credential.
+- [ ] Reduce the temporary Cloudinary Master Admin credential to a least-privilege upload role after successful media-upload validation.
+- [x] Assess a low-cost Render-compatible deployment architecture, including free-tier lifecycle limits and external-service compatibility.
+- [x] Prepare production deployment configuration, documented environment-variable mapping, and no-secret deployment instructions for the selected external host.
+- [x] Validate the production build and startup command for the selected low-cost external host.
+- [x] Resolve the pnpm/esbuild ignored-build-scripts issue for fresh Render installs and update the Render build configuration accordingly.
+- [x] Run the exact Render-style install, build, and start commands in a clean environment and confirm `/api/healthz` plus SPA routing.
+- [x] Document the pnpm esbuild build-script approval requirement for the Render Blueprint.
+- [x] Run the exact Render-style install, build, and start flow from a fresh install state, then verify `/api/healthz` and SPA routing again.
+- [x] Add the fresh-install validation evidence to the Render deployment notes.
