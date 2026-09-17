@@ -1910,3 +1910,100 @@
 [2026-08-19T14:52:21.062Z] [api] $ node --enable-source-maps ./dist/index.mjs
 [2026-08-19T14:52:21.512Z] [api] [14:52:21.492] [32mINFO[39m (8537): [36mServer listening[39m
 [2026-08-19T14:52:21.512Z] [api]     [35mport[39m: 3001
+[2026-09-17T06:20:06.230Z] Starting dev server with command: pnpm run dev
+[2026-09-17T06:20:06.902Z] $ API_PORT=3001 concurrently -k -n api,web -c blue,green "pnpm --filter @workspace/api-server run dev" "pnpm --filter @workspace/zoophilist run dev"
+[2026-09-17T06:20:08.004Z] [api] $ PORT=$API_PORT NODE_ENV=development pnpm run build && PORT=$API_PORT NODE_ENV=development pnpm run start
+[2026-09-17T06:20:08.049Z] [web] $ vite --config vite.config.ts --host 0.0.0.0
+[2026-09-17T06:20:08.605Z] [web]
+[2026-09-17T06:20:08.605Z] [web]   VITE v7.3.6  ready in 493 ms
+[2026-09-17T06:20:08.605Z] [web]
+[2026-09-17T06:20:08.605Z] [web]   ➜  Local:   http://localhost:3000/
+[2026-09-17T06:20:08.605Z] [web]   ➜  Network: http://169.254.0.21:3000/
+[2026-09-17T06:20:08.727Z] [api] $ node ./build.mjs
+[2026-09-17T06:20:09.352Z] [api]
+[2026-09-17T06:20:09.352Z] [api]   dist/index.mjs                       3.5mb ⚠️
+[2026-09-17T06:20:09.352Z] [api]   dist/pino-worker.mjs               153.4kb
+[2026-09-17T06:20:09.352Z] [api]   dist/pino-file.mjs                 142.1kb
+[2026-09-17T06:20:09.352Z] [api]   dist/pino-pretty.mjs               114.4kb
+[2026-09-17T06:20:09.352Z] [api]   dist/thread-stream-worker.mjs        7.3kb
+[2026-09-17T06:20:09.352Z] [api]   dist/index.mjs.map                   6.0mb
+[2026-09-17T06:20:09.352Z] [api]   dist/pino-worker.mjs.map           256.9kb
+[2026-09-17T06:20:09.352Z] [api]   dist/pino-file.mjs.map             229.1kb
+[2026-09-17T06:20:09.352Z] [api]   dist/pino-pretty.mjs.map           203.6kb
+[2026-09-17T06:20:09.352Z] [api]   dist/thread-stream-worker.mjs.map   12.0kb
+[2026-09-17T06:20:09.352Z] [api]
+[2026-09-17T06:20:09.352Z] [api] ⚡ Done in 495ms
+[2026-09-17T06:20:10.093Z] [api] $ node --enable-source-maps ./dist/index.mjs
+[2026-09-17T06:20:10.655Z] [api] [06:20:10.622] [32mINFO[39m (1865): [36mServer listening[39m
+[2026-09-17T06:20:10.655Z] [api]     [35mport[39m: 3001
+[2026-09-17T06:20:22.722Z] [api] [06:20:22.244] [32mINFO[39m (1865): [36mrequest aborted[39m
+[2026-09-17T06:20:22.722Z] [api]     [35mreq[39m: {
+[2026-09-17T06:20:22.722Z] [api]       "id": 1,
+[2026-09-17T06:20:22.722Z] [api]       "method": "GET",
+[2026-09-17T06:20:22.722Z] [api]       "url": "/api/services"
+[2026-09-17T06:20:22.722Z] [api]     }
+[2026-09-17T06:20:22.722Z] [api]     [35mres[39m: {
+[2026-09-17T06:20:22.722Z] [api]       "statusCode": null
+[2026-09-17T06:20:22.722Z] [api]     }
+[2026-09-17T06:20:22.722Z] [api]     [35mresponseTime[39m: 1534
+[2026-09-17T06:20:36.093Z] [api] /home/ubuntu/zoophilist-workspace/artifacts/api-server:
+[2026-09-17T06:20:36.093Z] [api] [ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL] @workspace/api-server@0.0.0 dev: `PORT=$API_PORT NODE_ENV=development pnpm run build && PORT=$API_PORT NODE_ENV=development pnpm run start`
+[2026-09-17T06:20:36.093Z] [api] Command failed with signal "SIGTERM"
+[2026-09-17T06:20:36.093Z] [api] [ELIFECYCLE] Command failed.
+[2026-09-17T06:20:36.095Z] [web] /home/ubuntu/zoophilist-workspace/artifacts/zoophilist:
+[2026-09-17T06:20:36.095Z] [web] [ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL] @workspace/zoophilist@0.0.0 dev: `vite --config vite.config.ts --host 0.0.0.0`
+[2026-09-17T06:20:36.095Z] [web] Command failed with signal "SIGTERM"
+[2026-09-17T06:20:36.101Z] [ELIFECYCLE] Command failed.
+[2026-09-17T06:20:36.105Z] [api] pnpm --filter @workspace/api-server run dev exited with code SIGTERM
+[2026-09-17T06:20:36.105Z] --> Sending SIGTERM to other processes..
+[2026-09-17T06:20:36.108Z] [web] pnpm --filter @workspace/zoophilist run dev exited with code SIGTERM
+[2026-09-17T06:20:36.113Z] Dev server exited with code -1
+[2026-09-17T06:20:37.179Z] Starting dev server with command: pnpm run dev
+[2026-09-17T06:20:37.900Z] $ API_PORT=3001 concurrently -k -n api,web -c blue,green "pnpm --filter @workspace/api-server run dev" "pnpm --filter @workspace/zoophilist run dev"
+[2026-09-17T06:20:38.878Z] [web] $ vite --config vite.config.ts --host 0.0.0.0
+[2026-09-17T06:20:38.888Z] [api] $ PORT=$API_PORT NODE_ENV=development pnpm run build && PORT=$API_PORT NODE_ENV=development pnpm run start
+[2026-09-17T06:20:39.322Z] [web]
+[2026-09-17T06:20:39.323Z] [web]   VITE v7.3.6  ready in 398 ms
+[2026-09-17T06:20:39.323Z] [web]
+[2026-09-17T06:20:39.323Z] [web]   ➜  Local:   http://localhost:3000/
+[2026-09-17T06:20:39.323Z] [web]   ➜  Network: http://169.254.0.21:3000/
+[2026-09-17T06:20:39.493Z] [api] $ node ./build.mjs
+[2026-09-17T06:20:39.939Z] [api]
+[2026-09-17T06:20:39.939Z] [api]   dist/index.mjs                       3.5mb ⚠️
+[2026-09-17T06:20:39.939Z] [api]   dist/pino-worker.mjs               153.4kb
+[2026-09-17T06:20:39.939Z] [api]   dist/pino-file.mjs                 142.1kb
+[2026-09-17T06:20:39.939Z] [api]   dist/pino-pretty.mjs               114.4kb
+[2026-09-17T06:20:39.939Z] [api]   dist/thread-stream-worker.mjs        7.3kb
+[2026-09-17T06:20:39.939Z] [api]   dist/index.mjs.map                   6.0mb
+[2026-09-17T06:20:39.939Z] [api]   dist/pino-worker.mjs.map           256.9kb
+[2026-09-17T06:20:39.939Z] [api]   dist/pino-file.mjs.map             229.1kb
+[2026-09-17T06:20:39.939Z] [api]   dist/pino-pretty.mjs.map           203.6kb
+[2026-09-17T06:20:39.939Z] [api]   dist/thread-stream-worker.mjs.map   12.0kb
+[2026-09-17T06:20:39.939Z] [api]
+[2026-09-17T06:20:39.939Z] [api] ⚡ Done in 311ms
+[2026-09-17T06:20:40.566Z] [web] 6:20:40 AM [vite] http proxy error: /api/services
+[2026-09-17T06:20:40.566Z] [web] Error: connect ECONNREFUSED 127.0.0.1:3001
+[2026-09-17T06:20:40.566Z] [web]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1634:16)
+[2026-09-17T06:20:40.650Z] [api] $ node --enable-source-maps ./dist/index.mjs
+[2026-09-17T06:20:41.217Z] [api] [06:20:41.147] [32mINFO[39m (2513): [36mServer listening[39m
+[2026-09-17T06:20:41.217Z] [api]     [35mport[39m: 3001
+[2026-09-17T06:21:03.295Z] [api] [06:21:03.227] [32mINFO[39m (2513): [36mrequest completed[39m
+[2026-09-17T06:21:03.295Z] [api]     [35mreq[39m: {
+[2026-09-17T06:21:03.295Z] [api]       "id": 1,
+[2026-09-17T06:21:03.295Z] [api]       "method": "GET",
+[2026-09-17T06:21:03.295Z] [api]       "url": "/api/services"
+[2026-09-17T06:21:03.295Z] [api]     }
+[2026-09-17T06:21:03.295Z] [api]     [35mres[39m: {
+[2026-09-17T06:21:03.295Z] [api]       "statusCode": 200
+[2026-09-17T06:21:03.295Z] [api]     }
+[2026-09-17T06:21:03.295Z] [api]     [35mresponseTime[39m: 19163
+[2026-09-17T06:23:00.483Z] [api] [06:23:00.283] [32mINFO[39m (2513): [36mrequest completed[39m
+[2026-09-17T06:23:00.483Z] [api]     [35mreq[39m: {
+[2026-09-17T06:23:00.483Z] [api]       "id": 2,
+[2026-09-17T06:23:00.483Z] [api]       "method": "GET",
+[2026-09-17T06:23:00.483Z] [api]       "url": "/api/healthz"
+[2026-09-17T06:23:00.483Z] [api]     }
+[2026-09-17T06:23:00.483Z] [api]     [35mres[39m: {
+[2026-09-17T06:23:00.483Z] [api]       "statusCode": 200
+[2026-09-17T06:23:00.483Z] [api]     }
+[2026-09-17T06:23:00.483Z] [api]     [35mresponseTime[39m: 2

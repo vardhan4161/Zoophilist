@@ -16,8 +16,8 @@
   ],
   "git_remote": {
     "repo_url": "https://7f0548f6b28a1758d9bf7be630d36cb4.artifacts.cloudflare.net/git/prod/QuEbeRWyTbZgiDBvQwXxsh.git",
-    "expiration": "2026-08-20T13:19:52.072Z",
-    "token": "art_v2_x_31cd3cf6ab0461f3019833b40d6db336f9528df2?expires=1787231992",
+    "expiration": "2026-09-18T06:19:51.500Z",
+    "token": "art_v2_x_f69220629af641490335d39fb45c6372d5eb55ee?expires=1789712391",
     "backend": "GIT_BACKEND_ARTIFACTS"
   },
   "name": "zoophilist-workspace",
