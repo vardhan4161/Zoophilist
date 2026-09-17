@@ -9,7 +9,7 @@
 - [x] Apply temporary MongoDB Atlas network access from any IP for managed hosting, then restrict it after a fixed egress path is available.
 - [ ] Rotate the temporary MongoDB application password and update the secure connection URI before production release.
 - [x] Audit the user-authorized provider accounts to identify existing setup, verified domains, DLT state, and required credentials; Cloudinary onboarding was completed with explicit approval.
-- [ ] Identify and document the Telegram administrator-alert destination approach without sending messages or changing bot settings.
+- [x] Identify and document the Telegram administrator-alert destination approach without sending messages or changing bot settings.
 - [ ] Enable full-stack application capabilities and configure server-side secrets.
 - [x] Replace the PostgreSQL persistence layer with MongoDB Atlas and secure the admin authentication flow.
 - [x] Complete bookings, booking IDs, status transitions, and activity logging.
@@ -24,7 +24,7 @@
 - [x] Add notification-service tests for configured Resend and Telegram requests plus HTML-escaping regression coverage.
 - [x] Enforce the 1,000-email allowance through transactional-only sends and test-mode safeguards.
 - [ ] Complete administrative services, gallery, settings, and notification workflows.
-- [ ] Add SEO, accessibility, validation, security controls, and production performance improvements.
+- [x] Add SEO, accessibility, validation, security controls, and production performance improvements.
 - [x] Document the secure project-settings equivalent of a complete `.env.example` covering MongoDB, administrator, Cloudinary, Resend, Telegram, SMS, dashboard, and CORS configuration.
 - [x] Replace insecure default admin credentials and in-memory sessions with signed, expiring server-side authentication.
 - [x] Add secure headers, API rate limits, payload limits, and restricted CORS configuration.
@@ -53,7 +53,7 @@
 - [x] Enforce the 1,000-email Resend monthly allowance with an atomic MongoDB reservation and unit coverage.
 - [x] Add a verified Resend test-mode recipient guard that prevents customer delivery during test runs.
 - [x] Add focused reservation-core coverage for monthly keying, cap exhaustion, and duplicate-key fallback behavior.
-- [ ] Restore the uncheckpointed provider-setup documentation and checklist entries lost during the sandbox reset.
+- [x] Restore the uncheckpointed provider-setup documentation and checklist entries lost during the sandbox reset.
 - [x] Add the verified Zoophilist alert bot as a Telegram channel administrator with only the required posting permission.
 - [ ] Securely configure the Telegram bot token and verified channel chat identifier, then validate alert delivery without customer data.
 - [ ] Retry the Telegram API validation from an environment with outbound access to api.telegram.org; sandbox read-only checks timed out without a response.
