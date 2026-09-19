@@ -7,8 +7,9 @@ const { Pool } = pg;
 
 let pool: any = null;
 let db: any = null;
+export let mockDbInstance: any = null;
 
-const DEFAULT_SERVICES = [
+export const DEFAULT_SERVICES = [
   {
     id: "s1",
     name: "Spa Bath",
@@ -71,7 +72,7 @@ const DEFAULT_SERVICES = [
   },
 ];
 
-const DEFAULT_GALLERY = [
+export const DEFAULT_GALLERY = [
   {
     id: "g1",
     url: "/images/gallery-1.jpg",
@@ -114,7 +115,7 @@ const DEFAULT_GALLERY = [
   },
 ];
 
-const DEFAULT_SETTINGS = [
+export const DEFAULT_SETTINGS = [
   { key: "phone", value: "+91 9515247704", updatedAt: new Date() },
   { key: "email", value: "zoophilistpetservice@gmail.com", updatedAt: new Date() },
   { key: "address", value: "Doorstep service across major cities in India", updatedAt: new Date() },
@@ -125,7 +126,7 @@ const DEFAULT_SETTINGS = [
   { key: "adminEmail", value: "zoophilistpetservice@gmail.com", updatedAt: new Date() },
 ];
 
-function createMockDb() {
+export function createMockDb() {
   const tables = {
     services: [...DEFAULT_SERVICES],
     bookings: [] as any[],
@@ -160,6 +161,7 @@ function createMockDb() {
   }
 
   return {
+    _tables: tables,
     select: (fields?: any) => ({
       from: (table: any) => {
         const name = getTableName(table);
@@ -234,17 +236,144 @@ function createMockDb() {
   };
 }
 
+mockDbInstance = createMockDb();
+
+export async function initDbSchema() {
+  if (!pool) return;
+  try {
+    const client = await pool.connect();
+    try {
+      await client.query(`
+        CREATE TABLE IF NOT EXISTS services (
+          id text PRIMARY KEY,
+          name text NOT NULL,
+          price numeric(10, 2) NOT NULL,
+          original_price numeric(10, 2),
+          description text,
+          features text[] NOT NULL DEFAULT '{}',
+          is_subscription boolean NOT NULL DEFAULT false,
+          badge text,
+          image_url text,
+          created_at timestamp NOT NULL DEFAULT now()
+        );
+
+        CREATE TABLE IF NOT EXISTS bookings (
+          id text PRIMARY KEY,
+          booking_id text UNIQUE,
+          customer_name text NOT NULL,
+          customer_phone text NOT NULL,
+          customer_email text,
+          city text,
+          area text,
+          address text,
+          latitude text,
+          longitude text,
+          map_url text,
+          pet_name text NOT NULL,
+          pet_type text NOT NULL,
+          breed text,
+          age text,
+          aggressive boolean DEFAULT false,
+          service_id text,
+          service_name text NOT NULL,
+          preferred_date text,
+          preferred_time text,
+          notes text,
+          internal_notes text,
+          photo_urls text[] NOT NULL DEFAULT '{}',
+          video_urls text[] NOT NULL DEFAULT '{}',
+          status text NOT NULL DEFAULT 'pending',
+          created_at timestamp NOT NULL DEFAULT now(),
+          updated_at timestamp NOT NULL DEFAULT now()
+        );
+
+        CREATE TABLE IF NOT EXISTS gallery (
+          id text PRIMARY KEY,
+          url text NOT NULL,
+          type text NOT NULL DEFAULT 'image',
+          category text NOT NULL DEFAULT 'grooming',
+          caption text,
+          created_at timestamp NOT NULL DEFAULT now()
+        );
+
+        CREATE TABLE IF NOT EXISTS settings (
+          key text PRIMARY KEY,
+          value text NOT NULL,
+          updated_at timestamp NOT NULL DEFAULT now()
+        );
+      `);
+
+      // Seed default services if empty
+      const servicesCheck = await client.query("SELECT COUNT(*) FROM services");
+      if (parseInt(servicesCheck.rows[0].count, 10) === 0) {
+        for (const s of DEFAULT_SERVICES) {
+          await client.query(
+            `INSERT INTO services (id, name, price, original_price, description, features, is_subscription, badge, image_url)
+             VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) ON CONFLICT (id) DO NOTHING`,
+            [s.id, s.name, s.price, s.originalPrice, s.description, s.features, s.isSubscription, s.badge, s.imageUrl]
+          );
+        }
+      }
+
+      // Seed default gallery if empty
+      const galleryCheck = await client.query("SELECT COUNT(*) FROM gallery");
+      if (parseInt(galleryCheck.rows[0].count, 10) === 0) {
+        for (const g of DEFAULT_GALLERY) {
+          await client.query(
+            `INSERT INTO gallery (id, url, type, category, caption)
+             VALUES ($1, $2, $3, $4, $5) ON CONFLICT (id) DO NOTHING`,
+            [g.id, g.url, g.type, g.category, g.caption]
+          );
+        }
+      }
+
+      // Seed default settings if empty
+      const settingsCheck = await client.query("SELECT COUNT(*) FROM settings");
+      if (parseInt(settingsCheck.rows[0].count, 10) === 0) {
+        for (const st of DEFAULT_SETTINGS) {
+          await client.query(
+            `INSERT INTO settings (key, value) VALUES ($1, $2) ON CONFLICT (key) DO NOTHING`,
+            [st.key, st.value]
+          );
+        }
+      }
+      console.info("[Database] PostgreSQL tables verified and seeded successfully.");
+    } finally {
+      client.release();
+    }
+  } catch (err) {
+    console.error("[Database] Failed to initialize PostgreSQL tables, queries will fall back if needed:", err);
+  }
+}
+
 if (process.env.DATABASE_URL) {
   try {
-    pool = new Pool({ connectionString: process.env.DATABASE_URL });
+    const isLocal =
+      process.env.DATABASE_URL.includes("localhost") ||
+      process.env.DATABASE_URL.includes("127.0.0.1");
+
+    pool = new Pool({
+      connectionString: process.env.DATABASE_URL,
+      ssl: isLocal ? false : { rejectUnauthorized: false },
+      connectionTimeoutMillis: 5000,
+    });
+
+    pool.on("error", (err: any) => {
+      console.warn("[Database] Unexpected error on idle PostgreSQL client:", err.message);
+    });
+
     db = drizzle(pool, { schema });
+    // Trigger non-blocking schema verification
+    initDbSchema().catch((err) => {
+      console.warn("[Database] Initial schema setup deferred:", err.message);
+    });
   } catch (err) {
-    console.warn("[AI Studio] Database connection failed, falling back to in-memory store", err);
-    db = createMockDb();
+    console.warn("[Database] Database connection failed, falling back to in-memory store", err);
+    db = mockDbInstance;
   }
 } else {
-  console.info("[AI Studio] DATABASE_URL not set — using in-memory store");
-  db = createMockDb();
+  console.info("[Database] DATABASE_URL not set — using in-memory store");
+  db = mockDbInstance;
 }
 
 export { pool, db };

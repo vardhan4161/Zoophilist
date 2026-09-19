@@ -2,10 +2,18 @@ import express from "express";
 import path from "path";
 import { createServer as createViteServer } from "vite";
 import apiApp from "./artifacts/api-server/src/app";
+import { initDbSchema } from "./lib/db/src";
 
 async function startServer() {
   const app = express();
   const PORT = 3000;
+
+  // Initialize DB schema if PostgreSQL is connected
+  try {
+    await initDbSchema();
+  } catch (err: any) {
+    console.warn("[Server] DB schema init non-fatal warning:", err?.message);
+  }
 
   // Mount API server
   app.use(apiApp);

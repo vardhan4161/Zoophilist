@@ -67,6 +67,7 @@ export default function Book() {
   const [videoFiles, setVideoFiles] = useState<File[]>([]);
   const [pinnedLocation, setPinnedLocation] = useState<PinnedLocation | null>(null);
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const photoRef = useRef<HTMLInputElement>(null);
   const videoRef = useRef<HTMLInputElement>(null);
   const { toast } = useToast();
@@ -129,23 +130,62 @@ export default function Book() {
     setStep(targetStep);
   };
 
-  const onSubmit = (data: BookingFormValues) => {
+  const onSubmit = async (data: BookingFormValues) => {
     setSubmitError(null);
+    setIsSubmitting(true);
     const selectedService = services.find((s) => s.id === data.serviceId);
+
+    let uploadedPhotoUrls: string[] = [];
+    let uploadedVideoUrls: string[] = [];
+
+    if (photoFiles.length > 0) {
+      for (const file of photoFiles) {
+        try {
+          const fd = new FormData();
+          fd.append("file", file);
+          const res = await fetch("/api/upload", { method: "POST", body: fd });
+          if (res.ok) {
+            const uploadRes = await res.json();
+            if (uploadRes.url) uploadedPhotoUrls.push(uploadRes.url);
+          }
+        } catch (e) {
+          console.warn("Failed to upload photo:", e);
+        }
+      }
+    }
+
+    if (videoFiles.length > 0) {
+      for (const file of videoFiles) {
+        try {
+          const fd = new FormData();
+          fd.append("file", file);
+          const res = await fetch("/api/upload", { method: "POST", body: fd });
+          if (res.ok) {
+            const uploadRes = await res.json();
+            if (uploadRes.url) uploadedVideoUrls.push(uploadRes.url);
+          }
+        } catch (e) {
+          console.warn("Failed to upload video:", e);
+        }
+      }
+    }
+
     createBooking.mutate({
       data: {
         ...data,
         aggressive: data.aggressive === "yes",
         serviceName: selectedService?.name ?? "Unknown Service",
-        photoUrls: [],
-        videoUrls: [],
+        photoUrls: uploadedPhotoUrls,
+        videoUrls: uploadedVideoUrls,
       },
     }, {
       onSuccess: (data: any) => {
+        setIsSubmitting(false);
         const ref = data?.bookingId ? `?ref=${encodeURIComponent(data.bookingId)}` : "";
         setLocation(`/book/success${ref}`);
       },
       onError: (err: any) => {
+        setIsSubmitting(false);
         console.error("Booking error:", err);
         const errMsg = err?.message || "Failed to submit booking. Please check your information and try again.";
         setSubmitError(errMsg);
@@ -644,10 +684,10 @@ export default function Book() {
               ) : (
                 <button
                   type="submit"
-                  disabled={createBooking.isPending}
+                  disabled={createBooking.isPending || isSubmitting}
                   className="flex items-center gap-2 h-12 px-8 rounded-xl bg-primary text-primary-foreground font-bold text-sm hover:bg-primary/90 transition-all hover:shadow-lg hover:shadow-primary/20 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  {createBooking.isPending ? (
+                  {createBooking.isPending || isSubmitting ? (
                     <><Loader2 className="w-4 h-4 animate-spin" /> Submitting...</>
                   ) : (
                     <><CheckCircle2 className="w-4 h-4" /> Confirm Booking</>
