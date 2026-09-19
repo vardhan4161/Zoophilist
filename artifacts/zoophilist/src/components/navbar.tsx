@@ -27,16 +27,21 @@ export function Navbar() {
   // Close mobile menu on route change
   useEffect(() => { setMobileOpen(false); }, [location]);
 
+  // Never render the public website floating navbar when on admin routes
+  if (location.startsWith("/admin")) {
+    return null;
+  }
+
   return (
     <>
       <motion.header
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 sm:px-6 lg:px-8 h-20"
+        className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 sm:px-6 lg:px-8 h-20 pointer-events-none"
       >
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5 group shrink-0">
+        <Link href="/" className="flex items-center gap-2.5 group shrink-0 pointer-events-auto">
           <div className="w-9 h-9 rounded-xl bg-primary/15 flex items-center justify-center border border-primary/25 group-hover:bg-primary/25 group-hover:border-primary/40 transition-all duration-300">
             <PawPrint className="w-5 h-5 text-primary" />
           </div>
@@ -48,7 +53,7 @@ export function Navbar() {
         {/* Desktop: Glass pill nav */}
         <nav
           className={cn(
-            "hidden md:flex items-center gap-1 px-3 py-2 rounded-full transition-all duration-500",
+            "hidden md:flex items-center gap-1 px-3 py-2 rounded-full transition-all duration-500 pointer-events-auto",
             scrolled
               ? "bg-black/60 backdrop-blur-2xl border border-white/10 shadow-xl shadow-black/30"
               : "bg-white/5 backdrop-blur-md border border-white/8"
@@ -82,7 +87,7 @@ export function Navbar() {
         </nav>
 
         {/* Desktop: Right actions */}
-        <div className="hidden md:flex items-center gap-2.5 shrink-0">
+        <div className="hidden md:flex items-center gap-2.5 shrink-0 pointer-events-auto">
           <ThemeSelector />
 
           <Link
@@ -114,7 +119,7 @@ export function Navbar() {
         {/* Mobile: Toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-white/10 transition-colors"
+          className="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-white/10 transition-colors pointer-events-auto"
           aria-label="Toggle menu"
         >
           {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}

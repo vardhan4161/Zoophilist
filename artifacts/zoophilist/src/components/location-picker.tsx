@@ -321,7 +321,19 @@ export function LocationPicker({
 
           {/* Search & Actions Bar */}
           <div className="p-3 sm:px-5 bg-background/50 border-b border-white/10 flex flex-col sm:flex-row gap-2.5 relative">
-            <form onSubmit={handleSearch} className="flex-1 flex gap-2">
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                handleSearch(e);
+              }}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  e.stopPropagation();
+                }
+              }}
+              className="flex-1 flex gap-2"
+            >
               <div className="relative flex-1">
                 <Input
                   value={searchQuery}

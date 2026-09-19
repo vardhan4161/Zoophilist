@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   User, Phone, Mail, MapPin, PawPrint, Calendar, Clock,
   FileText, UploadCloud, CheckCircle2, ArrowRight, ArrowLeft,
-  Loader2, Sparkles, X, Image as ImageIcon, Video, ExternalLink
+  Loader2, Sparkles, X, Image as ImageIcon, Video, ExternalLink, AlertCircle
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -19,6 +19,7 @@ import { PageTransition, AuroraBackground, FadeInUp } from "@/components/animati
 import { useGetServices, useCreateBooking } from "@workspace/api-client-react";
 import { STATIC_SERVICES } from "@/lib/constants";
 import { LocationPicker, type PinnedLocation } from "@/components/location-picker";
+import { useToast } from "@/hooks/use-toast";
 
 const bookingSchema = z.object({
   customerName: z.string().min(2, "Name must be at least 2 characters"),
@@ -65,8 +66,10 @@ export default function Book() {
   const [photoFiles, setPhotoFiles] = useState<File[]>([]);
   const [videoFiles, setVideoFiles] = useState<File[]>([]);
   const [pinnedLocation, setPinnedLocation] = useState<PinnedLocation | null>(null);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const photoRef = useRef<HTMLInputElement>(null);
   const videoRef = useRef<HTMLInputElement>(null);
+  const { toast } = useToast();
 
   const { data: apiServices } = useGetServices();
   const services = apiServices?.length ? apiServices : STATIC_SERVICES;
@@ -105,7 +108,29 @@ export default function Book() {
 
   const prevStep = () => setStep((s) => Math.max(1, s - 1));
 
+  const goToStep = async (targetStep: number) => {
+    if (targetStep < step) {
+      setStep(targetStep);
+      return;
+    }
+    // Validate each step in sequence before allowing skipping forward
+    for (let s = 1; s < targetStep; s++) {
+      const ok = await validateStep(s);
+      if (!ok) {
+        setStep(s);
+        toast({
+          title: `Step ${s} incomplete`,
+          description: "Please fill in the required fields before continuing.",
+          variant: "destructive",
+        });
+        return;
+      }
+    }
+    setStep(targetStep);
+  };
+
   const onSubmit = (data: BookingFormValues) => {
+    setSubmitError(null);
     const selectedService = services.find((s) => s.id === data.serviceId);
     createBooking.mutate({
       data: {
@@ -120,7 +145,16 @@ export default function Book() {
         const ref = data?.bookingId ? `?ref=${encodeURIComponent(data.bookingId)}` : "";
         setLocation(`/book/success${ref}`);
       },
-      onError: () => setLocation("/book/success"),
+      onError: (err: any) => {
+        console.error("Booking error:", err);
+        const errMsg = err?.message || "Failed to submit booking. Please check your information and try again.";
+        setSubmitError(errMsg);
+        toast({
+          title: "Booking Submission Failed",
+          description: errMsg,
+          variant: "destructive",
+        });
+      },
     });
   };
 
@@ -155,24 +189,30 @@ export default function Book() {
               const done = step > s.id;
               const active = step === s.id;
               return (
-                <div key={s.id} className="flex flex-col items-center gap-2 relative z-10">
+                <button
+                  type="button"
+                  key={s.id}
+                  onClick={() => goToStep(s.id)}
+                  className="flex flex-col items-center gap-2 relative z-10 group cursor-pointer focus:outline-none"
+                  aria-label={`Step ${s.id}: ${s.label}`}
+                >
                   <motion.div
                     animate={{
                       backgroundColor: done ? "hsl(142, 71%, 45%)" : active ? "rgba(34,197,94,0.15)" : "rgba(255,255,255,0.05)",
                       borderColor: done || active ? "hsl(142, 71%, 45%)" : "rgba(255,255,255,0.1)",
                     }}
-                    className="w-10 h-10 rounded-full border-2 flex items-center justify-center transition-colors duration-300"
+                    className="w-10 h-10 rounded-full border-2 flex items-center justify-center transition-all duration-300 group-hover:scale-105"
                   >
                     {done ? (
                       <CheckCircle2 className="w-5 h-5 text-primary-foreground" />
                     ) : (
-                      <s.icon className={`w-4.5 h-4.5 ${active ? "text-primary" : "text-muted-foreground"}`} />
+                      <s.icon className={`w-4.5 h-4.5 ${active ? "text-primary" : "text-muted-foreground group-hover:text-white"}`} />
                     )}
                   </motion.div>
-                  <span className={`text-xs font-medium hidden sm:block ${active ? "text-primary" : done ? "text-gray-300" : "text-muted-foreground"}`}>
+                  <span className={`text-xs font-medium hidden sm:block transition-colors ${active ? "text-primary font-bold" : done ? "text-gray-300 group-hover:text-white" : "text-muted-foreground group-hover:text-gray-300"}`}>
                     {s.label}
                   </span>
-                </div>
+                </button>
               );
             })}
           </div>
@@ -181,6 +221,22 @@ export default function Book() {
         {/* Card */}
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)}>
+            {submitError && (
+              <div className="mb-6 p-4 rounded-xl bg-destructive/15 border border-destructive/30 flex items-start gap-3 text-red-300 text-sm">
+                <AlertCircle className="w-5 h-5 text-destructive shrink-0 mt-0.5" />
+                <div className="flex-1">
+                  <div className="font-semibold text-white">Booking Submission Failed</div>
+                  <div className="text-xs text-red-200/90 mt-0.5">{submitError}</div>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setSubmitError(null)}
+                  className="text-red-300 hover:text-white"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
+            )}
             <AnimatePresence mode="wait">
               {step === 1 && (
                 <StepCard key={1} title="Your Details" desc="Tell us how to reach you and where you're located.">
@@ -472,8 +528,21 @@ export default function Book() {
                         setPhotoFiles(prev => [...prev, ...files].slice(0, 5));
                       }} />
                       <div
-                        onClick={() => photoRef.current?.click()}
-                        className="flex flex-col items-center justify-center border-2 border-dashed border-white/15 rounded-2xl p-10 cursor-pointer hover:border-primary/40 hover:bg-primary/4 transition-all duration-200 group"
+                        role="button"
+                        tabIndex={0}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          photoRef.current?.click();
+                        }}
+                        onKeyDown={(e) => {
+                          if (e.key === "Enter" || e.key === " ") {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            photoRef.current?.click();
+                          }
+                        }}
+                        className="flex flex-col items-center justify-center border-2 border-dashed border-white/15 rounded-2xl p-10 cursor-pointer hover:border-primary/40 hover:bg-primary/4 transition-all duration-200 group focus:outline-none focus:ring-2 focus:ring-primary/40"
                       >
                         <ImageIcon className="w-8 h-8 text-muted-foreground mb-2 group-hover:text-primary transition-colors" />
                         <p className="text-sm font-medium text-white">Click to upload photos</p>
@@ -502,8 +571,21 @@ export default function Book() {
                         setVideoFiles(prev => [...prev, ...files].slice(0, 2));
                       }} />
                       <div
-                        onClick={() => videoRef.current?.click()}
-                        className="flex flex-col items-center justify-center border-2 border-dashed border-white/15 rounded-2xl p-10 cursor-pointer hover:border-primary/40 hover:bg-primary/4 transition-all duration-200 group"
+                        role="button"
+                        tabIndex={0}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          videoRef.current?.click();
+                        }}
+                        onKeyDown={(e) => {
+                          if (e.key === "Enter" || e.key === " ") {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            videoRef.current?.click();
+                          }
+                        }}
+                        className="flex flex-col items-center justify-center border-2 border-dashed border-white/15 rounded-2xl p-10 cursor-pointer hover:border-primary/40 hover:bg-primary/4 transition-all duration-200 group focus:outline-none focus:ring-2 focus:ring-primary/40"
                       >
                         <Video className="w-8 h-8 text-muted-foreground mb-2 group-hover:text-primary transition-colors" />
                         <p className="text-sm font-medium text-white">Click to upload videos</p>

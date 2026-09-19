@@ -1,4 +1,4 @@
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { PawPrint, Instagram, Facebook, Youtube, MapPin, Phone, Mail, ArrowRight, ShieldCheck } from "lucide-react";
 
 const footerLinks = {
@@ -23,6 +23,11 @@ const footerLinks = {
 };
 
 export function Footer() {
+  const [location] = useLocation();
+
+  if (location.startsWith("/admin")) {
+    return null;
+  }
   return (
     <footer className="relative bg-card border-t border-white/5 overflow-hidden">
       {/* Subtle aurora glow */}

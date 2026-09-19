@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useGetBookings, useUpdateBookingStatus, getGetBookingsQueryKey } from "@workspace/api-client-react";
+import { useGetBookings, useUpdateBookingStatus, getGetBookingsQueryKey, type Booking } from "@workspace/api-client-react";
 import { useQueryClient } from "@tanstack/react-query";
 import { 
   Table, TableBody, TableCell, TableHead, TableHeader, TableRow 
@@ -10,12 +10,20 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { format } from "date-fns";
-import { Search, Loader2, MapPin, ExternalLink } from "lucide-react";
+import { Search, Loader2, MapPin, ExternalLink, Eye, Phone, Mail, Calendar, Clock, PawPrint, ShieldAlert, FileText, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 
 export default function AdminRequests() {
   const [statusFilter, setStatusFilter] = useState<string>("all");
   const [searchTerm, setSearchTerm] = useState("");
+  const [selectedBooking, setSelectedBooking] = useState<Booking | null>(null);
   
   const queryParams = statusFilter === "all" ? {} : { status: statusFilter as any };
   const { data: response, isLoading } = useGetBookings(queryParams);
@@ -34,6 +42,9 @@ export default function AdminRequests() {
         queryClient.invalidateQueries({ queryKey: getGetBookingsQueryKey({}) });
         if (statusFilter !== "all") {
           queryClient.invalidateQueries({ queryKey: getGetBookingsQueryKey({ status: statusFilter as any }) });
+        }
+        if (selectedBooking && selectedBooking.id === id) {
+          setSelectedBooking(prev => prev ? { ...prev, status: newStatus } : null);
         }
       }
     });
@@ -63,8 +74,15 @@ export default function AdminRequests() {
   return (
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-        <h1 className="text-3xl font-bold text-white">Bookings</h1>
-        <Button>Add Request</Button>
+        <div>
+          <h1 className="text-3xl font-bold text-white">Bookings</h1>
+          <p className="text-sm text-muted-foreground mt-0.5">Manage pet grooming appointments, verify locations, and update statuses.</p>
+        </div>
+        <Button asChild className="gap-2">
+          <a href="/zoophilist/book" target="_blank" rel="noopener noreferrer">
+            <ExternalLink className="w-4 h-4" /> Book New Appointment
+          </a>
+        </Button>
       </div>
 
       <Card className="bg-card border-white/5">
@@ -157,22 +175,33 @@ export default function AdminRequests() {
                         {getStatusBadge(booking.status)}
                       </TableCell>
                       <TableCell className="text-right">
-                        <Select 
-                          value={booking.status} 
-                          onValueChange={(val) => handleStatusChange(booking.id, val)}
-                          disabled={updateStatus.isPending}
-                        >
-                          <SelectTrigger className="w-[130px] h-8 text-xs ml-auto bg-black/20 border-white/10">
-                            <SelectValue placeholder="Status" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="pending">Pending</SelectItem>
-                            <SelectItem value="confirmed">Confirmed</SelectItem>
-                            <SelectItem value="scheduled">Scheduled</SelectItem>
-                            <SelectItem value="completed">Completed</SelectItem>
-                            <SelectItem value="cancelled">Cancelled</SelectItem>
-                          </SelectContent>
-                        </Select>
+                        <div className="flex items-center justify-end gap-2">
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            onClick={() => setSelectedBooking(booking)}
+                            className="h-8 w-8 text-gray-400 hover:text-white hover:bg-white/10"
+                            title="View Full Booking Details"
+                          >
+                            <Eye className="w-4 h-4" />
+                          </Button>
+                          <Select 
+                            value={booking.status} 
+                            onValueChange={(val) => handleStatusChange(booking.id, val)}
+                            disabled={updateStatus.isPending}
+                          >
+                            <SelectTrigger className="w-[125px] h-8 text-xs bg-black/20 border-white/10">
+                              <SelectValue placeholder="Status" />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="pending">Pending</SelectItem>
+                              <SelectItem value="confirmed">Confirmed</SelectItem>
+                              <SelectItem value="scheduled">Scheduled</SelectItem>
+                              <SelectItem value="completed">Completed</SelectItem>
+                              <SelectItem value="cancelled">Cancelled</SelectItem>
+                            </SelectContent>
+                          </Select>
+                        </div>
                       </TableCell>
                     </TableRow>
                   ))
@@ -182,6 +211,158 @@ export default function AdminRequests() {
           </div>
         </CardContent>
       </Card>
+
+      {/* Booking Details Modal */}
+      <Dialog open={!!selectedBooking} onOpenChange={(open) => !open && setSelectedBooking(null)}>
+        <DialogContent className="max-w-2xl bg-card border-white/10 text-white max-h-[90vh] overflow-y-auto">
+          {selectedBooking && (
+            <>
+              <DialogHeader>
+                <div className="flex items-center justify-between gap-4">
+                  <div>
+                    <DialogTitle className="text-xl font-bold text-white flex items-center gap-2">
+                      <span>Booking {(selectedBooking as any).bookingId || `#${selectedBooking.id.slice(0, 8)}`}</span>
+                      {getStatusBadge(selectedBooking.status)}
+                    </DialogTitle>
+                    <DialogDescription className="text-xs text-muted-foreground mt-1">
+                      Received on {format(new Date(selectedBooking.createdAt), "MMMM d, yyyy 'at' h:mm a")}
+                    </DialogDescription>
+                  </div>
+                </div>
+              </DialogHeader>
+
+              <div className="space-y-6 pt-3 text-sm">
+                {/* Customer & Location */}
+                <div className="rounded-xl bg-white/[0.03] border border-white/10 p-4 space-y-3">
+                  <h4 className="text-xs font-semibold uppercase tracking-wider text-primary flex items-center gap-1.5">
+                    <MapPin className="w-3.5 h-3.5" /> Customer & Doorstep Location
+                  </h4>
+                  <div className="grid sm:grid-cols-2 gap-3 text-xs">
+                    <div>
+                      <span className="text-muted-foreground block">Customer Name</span>
+                      <span className="text-white font-medium text-sm">{selectedBooking.customerName}</span>
+                    </div>
+                    <div>
+                      <span className="text-muted-foreground block">Phone</span>
+                      <a href={`tel:${selectedBooking.customerPhone}`} className="text-emerald-400 font-medium hover:underline flex items-center gap-1">
+                        <Phone className="w-3 h-3" /> {selectedBooking.customerPhone}
+                      </a>
+                    </div>
+                    {selectedBooking.customerEmail && (
+                      <div>
+                        <span className="text-muted-foreground block">Email</span>
+                        <a href={`mailto:${selectedBooking.customerEmail}`} className="text-gray-300 hover:underline flex items-center gap-1">
+                          <Mail className="w-3 h-3" /> {selectedBooking.customerEmail}
+                        </a>
+                      </div>
+                    )}
+                    <div>
+                      <span className="text-muted-foreground block">City / Area</span>
+                      <span className="text-white font-medium">{[selectedBooking.area, selectedBooking.city].filter(Boolean).join(", ") || "—"}</span>
+                    </div>
+                    <div className="sm:col-span-2">
+                      <span className="text-muted-foreground block">Complete Address</span>
+                      <span className="text-gray-200">{selectedBooking.address || "—"}</span>
+                    </div>
+                  </div>
+
+                  {((selectedBooking as any).mapUrl || ((selectedBooking as any).latitude && (selectedBooking as any).longitude)) && (
+                    <div className="pt-2 border-t border-white/5">
+                      <a
+                        href={(selectedBooking as any).mapUrl || `https://www.google.com/maps?q=${(selectedBooking as any).latitude},${(selectedBooking as any).longitude}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-400 hover:text-emerald-300 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 px-3 py-1.5 rounded-lg transition-colors"
+                      >
+                        <MapPin className="w-3.5 h-3.5 text-emerald-400" />
+                        <span>Open Doorstep Location in Google Maps</span>
+                        <ExternalLink className="w-3 h-3 ml-0.5" />
+                      </a>
+                    </div>
+                  )}
+                </div>
+
+                {/* Pet & Service Details */}
+                <div className="rounded-xl bg-white/[0.03] border border-white/10 p-4 space-y-3">
+                  <h4 className="text-xs font-semibold uppercase tracking-wider text-primary flex items-center gap-1.5">
+                    <PawPrint className="w-3.5 h-3.5" /> Pet & Appointment
+                  </h4>
+                  <div className="grid sm:grid-cols-2 gap-3 text-xs">
+                    <div>
+                      <span className="text-muted-foreground block">Pet Name & Type</span>
+                      <span className="text-white font-medium text-sm">{selectedBooking.petName} ({selectedBooking.petType})</span>
+                    </div>
+                    <div>
+                      <span className="text-muted-foreground block">Breed & Age</span>
+                      <span className="text-gray-300">{[selectedBooking.breed, selectedBooking.age ? `${selectedBooking.age} yrs` : null].filter(Boolean).join(" • ") || "—"}</span>
+                    </div>
+                    <div>
+                      <span className="text-muted-foreground block">Requested Service</span>
+                      <span className="text-primary font-semibold text-sm">{selectedBooking.serviceName}</span>
+                    </div>
+                    <div>
+                      <span className="text-muted-foreground block">Scheduled Slot</span>
+                      <span className="text-white font-medium flex items-center gap-1">
+                        <Calendar className="w-3 h-3 text-muted-foreground" /> {selectedBooking.preferredDate || "Flexible"}
+                        <Clock className="w-3 h-3 text-muted-foreground ml-1.5" /> {selectedBooking.preferredTime || "Anytime"}
+                      </span>
+                    </div>
+                    {selectedBooking.aggressive && (
+                      <div className="sm:col-span-2 p-2 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center gap-2 text-amber-400 text-xs">
+                        <ShieldAlert className="w-4 h-4 shrink-0" />
+                        <span>Pet may show aggressive or nervous behavior. Extra grooming precautions recommended.</span>
+                      </div>
+                    )}
+                    {selectedBooking.notes && (
+                      <div className="sm:col-span-2">
+                        <span className="text-muted-foreground block">Customer Notes</span>
+                        <p className="text-gray-300 italic bg-black/20 p-2.5 rounded-lg border border-white/5 mt-1">"{selectedBooking.notes}"</p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                {/* Media attachments */}
+                {((selectedBooking.photoUrls && selectedBooking.photoUrls.length > 0) || (selectedBooking.videoUrls && selectedBooking.videoUrls.length > 0)) && (
+                  <div className="rounded-xl bg-white/[0.03] border border-white/10 p-4 space-y-3">
+                    <h4 className="text-xs font-semibold uppercase tracking-wider text-primary">Attached Media</h4>
+                    {selectedBooking.photoUrls && selectedBooking.photoUrls.length > 0 && (
+                      <div className="flex flex-wrap gap-2">
+                        {selectedBooking.photoUrls.map((url, i) => (
+                          <a key={i} href={url} target="_blank" rel="noopener noreferrer" className="block rounded-lg overflow-hidden border border-white/10 hover:border-primary transition-colors">
+                            <img src={url} alt={`Pet Photo ${i + 1}`} className="w-20 h-20 object-cover" />
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {/* Quick Status Control */}
+                <div className="flex items-center justify-between pt-2 border-t border-white/10">
+                  <span className="text-xs text-muted-foreground">Update status for this booking:</span>
+                  <Select 
+                    value={selectedBooking.status} 
+                    onValueChange={(val) => handleStatusChange(selectedBooking.id, val)}
+                    disabled={updateStatus.isPending}
+                  >
+                    <SelectTrigger className="w-[140px] h-8 text-xs bg-black/20 border-white/10">
+                      <SelectValue placeholder="Status" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="pending">Pending</SelectItem>
+                      <SelectItem value="confirmed">Confirmed</SelectItem>
+                      <SelectItem value="scheduled">Scheduled</SelectItem>
+                      <SelectItem value="completed">Completed</SelectItem>
+                      <SelectItem value="cancelled">Cancelled</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
