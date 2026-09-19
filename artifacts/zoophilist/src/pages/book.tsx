@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   User, Phone, Mail, MapPin, PawPrint, Calendar, Clock,
   FileText, UploadCloud, CheckCircle2, ArrowRight, ArrowLeft,
-  Loader2, Sparkles, X, Image as ImageIcon, Video
+  Loader2, Sparkles, X, Image as ImageIcon, Video, ExternalLink
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -18,6 +18,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { PageTransition, AuroraBackground, FadeInUp } from "@/components/animations";
 import { useGetServices, useCreateBooking } from "@workspace/api-client-react";
 import { STATIC_SERVICES } from "@/lib/constants";
+import { LocationPicker, type PinnedLocation } from "@/components/location-picker";
 
 const bookingSchema = z.object({
   customerName: z.string().min(2, "Name must be at least 2 characters"),
@@ -26,6 +27,9 @@ const bookingSchema = z.object({
   city: z.string().min(2, "City is required"),
   area: z.string().min(2, "Area/Locality is required"),
   address: z.string().min(10, "Complete address required (min 10 characters)"),
+  latitude: z.string().optional(),
+  longitude: z.string().optional(),
+  mapUrl: z.string().optional(),
   petName: z.string().min(2, "Pet name required"),
   petType: z.string().min(1, "Pet type required"),
   breed: z.string().optional(),
@@ -60,6 +64,7 @@ export default function Book() {
   const [step, setStep] = useState(1);
   const [photoFiles, setPhotoFiles] = useState<File[]>([]);
   const [videoFiles, setVideoFiles] = useState<File[]>([]);
+  const [pinnedLocation, setPinnedLocation] = useState<PinnedLocation | null>(null);
   const photoRef = useRef<HTMLInputElement>(null);
   const videoRef = useRef<HTMLInputElement>(null);
 
@@ -72,6 +77,7 @@ export default function Book() {
     defaultValues: {
       customerName: "", customerPhone: "", customerEmail: "",
       city: "", area: "", address: "",
+      latitude: "", longitude: "", mapUrl: "",
       petName: "", petType: "", breed: "", age: "", aggressive: "no",
       serviceId: preselectedService, preferredDate: "", preferredTime: "", notes: "",
     },
@@ -233,6 +239,82 @@ export default function Book() {
                         <FormMessage />
                       </FormItem>
                     )} />
+
+                    {/* Interactive Map Pinning Option */}
+                    <div className="sm:col-span-2 p-4 rounded-xl bg-primary/10 border border-primary/25 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 transition-all">
+                      <div className="flex items-start gap-3">
+                        <div className="w-10 h-10 rounded-xl bg-primary/20 border border-primary/30 flex items-center justify-center text-primary shrink-0 mt-0.5">
+                          <MapPin className="w-5 h-5" />
+                        </div>
+                        <div>
+                          <div className="text-sm font-semibold text-white flex items-center gap-2">
+                            <span>Pin Your Doorstep on Map</span>
+                            {pinnedLocation?.latitude ? (
+                              <span className="text-[10px] bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded-full font-bold flex items-center gap-1">
+                                <CheckCircle2 className="w-3 h-3" /> Pinned
+                              </span>
+                            ) : (
+                              <span className="text-[10px] bg-primary/20 text-primary border border-primary/30 px-2 py-0.5 rounded-full font-semibold">
+                                Recommended
+                              </span>
+                            )}
+                          </div>
+                          <p className="text-xs text-gray-300 mt-0.5">
+                            {pinnedLocation?.latitude
+                              ? `GPS: ${pinnedLocation.latitude}, ${pinnedLocation.longitude}`
+                              : "Pin your exact house or gate on the map so our mobile grooming van arrives right at your doorstep."}
+                          </p>
+                          {pinnedLocation?.mapUrl && (
+                            <div className="mt-1 flex items-center gap-3">
+                              <a
+                                href={pinnedLocation.mapUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-xs text-primary hover:underline inline-flex items-center gap-1 font-medium"
+                              >
+                                <span>Preview on Google Maps</span>
+                                <ExternalLink className="w-3 h-3" />
+                              </a>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+
+                      <LocationPicker
+                        initialLat={pinnedLocation?.latitude}
+                        initialLng={pinnedLocation?.longitude}
+                        onLocationSelect={(loc) => {
+                          setPinnedLocation(loc);
+                          form.setValue("latitude", loc.latitude);
+                          form.setValue("longitude", loc.longitude);
+                          form.setValue("mapUrl", loc.mapUrl);
+
+                          if (loc.city && !form.getValues("city")) {
+                            form.setValue("city", loc.city);
+                          }
+                          if (loc.area && !form.getValues("area")) {
+                            form.setValue("area", loc.area);
+                          }
+                          if (loc.formattedAddress) {
+                            const cur = form.getValues("address");
+                            if (!cur || cur.trim().length < 5) {
+                              form.setValue("address", loc.formattedAddress);
+                            }
+                          }
+                        }}
+                        triggerButton={
+                          <Button
+                            type="button"
+                            variant="outline"
+                            size="sm"
+                            className="h-10 px-4 border-primary/40 bg-primary/10 hover:bg-primary/20 text-primary text-xs font-semibold whitespace-nowrap shrink-0 shadow-sm"
+                          >
+                            <MapPin className="w-4 h-4 mr-1.5 text-primary" />
+                            {pinnedLocation?.latitude ? "Change Map Pin" : "📍 Pin on Map"}
+                          </Button>
+                        }
+                      />
+                    </div>
                   </div>
                 </StepCard>
               )}

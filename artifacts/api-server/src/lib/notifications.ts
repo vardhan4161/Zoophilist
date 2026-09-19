@@ -17,6 +17,9 @@ export interface BookingNotificationData {
   address?: string | null;
   city?: string | null;
   area?: string | null;
+  latitude?: string | null;
+  longitude?: string | null;
+  mapUrl?: string | null;
   notes?: string | null;
   photoUrls?: string[];
   videoUrls?: string[];
@@ -79,6 +82,7 @@ function customerEmailHtml(b: BookingNotificationData): string {
                     <span style="float:right;color:#fff;font-size:13px;font-weight:600;">${b.petName} (${b.petType})</span>
                   </td>
                 </tr>
+                ${(b.mapUrl || (b.latitude && b.longitude)) ? `<tr><td style="padding:8px 0;border-bottom:1px solid #1f2d1f;"><span style="color:#6b7280;font-size:13px;">Doorstep Pin</span><span style="float:right;"><a href="${b.mapUrl || `https://www.google.com/maps?q=${b.latitude},${b.longitude}`}" target="_blank" style="color:#22c55e;font-size:13px;font-weight:600;text-decoration:none;">📍 View on Google Maps ↗</a></span></td></tr>` : ""}
               </table>
 
               <!-- Contact note -->
@@ -131,6 +135,7 @@ function adminEmailHtml(b: BookingNotificationData): string {
                 ${b.customerEmail ? `<tr><td style="padding:6px 0;border-bottom:1px solid #1f2d1f;"><span style="color:#6b7280;font-size:13px;">Email</span><span style="float:right;color:#fff;font-size:13px;">${b.customerEmail}</span></td></tr>` : ""}
                 ${b.city ? `<tr><td style="padding:6px 0;border-bottom:1px solid #1f2d1f;"><span style="color:#6b7280;font-size:13px;">City / Area</span><span style="float:right;color:#fff;font-size:13px;">${[b.city, b.area].filter(Boolean).join(", ")}</span></td></tr>` : ""}
                 ${b.address ? `<tr><td style="padding:6px 0;border-bottom:1px solid #1f2d1f;"><span style="color:#6b7280;font-size:13px;">Address</span><span style="float:right;color:#fff;font-size:13px;">${b.address}</span></td></tr>` : ""}
+                ${(b.mapUrl || (b.latitude && b.longitude)) ? `<tr><td style="padding:8px 0;border-bottom:1px solid #1f2d1f;"><span style="color:#6b7280;font-size:13px;">Pinned Location</span><div style="margin-top:4px;"><a href="${b.mapUrl || `https://www.google.com/maps?q=${b.latitude},${b.longitude}`}" target="_blank" style="display:inline-block;background:#0284c7;color:#ffffff;text-decoration:none;padding:5px 12px;border-radius:6px;font-size:12px;font-weight:bold;">📍 View Pinned Location on Google Maps →</a></div></td></tr>` : ""}
               </table>
 
               <h3 style="color:#22c55e;margin:0 0 16px;">Pet</h3>
@@ -247,6 +252,9 @@ export async function sendTelegramNotification(
       ? `*Location:* ${escMd([b.city, b.area].filter(Boolean).join(", "))}`
       : null,
     b.address ? `*Address:* ${escMd(b.address)}` : null,
+    (b.mapUrl || (b.latitude && b.longitude))
+      ? `📍 *Pinned Location:* [Open in Google Maps](${b.mapUrl || `https://www.google.com/maps?q=${b.latitude},${b.longitude}`})`
+      : null,
     ``,
     `[Open Dashboard](${dashboardUrl ?? "https://zoophilist.replit.app/admin"})`,
   ]

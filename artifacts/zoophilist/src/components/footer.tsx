@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { PawPrint, Instagram, Facebook, Youtube, MapPin, Phone, Mail, ArrowRight } from "lucide-react";
+import { PawPrint, Instagram, Facebook, Youtube, MapPin, Phone, Mail, ArrowRight, ShieldCheck } from "lucide-react";
 
 const footerLinks = {
   services: [
@@ -167,9 +167,19 @@ export function Footer() {
           <p className="text-sm text-muted-foreground text-center sm:text-left">
             © {new Date().getFullYear()} Zoophilist Pet Services. All rights reserved.
           </p>
-          <p className="text-sm text-muted-foreground flex items-center gap-1">
-            Made with <span className="text-primary">♥</span> for pets across India
-          </p>
+          <div className="flex items-center gap-4 text-sm text-muted-foreground">
+            <Link
+              href="/admin"
+              className="inline-flex items-center gap-1.5 hover:text-primary transition-colors font-medium text-xs bg-white/5 hover:bg-white/10 px-3 py-1.5 rounded-full border border-white/10"
+            >
+              <ShieldCheck className="w-3.5 h-3.5 text-primary" />
+              Staff &amp; Admin Portal
+            </Link>
+            <span className="hidden sm:inline">•</span>
+            <p className="hidden sm:flex items-center gap-1">
+              Made with <span className="text-primary">♥</span> for pets
+            </p>
+          </div>
         </div>
       </div>
     </footer>

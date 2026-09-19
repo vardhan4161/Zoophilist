@@ -6,7 +6,8 @@ import {
   Scissors, 
   Image as ImageIcon, 
   Settings, 
-  PawPrint 
+  PawPrint,
+  ExternalLink,
 } from "lucide-react";
 
 export function AdminSidebar() {
@@ -52,6 +53,19 @@ export function AdminSidebar() {
             </Link>
           );
         })}
+      </div>
+
+      <div className="p-4 border-t border-white/5">
+        <Link
+          href="/"
+          className="flex items-center justify-between px-3 py-2.5 rounded-lg text-xs font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-colors border border-white/5"
+        >
+          <span className="flex items-center gap-2">
+            <ExternalLink className="w-4 h-4 text-primary" />
+            <span>Visit Live Site</span>
+          </span>
+          <span className="text-[10px] text-primary font-bold">↗</span>
+        </Link>
       </div>
     </aside>
   );

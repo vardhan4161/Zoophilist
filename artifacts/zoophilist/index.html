@@ -3,19 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>Zoophilist</title>
-    <meta name="description" content="Zoophilist — built on Replit. Update this description to reflect the app." />
+    <title>Zoophilist — Premium Doorstep Pet Grooming</title>
+    <meta name="description" content="Zoophilist — Premium Doorstep Pet Grooming &amp; Animal Welfare Services" />
     <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="Zoophilist" />
-    <meta property="og:description" content="Zoophilist — built on Replit. Update this description to reflect the app." />
+    <meta property="og:title" content="Zoophilist — Premium Doorstep Pet Grooming" />
+    <meta property="og:description" content="Zoophilist — Premium Doorstep Pet Grooming &amp; Animal Welfare Services" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Zoophilist" />
-    <meta name="twitter:description" content="Zoophilist — built on Replit. Update this description to reflect the app." />
+    <meta name="twitter:title" content="Zoophilist — Premium Doorstep Pet Grooming" />
+    <meta name="twitter:description" content="Zoophilist — Premium Doorstep Pet Grooming &amp; Animal Welfare Services" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      (function() {
+        try {
+          var saved = localStorage.getItem('zoophilist_custom_theme');
+          if (saved === 'white') {
+            document.documentElement.setAttribute('data-theme', 'white');
+            document.documentElement.classList.add('light-theme');
+            document.documentElement.classList.remove('dark');
+          } else if (saved && saved !== 'emerald') {
+            document.documentElement.setAttribute('data-theme', saved);
+            document.documentElement.classList.remove('light-theme');
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('light-theme');
+            document.documentElement.classList.add('dark');
+          }
+        } catch(e) {}
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

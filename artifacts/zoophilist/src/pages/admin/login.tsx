@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useLocation } from "wouter";
+import { useLocation, Link } from "wouter";
 import { useAdminLogin } from "@workspace/api-client-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -96,11 +96,31 @@ export default function AdminLogin() {
 
               <Button 
                 type="submit" 
-                className="w-full h-12 text-base" 
+                className="w-full h-12 text-base font-semibold" 
                 disabled={login.isPending}
               >
                 {login.isPending ? <Loader2 className="w-5 h-5 animate-spin" /> : "Sign in"}
               </Button>
+
+              <div className="pt-2 flex flex-col gap-2">
+                <Button
+                  type="button"
+                  variant="outline"
+                  className="w-full h-9 text-xs border-white/10 hover:bg-white/5 text-gray-300"
+                  onClick={() => {
+                    form.setValue("username", "admin");
+                    form.setValue("password", "zoophilist2024");
+                  }}
+                >
+                  ⚡ Auto-Fill Credentials (admin / zoophilist2024)
+                </Button>
+
+                <div className="text-center mt-2">
+                  <Link href="/" className="text-xs text-primary hover:underline font-medium">
+                    ← Back to Zoophilist Website
+                  </Link>
+                </div>
+              </div>
             </form>
           </Form>
         </div>
